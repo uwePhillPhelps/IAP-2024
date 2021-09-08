@@ -22,7 +22,7 @@ A video guide for setting up XCode on MacOS is here: <a href="https://www.youtub
 
 For those of you on OSX 10.15+ please watch this version instead: <a href="https://www.youtube.com/watch?v=OQFYdAl54XE">MacOS setup Catalina</a>
 
-Download this IAP repository (which contains all of the required materials and applications)
+Download the IAP repository (which contains all of the required materials and applications)
 
 ::arrow_right:: [Download master branch zip file](../../../archive/refs/heads/master.zip) ::arrow_left::
 
@@ -40,7 +40,7 @@ http://developer.apple.com/programs/register/
 
 A video guide for setting up Visual Studio on Windows is here: <a href="https://www.youtube.com/watch?v=_bTzXlonKeo">Windows setup video</a>
 
-Download this IAP folder (which contains all of the required materials and applications)
+Download the IAP repository (which contains all of the required materials and applications)
 
 ::arrow_right:: [Download windows branch zip file](../../../archive/refs/heads/windows.zip) ::arrow_left::
 
@@ -67,4 +67,4 @@ If you double-click by mistake, close the separate window that will appear, and 
 
 ## The first tutorial exercises
 
-You can now start the practical sessions from <a href="Part%201/1%20-%20Familiarisation.md">Tutorial 1 - familiarisation</a>
+You can now start the practical sessions from [Tutorial 1 - Section 1 - Familiarisation](Part%201/1%20-%20Familiarisation.md).
