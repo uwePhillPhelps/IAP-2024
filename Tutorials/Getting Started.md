@@ -22,9 +22,9 @@ A video guide for setting up XCode on MacOS is here: <a href="https://www.youtub
 
 For those of you on OSX 10.15+ please watch this version instead: <a href="https://www.youtube.com/watch?v=OQFYdAl54XE">MacOS setup Catalina</a>
 
-Download the IAP folder (which contains all of the required materials and applications)
+Download this IAP repository (which contains all of the required materials and applications)
 
-https://github.com/Sjhunt93/IAP-2019-2020
+[Download master branch zip file](../../../archive/refs/heads/master.zip)
 
 You will also need to download Xcode from the appstore if you are working on your own machine. The university machines already have Xcode installed.
 
@@ -42,7 +42,7 @@ A video guide for setting up Visual Studio on Windows is here: <a href="https://
 
 Download this IAP folder (which contains all of the required materials and applications)
 
-https://github.com/Sjhunt93/IAP-2019-2020/tree/windows
+[Download windows branch zip file](../../../archive/refs/heads/windows.zip)
 
 For windows users you will need to download Microsoft's Visual Studio:
 
