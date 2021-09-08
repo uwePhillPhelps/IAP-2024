@@ -160,7 +160,7 @@ However, be aware than you can only assign values to waveType that were specifie
 
 ## Exercise 1: Code refactoring
 
-Obtain a copy of the following <a href="https://github.com/Sjhunt93/IAP-2018-2019/tree/master/Code%20Exercises/Extra%20Tutorial/enums">files</a> copy them into your project. You will be refactoring this project to make use of the topics we discussed in this handout. 
+Download the supplied files [Tutorial 13 enums](../../Code%20Exercises/Extra%20Tutorial/enums) and copy them into your project. You will be refactoring this project to make use of the topics we discussed in this handout. 
 
 1.	You should make any variables const that are not going to be modified after being initiliased
 2.	Replace any arbitrary literals with constants
@@ -210,7 +210,7 @@ Add the **printVector** function declaration shown above to your IAP.h file. Onc
 
 As arrays can hold a large number of variables if very common to search through and find the position (index) of them. Study the following code.
 
-<img src="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/finding.png" />
+<img src="../images/finding.png" />
 
 This code shown above is a common routine for searching through an array. Firstly, we create a for loop for iterating over each element of the array, we then check each array element for the value we are looking for, which in this case is 16. If this value is found, we then set the indexOfValueToLookFor variable to be the index that holds 16. We can then call break to exit the loop. In this example we use -1 to symbolise that the value requested was not found.
 
@@ -218,7 +218,7 @@ This code shown above is a common routine for searching through an array. Firstl
 
 Adapt the code supplied above to write a generalized find Index function. This function should take a **vector** as its argument and a **value** to look for. It should return an int which corresponds to the index of the value (if it contains it), or a -1 value if it does not. **Note you should not use shared variables for this exercise.**
 
-Add the following <a href="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Code%20Exercises/Extra%20Tutorial/sorting/find%20function%20unit%20test.txt">test code</a> to your solution to test your findIndex function. This is a different test to the one required for unit test 10.
+Download the supplied [Tutorial 13 test text file](../..//Code%20Exercises/Extra%20Tutorial/sorting/find%20function%20unit%20test.txt") to your solution to test your findIndex function. **Note that this is a different test file to the one required for unit test 10**.
 
 ## Sorting
 
@@ -261,5 +261,5 @@ You can use this to shuffle or randomize the order of the elements within an arr
 
 ## Exercise 4: Sort, Reverse, Randomize
 
-To conclude this tutorial, you should try out each of the 3 functions discussed previously. A placeholder for this exercise can be found <a href="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Code%20Exercises/Extra%20Tutorial/sorting/getting%20started.txt">here</a>
+To conclude this tutorial, you should try out each of the 3 functions discussed previously. A placeholder for this exercise can be found here [Tutorial 13 sorting getting started](../../Code%20Exercises/Extra%20Tutorial/sorting/getting%20started.txt").
 

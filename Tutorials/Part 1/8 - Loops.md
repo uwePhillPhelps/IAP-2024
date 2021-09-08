@@ -36,12 +36,12 @@ Modify the while loop condition to achieve this. You will need to set up and use
 
 In the conventional while loop, the test condition appears at the beginning of the loop structure. The general form of the while loop is indicated below: 
 
-<img src="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/while.png" height=300/>
+<img src="../images/while.png" height=300/>
 
 
 An alternative looping mechanism is the do-while construction, which operates in exactly the same way as the while loop only the test condition is positioned at the end of the loop, rather than at the beginning. The general form of the do while loop is as follows. 
 
-<img src="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/dowhile.png" height=300/>
+<img src="../images/dowhile.png" height=300/>
 
 It is more appropriate to use a do while rather than a while loop when the outcome of the condition is controlled by the statements within the loop. Or that you need to always do something once regardless of the condition.
 
@@ -111,7 +111,7 @@ Once you have this working, modify the loop so that the table is displayed in de
 
 ## Challenge Exercise: Making a saw wave from sine waves
 
-Load the example <a href="https://github.com/Sjhunt93/IAP-2018-2019/tree/master/Code%20Exercises/Tutorial%208/Exercise%205">code</a> into your IAP.h and IAP.cpp files.
+Load the example [Tutorial 08 Exercise 5 code](../../Code%20Exercises/Tutorial%208/Exercise%205) into your IAP.h and IAP.cpp files.
 
 We will now add two for loops to our monophonic synthesizer to artificially create a low-fi saw wave oscillator from a series of sine waves. To achieve this **rearrange** and **add** the following code to the note on branch of the if statement inside the note callback function.
 

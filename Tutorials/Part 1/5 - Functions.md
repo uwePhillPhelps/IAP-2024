@@ -135,7 +135,7 @@ Function definitions should appear in IAP.cpp separated from the IAP::run() func
 
 ## Exercise 2: mtof function
 
-Back in practical 3 we used a formula for converting note numbers into frequencies. This formula will be used frequently throughout this module, so it would make sense to put this code inside a function. Download the practical 5.2 files from [here](https://github.com/Sjhunt93/IAP-2019-2020/tree/master/Code%20Exercises/Tutorial%205/Exercise%202) and copy in the code for both the .h and .cpp file.
+Back in practical 3 we used a formula for converting note numbers into frequencies. This formula will be used frequently throughout this module, so it would make sense to put this code inside a function. Download the practical 5.2 files from [here](../../Code%20Exercises/Tutorial%205/Exercise%202) and copy in the code for both the .h and .cpp file.
 
 The prototype for the mtof function looks like this:
 
@@ -205,7 +205,7 @@ Add 2 or more chord functions, some suggestions for chords are given bellow. You
 
 Open debug exercise 5 and then fix the broken exercise. Make sure you save your solution to codeBook.
 
-https://github.com/Sjhunt93/IAP-2019-2020/tree/master/Code%20Exercises/Tutorial%205/Debug
+Download: [Tutorial 05 Debug code](../../Code%20Exercises/Tutorial%205/Debug)
 
 ## Challenge Exercise: 
 
