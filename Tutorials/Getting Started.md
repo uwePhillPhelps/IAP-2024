@@ -24,7 +24,7 @@ For those of you on OSX 10.15+ please watch this version instead: <a href="https
 
 Download this IAP repository (which contains all of the required materials and applications)
 
-[Download master branch zip file](../../../archive/refs/heads/master.zip)
+::arrow_right:: [Download master branch zip file](../../../archive/refs/heads/master.zip) ::arrow_left::
 
 You will also need to download Xcode from the appstore if you are working on your own machine. The university machines already have Xcode installed.
 
@@ -42,7 +42,7 @@ A video guide for setting up Visual Studio on Windows is here: <a href="https://
 
 Download this IAP folder (which contains all of the required materials and applications)
 
-[Download windows branch zip file](../../../archive/refs/heads/windows.zip)
+::arrow_right:: [Download windows branch zip file](../../../archive/refs/heads/windows.zip) ::arrow_left::
 
 For windows users you will need to download Microsoft's Visual Studio:
 
