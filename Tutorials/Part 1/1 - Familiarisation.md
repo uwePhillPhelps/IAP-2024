@@ -131,7 +131,7 @@ To help you keep a reference of your work to help with future practicals and ass
 
 This application helps you take a snapshot of your work, with neatly organised spaces for each and every exercise of each and every practical. 
 
-1.	In finder, navigate to your `IAP-2019-2020-master/apps` folder and open CodeBook.app.
+1.	In finder, navigate to the IAP `apps` folder and open CodeBook.app.
 2.	On the left hand side of the application you should headers for each week.
     * If codebook loads blank, use `File > Load` to pick `iap.xml` from `codebook files` folder
 3.	Within weekly headers you should see labels for each exercise.
