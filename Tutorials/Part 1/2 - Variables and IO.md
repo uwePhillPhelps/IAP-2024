@@ -160,19 +160,19 @@ We will open up and use the debugger to see what is happening on each line.
 Firstly, click on the line number where int x = 0 has been written, to drop a break point. (see below). Break points appear in blue. (note that your line numbers may be different to those shown in the figure)
 
 
-![Debug 1](https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/debug2_1.png)
+![Debug 1](../images/debug2_1.png)
 
 When you run your program you should now see that the program pauses where you have placed the break point.
 
 Ensure that the debug window (1) is being shown at the bottom of the Xcode project. We can now use the step over button (2) to manual step through the program as its running. Observe what happens on each step in the debug window (1) on each press of the step over button.
 
-![Debug 2](https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/debug2_2.png)
+![Debug 2](../images/debug2_2.png)
 
 On step 2 you should see that the variable **y** appears in the debug window and is given the value 0. Remember that before this point (step 1) the variable **y** was not known to the program.
 
 Step 3 should show how **x** now holds the number 5. Step 4 should show how both **x and y** now have the same value. Finally, the last step should should show the the program ends with **y** having a value of 5 and **x** a value of 7.
 
-![Debug 3](https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/debug2_3.png)
+![Debug 3](../images/debug2_3.png)
 
 
 Although this may seem a trivial example, debugging is a very important part of learning any programming language. We will continue to use the debugger in future practicals to fix broken code and understand what is happening on each line of a program.

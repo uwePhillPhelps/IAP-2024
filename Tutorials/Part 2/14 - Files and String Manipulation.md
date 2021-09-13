@@ -64,13 +64,13 @@ Once we are done with the file we need to close it. We simply call the member fu
 
 ## Exercise 1: Reading from a file
 
-Please download <a href="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Code%20Exercises/Tutorial%2014/exercise1.txt">exercise1.txt</a> and place the file in the following location:
+Please download the supplied [Tutorial 14 Exercise 1 text file](../../Code%20Exercises/Tutorial%2014/exercise1.txt) and place the file in the following location:
 
 ```cpp
 “Your iap project folder”/iapProj/Builds/MacOSX/build/Debug/
 ```
 
-*Please note you will need to run your project first to create the folder as the folder is created as part of xcode's compilation process.*
+*If you have recently downloaded a fresh iapProj the above folder will not exist. The folder is created as part of xcode's compilation process, so you may need to first run a build, then copy the file*
 
 To complete this exercise, re-arrange the following blocks of code. The program should open a file and read each line. The code is supplied in blocks to make this exercise easier. 
 
@@ -279,7 +279,7 @@ The function should do the following:
 4.	Return true;
 
 
-To test this code, download the test code from <a href="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Code%20Exercises/Tutorial%2014/string%20split%20unit%20test.txt">here</a>. Add this code to your run() function. Read the comments carefully and check that you getting the correct values printed out.
+To test your code, download the supplied [Tutorial 14 string split test](../../Code%20Exercises/Tutorial%2014/string%20split%20unit%20test.txt). Add this code to your run() function. **Read the comments carefully and check that you getting the correct values printed out.**
 
 ## Challenge Exercise: Aserve file playback system
 

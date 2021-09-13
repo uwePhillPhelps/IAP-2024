@@ -7,9 +7,13 @@ This practical is designed to help familiarise you with the development tools th
 3.	The Aserve application.
 4.	The structure of a basic C++ program. 
 
+## Getting started
+
+If you have not already done so, please follow the [getting started guide](../Getting%20Started.md) before attempting this practical.
+
 ## Videos
 
-Please use the following videos for help during this session:
+The following videos may help you during this session:
 
 ### Printing text
 
@@ -19,11 +23,6 @@ Please use the following videos for help during this session:
 ### Programming Aserve
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Pfclu24116U/0.jpg)](http://www.youtube.com/watch?v=Pfclu24116U)
 
-
-
-## Getting started
-
-If you have not already done so, please follow the <a href="../Getting%20Started.md">getting started notes</a> before attempting this practical.
 
 ## What is all this stuff?
 

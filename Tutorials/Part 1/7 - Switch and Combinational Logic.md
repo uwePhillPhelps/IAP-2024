@@ -30,7 +30,7 @@ By explicitly specifying the condition of the while loop as true the program wil
 
 Open up the practical 7 exercise 1 files and copy them to your Xcode project.
 
-Available from: https://github.com/Sjhunt93/IAP-2019-2020/tree/master/Code%20Exercises/Tutorial%207
+Download: [Tutorial 7 code](../../Code%20Exercises/Tutorial%207)
 
 Modify the condition of the while loop so that the user can enter a number to cause the loop to exit. The steps you might follow to achieve this are listed below:
 

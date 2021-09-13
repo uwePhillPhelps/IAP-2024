@@ -91,7 +91,7 @@ In C++ we have to define the type when declaring a variable. However, in other p
 
 When we run a program contain the above code and then open the debugger we can see that these variables have data types determined by the compiler.
 
-<img src="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/autotypes.png" height=200/>
+<img src="../images/autotypes.png" height=200/>
 
 
 If you can determine the data type yourself then you should declare it as such, however there are a number of useful occasions where we might use the auto type. We will return to this at the end of this tutorial.

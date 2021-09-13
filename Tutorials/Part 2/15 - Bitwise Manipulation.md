@@ -17,12 +17,12 @@ The representation of binary integers has been discussed in a previous practical
 
 In a decimal (base 10) number, the value of each digit is between 0 and 9. The position of each digit within a number indicates the power of 10 multiplied by that digit. That multiplier increases by a factor of 10 each time the position moves one digit to the left. For example, for a decimal number with 6 digits the multipliers are as follows: 
 
-<img src="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/6bit.png" height=200/>
+<img src="../images/6bit.png" height=200/>
 
 
 In a binary (base 2) number, the value of each digit is 0 or 1. The position of each digit within a number indicates the power of 2 multiplied by that digit. That multiplier increases by a factor of 2 each time the position moves one digit to the left. For example, for a binary number with 16 digits the multipliers are as follows: 
 
-<img src="https://github.com/Sjhunt93/IAP-2018-2019/blob/master/Tutorials/images/16bit.png" height=200/>
+<img src="../images/16bit.png" height=200/>
 
 
 
@@ -203,6 +203,6 @@ Some steps for getting started are provided bellow:
 
 ## Debug & Challenge Exercise: Snake
 
-A version of Snake has been partially completed but is broken and requires you to fix the many errors. Download the files from <a href="https://github.com/Sjhunt93/IAP-2018-2019/tree/master/Code%20Exercises/Tutorial%2015/Debug">here</a>
+A version of Snake has been partially completed but is broken and requires you to fix the many errors. Download the files from here [Tutorial 15 snake debug](../../Code%20Exercises/Tutorial%2015/Debug).
 
 
