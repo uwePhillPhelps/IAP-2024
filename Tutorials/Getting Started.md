@@ -2,6 +2,8 @@
 
 Welcome to IAP (Introductory audio programming)
 
+<img src="images/start-ignition.jpeg" alt="ignition"></img><img src="images/filestruct.png" alt="file structure"></img>
+
 ## About IAP
 
 Programmed electronic devices are abundant in every sector of the music industry. In whichever area you choose to focus your studies - in the creation or use of audio technology - an intimate understanding of the inner workings of these devices will naturally enhance your abilities. 
