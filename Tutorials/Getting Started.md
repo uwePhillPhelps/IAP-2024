@@ -48,7 +48,7 @@ Download the IAP repository (which contains all of the required materials and ap
 
 For windows users you will need to download Microsoft's Visual Studio:
 
-https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15
+https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&source=VSLandingPage&cid=2011
 
 The setup video above mentions Visual studio 2017 (for compatibility) but we recommend and support Visual Studio 2019.
 
