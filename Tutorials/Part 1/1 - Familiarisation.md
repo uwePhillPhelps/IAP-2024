@@ -287,8 +287,6 @@ A table of events is given in the appendix.
 
 Your homework task for this week is to program in your own choice of music, using what we have learnt in this session, or: Complete the Mario theme exercise.
 
-Feel free to send your creation to sam, who shall pick one to play in next weeks lecture!
-
 ## Finishing Up
 
 Make sure that you have saved your work to codeBook and taken a backup of your iap folder.
