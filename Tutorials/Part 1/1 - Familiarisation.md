@@ -123,24 +123,22 @@ std::cout displays the text enclosed by quotation marks on the console; however,
 
 \n is what’s called an escape sequence and lets us print characters that cannot be represented easily in code. \t is another useful escape sequence. Insert it in a few places to work out what it does. 
 
-## Keeping a reference archive of your work
+## Use codebook to keep a reference archive of your work
 
-To help you keep a reference of your work to help with future practicals and assignments, we have developed a handy application called `CodeBook`. 
+To help you keep a reference of your work to help with future practicals and assignments, we have included a webbrowser notebook app called  `CodeBook`. 
 
 <img src="../images/codebook.png" />
 
-This application helps you take a snapshot of your work, with neatly organised spaces for each and every exercise of each and every practical. 
+This helps you take a snapshot of your work. The idea is that you keep a log of your work for every exercise of each and every practical. Codebook is searchable, so you can retrieve code you have completed months ago. Keeping your codebook up to date be useful when some exercise requires you to extend some work you have already completed, and will help you revise topics you need to brush up on later in the module. 
 
-1.	In finder, navigate to the IAP `apps` folder and open CodeBook.app.
-2.	On the left hand side of the application you should headers for each week.
-    * If codebook loads blank, use `File > Load` to pick `iap.xml` from `codebook files` folder
-3.	Within weekly headers you should see labels for each exercise.
-    * By default all headers are 'collapsed', double-click to expand/re-collapse them
-4.	Copy and paste the contents of `IAP.cpp` and paste it into `Exercise 1: Hello World` in codebook. 
-5.	You can now work on the next exercise in `IAP.cpp` in Xcode without the risk of losing any work. 
-6.	Ensure that you complete and then **save each exercise** with `File > Save'.
+1.	In finder, navigate to the IAP `apps` folder and open `codebook.html` in a web browser.
+* We recommend Google Chrome but any other standards compliant browser should do. 
+2.	Follow the instructions to copy your code into codebook and **save your changes**
+3.	After your work is saved in codebook, you can use Xcode to work on the next exercise. 
+4.	Ensure that you **back up your saved codebook.html regularly**
+* It's okay to delete old versions, but you should **always keep the latest version safe**
 
-Code book stores files in a `code book files` folder, you should avoid manual edits to this folder and **back it up carefully**.
+Code book is based on a project called [tiddlywiki](https://tiddlywiki.com/). 
 
 ## Aserve 2.0
 
@@ -286,8 +284,6 @@ A table of events is given in the appendix.
 
 
 Your homework task for this week is to program in your own choice of music, using what we have learnt in this session, or: Complete the Mario theme exercise.
-
-Feel free to send your creation to sam, who shall pick one to play in next weeks lecture!
 
 ## Finishing Up
 
