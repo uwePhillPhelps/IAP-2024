@@ -266,5 +266,5 @@ You can use this to shuffle or randomize the order of the elements within an arr
 
 ## Exercise 4: Sort, Reverse, Randomize
 
-To conclude this tutorial, you should try out each of the 3 functions discussed previously. A placeholder for this exercise can be found here [Tutorial 13 sorting getting started](../../Code%20Exercises/Extra%20Tutorial/sorting/getting%20started.txt").
+To conclude this tutorial, you should try out each of the 3 functions discussed previously. A placeholder for this exercise can be found here [Tutorial 13 sorting getting started](../../Code%20Exercises/Extra%20Tutorial/sorting/getting%20started.txt).
 
