@@ -218,7 +218,12 @@ This code shown above is a common routine for searching through an array. Firstl
 
 Adapt the code supplied above to write a generalized find Index function. This function should take a **vector** as its argument and a **value** to look for. It should return an int which corresponds to the index of the value (if it contains it), or a -1 value if it does not. **Note you should not use shared variables for this exercise.**
 
-Download the supplied [Tutorial 13 test text file](../..//Code%20Exercises/Extra%20Tutorial/sorting/find%20function%20unit%20test.txt") to your solution to test your findIndex function. **Note that this is a different test file to the one required for unit test 10**.
+We have supplied a template program which you can download from the following link.
+
+[Tutorial 13 test text file](../../Code%20Exercises/Extra%20Tutorial/sorting/find%20function%20unit%20test.txt") 
+
+You should copy-paste the template program into your IAP::run() and write your own your findIndex function. 
+**Note that this is a different test file to the one required for unit test 10**.
 
 ## Sorting
 
