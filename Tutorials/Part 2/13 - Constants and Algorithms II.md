@@ -220,7 +220,7 @@ Adapt the code supplied above to write a generalized find Index function. This f
 
 We have supplied a template program which you can download from the following link.
 
-[Tutorial 13 test text file](../../Code%20Exercises/Extra%20Tutorial/sorting/find%20function%20unit%20test.txt") 
+[Tutorial 13 test text file](../../Code%20Exercises/Extra%20Tutorial/sorting/find%20function%20unit%20test.txt) 
 
 You should copy-paste the template program into your IAP::run() and write your own your findIndex function. 
 **Note that this is a different test file to the one required for unit test 10**.
