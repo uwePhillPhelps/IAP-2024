@@ -50,6 +50,8 @@ AserveComs::AserveComs ()
       //  std::cout << "File path : " << f.getFullPathName() << "\n";
         
         sender.send(AserveOSC::fPath, f.getFullPathName());
+
+        sender.send("/aserve/pwdpath", File::getCurrentWorkingDirectory().getFullPathName());
         
     }
     

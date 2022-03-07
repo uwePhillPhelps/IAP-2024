@@ -411,6 +411,11 @@ public:
      THIS IS AN EXPERIMENTAL FEATURE */
     
     void aserveSetRegister (int reg, float value);
+
+    void aserveBeginUnitTest(int testNumber)
+    {
+        sender.send("/aserve/unittest", testNumber);
+    }
     
     
     AserveComs ();
