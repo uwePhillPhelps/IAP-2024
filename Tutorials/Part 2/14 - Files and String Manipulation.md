@@ -281,25 +281,6 @@ The function should do the following:
 
 To test your code, download the supplied [Tutorial 14 string split test](../../Code%20Exercises/Tutorial%2014/string%20split%20unit%20test.txt). Add this code to your run() function. **Read the comments carefully and check that you getting the correct values printed out.**
 
-## Challenge Exercise: Aserve file playback system
-
-For this exercise we will be synthesizing the contents of a file produce by the MIDI to Aserve application. Firstly, download or obtain a MIDI file of a song of your choice. Drag and drop this into the MIDIToAserve.app application to produce a text file. The text file will be saved to your documents. 
-
-To read and process each line you should follow these steps:
-
-1.	Read the line
-2.	Check to see if it is an oscillator, sleep, or sample trigger command:
-3.	If it is an oscillator command
-    - Extract the 4 fields
-    - Update oscillator
-4.	If it is a sleep command
-    - Extract sleep value	
-    - Sleep for specified value
-5.	If it is a trigger sample
-    - Extract sample to trigger
-    - Trigger sample 
-
-*You should make use of your splitString function.*
 
 
 
