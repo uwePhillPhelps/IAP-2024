@@ -207,11 +207,11 @@ For example:
 # Test 10: Sorting, Reversing, Shuffling
 *Tests: <a href="../Tutorials/Part%202/13%20-%20Constants%20and%20Algorithms%20II.md">Exercise 13.4</a>
 
-For this you will need to adapt your solution to unit test 7. You will only need one vector for this unit test, and you only need to store note-on note numbers. Ensure this test is passed before attempting this one. Once the inner for loop has played you should set the playButton to be false. (so that the sequence is only played once and does not loop). Aserve will send various CC commands and these should perform various algorithims on the stored sequence, before playing it back.
+For this you will need to adapt your solution to unit test 7. Ensure UT7 is passed before attempting this. You will only need one vector for unit test 10, and you only need to store note-on note numbers. **Once the playback for-loop has ended you should set the playButton to be false** (so that the sequence plays once, not loop). Aserve will send various CC commands and these should perform various algorithims on the stored sequence, before playing it back.
 
 | # | Input From Aserve | Output expected from project |
 | --- | --- | --- |
-| 1 | 12 MIDI messages 6 note on, 6 note off | Each note should be synthesised | 
+| 1 | 10 MIDI messages 5 note on, 5 note off | Each note should be synthesised | 
 | 2 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
 | 3 | CC 112 with a value of 127 | All notes sent previously should be sorted into assending order |
 | 4 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
