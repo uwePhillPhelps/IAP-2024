@@ -11,7 +11,9 @@
 
 void IAP::run ()
 {
-    while (modwheelVal == 0) { // check the shared modwheel value
+    // wait for modwheelVal to change before we start high freq test
+    while (modwheelVal == 0) 
+    {
         aserveSleep(100);
     }
     
