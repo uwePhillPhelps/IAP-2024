@@ -22,5 +22,5 @@ void IAP::run ()
 
 void IAP::callbackModWheelMoved (int value)
 {
-    //set modwheelVal here
+    modwheelVal = value; // share the modwheel value
 }
