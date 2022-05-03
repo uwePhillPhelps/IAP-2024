@@ -11,7 +11,7 @@
 
 void IAP::run ()
 {
-    while (modwheelVal == 0) {
+    while (modwheelVal == 0) { // check the shared modwheel value
         aserveSleep(100);
     }
     
@@ -20,5 +20,5 @@ void IAP::run ()
 
 void IAP::callbackModWheelMoved (int value)
 {
-    //set modwheelVal here
+    modwheelVal = value; // share the modwheel value
 }
