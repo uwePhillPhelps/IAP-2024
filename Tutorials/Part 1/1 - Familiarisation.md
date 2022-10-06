@@ -11,19 +11,6 @@ This practical is designed to help familiarise you with the development tools th
 
 If you have not already done so, please follow the [getting started guide](../Getting%20Started.md) before attempting this practical.
 
-## Videos
-
-The following videos may help you during this session:
-
-### Printing text
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/oAFGNsZ6MPc/0.jpg)](http://www.youtube.com/watch?v=oAFGNsZ6MPc)
-
-
-### Programming Aserve
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Pfclu24116U/0.jpg)](http://www.youtube.com/watch?v=Pfclu24116U)
-
-
 ## What is all this stuff?
 
 You will write code in one of two places.
@@ -345,3 +332,14 @@ Order |	Note | Duration | Order | Note | Duration
 
 
 
+## Videos
+
+The following videos may help you during this session:
+
+### Printing text
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/oAFGNsZ6MPc/0.jpg)](http://www.youtube.com/watch?v=oAFGNsZ6MPc)
+
+
+### Programming Aserve
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Pfclu24116U/0.jpg)](http://www.youtube.com/watch?v=Pfclu24116U)
