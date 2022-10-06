@@ -23,17 +23,17 @@ std::cout << "Hello Person";
 Write the following code into your main run function:
 
 ```cpp
-int year = 2018; 
+int year = 2022; 
 std::cout << "The Value of Year: " << year << "\n";
 ```
 
 
-Check that it compiles and runs, and that the value 2018 is printed.
+Check that it compiles and runs, and that the number is printed.
 
-The first line of this program is called a variable declaration, and there is usually 4 parts. The first part is the type of variable we want to have, in this instance we have a variable of type int (see the bellow table for different types). The second part of this is the variables name, in this case we call it year. Part 3 is the assignment operator, used to give variables a value. And finally part 4 is the value we wish to assign, in this case 2018.
+The first line of this program is called a variable declaration, and there is usually 4 parts. The first part is the type of variable we want to have, in this instance we have a variable of type int (see the bellow table for different types). The second part of this is the variables name, in this case we call it year. Part 3 is the assignment operator, used to give variables a value. And finally part 4 is the value we wish to assign, in this case 2022.
 
 ```cpp
-(1) int	(2) year (3) = (4) 2018; 
+(1) int	(2) year (3) = (4) 2022; 
 ```
 
 We then use the std::cout command to print the value of the variable year. Note we can chain up as many messages and variables for printing as we like as long as we separate them by the << symbol.
@@ -53,7 +53,7 @@ An example of using each of these is shown bellow.
 
 ```cpp
 int age = 25;
-std::string name = "Sam";
+std::string name = "Phill";
 float height = 1.83;
 bool btnState = true;
 char decision = 'y';
@@ -104,24 +104,24 @@ Firstly, clear the main run loop and then copy and rearrange the following code 
 
 ## Exercise 3: Adding Amplitude Control
 
-Extend the above exercise by adding amplitude control, remember that a variable can only hold a single piece of data at once, so you will need to add a second variable. Follow these steps:
+Extend the above exercise so that it prompts the user for *both* a frequency and amplitude before using those values. Remember that each variable can only hold a single piece of data, so you will need to add a second variable. Follow these steps:
 
-1.	Create another floating-point variable with an appropriate name.
-2.	Prompt the user to enter an amplitude value.
-3.	Read the entered value into the variable created above.
-4.	Display the entered amplitude value as well as the frequency value.
-5.	Set the oscillator amplitude to the value entered by the user. 
+1.	Add an additional floating-point variable with an appropriate name.
+2.	Add an additional prompt for the user.
+3.	Read their additional value into the appropriate variable.
+4.	Display both values on screen to the user.
+5.	Set the oscillator amplitude and oscillator frequency to the values entered previously. 
 
 
 ## Exercise 4: Loops
 
-The exercise above will exit once the user has entered a single frequency and amplitude value, in reality the user will most likely want to enter another set of frequency and amplitude values without having to run the program again. For this we can use the following loop.
+The exercise above will exit once the user has heard the oscillator play. Practically speaking, if the user will wishes to enter another set of frequency and amplitude values they must start the program from scratch. To avoid this, and have the program repeatedly ask for input until the user quits the program, we can use a loop.
 
 ```cpp
 void IAP::run ()
 {
     while (true) 
-	{
+    {
         //Code from previous exercise
     }   
 }
