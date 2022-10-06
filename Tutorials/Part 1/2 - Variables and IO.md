@@ -7,17 +7,6 @@ In this practical, we will build on last week’s work by enabling our programs 
 3.	How to display variable values with std::cout.
 4.	A basic loop for repeating blocks of code.  
 
-## Videos
-
-Please use the following videos for help during this session:
-
-### Variables
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/UNdOMshCIlk/0.jpg)](http://www.youtube.com/watch?v=UNdOMshCIlk)
-
-### Text Input 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/c0Wo8mMCpDQ/0.jpg)](http://www.youtube.com/watch?v=c0Wo8mMCpDQ)
-
-
 ## Getting stated
 Ensure that your run function is empty, and that any work from last week is appropriately saved.
 
@@ -253,3 +242,12 @@ Knowledge of the following will be assumed in next week’s practical:
 
 
 
+## Videos
+
+The following videos may help you during this session:
+
+### Variables
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/UNdOMshCIlk/0.jpg)](http://www.youtube.com/watch?v=UNdOMshCIlk)
+
+### Text Input 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/c0Wo8mMCpDQ/0.jpg)](http://www.youtube.com/watch?v=c0Wo8mMCpDQ)
