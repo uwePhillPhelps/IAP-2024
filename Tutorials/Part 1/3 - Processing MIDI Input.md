@@ -7,35 +7,50 @@ In this practical we will focus on processing MIDI input data, and building our 
 2.	Aserve filters.
 3.	MIDI note numbers and note frequencies.
 
-
-
-## Videos
-
-Please use the following videos for help during this session:
-
-### Aserve Programming 2 - callbacks
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ZJXi2eIq--0/0.jpg)](http://www.youtube.com/watch?v=ZJXi2eIq--0)
-
-### Operators
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/yPNMVlxy1B0/0.jpg)](http://www.youtube.com/watch?v=yPNMVlxy1B0)
-
-
 ## Callbacks
 
 In computer program design we have two opposing principles for dealing with input. Either continuously check if something has changed (known as *polling*). Or we can set things up to alert us when something has changed (we call this second method a *callback*).  
 
-In the previous exercise we used **std::cin** to wait for the user to enter some text that we could then process and display. This input method is sometimes called "blocking" or "busy waiting" - because our program must wait until the input is complete before moving on.
+Previously we have used **std::cin** to wait for the user to enter some text that we could then process and display. This input method is sometimes called "blocking" or "busy waiting" - because the program cannot proceed until input is complete.
 
 In this exercise we will use a *callback* to be alerted when MIDI information is received. This is sometimes called "interrupt driven" or "event driven" input - because our program can be interrupted by an event (e.g. someone pushing a MIDI key) to react accordingly. 
 
-Programs designed with event driven input deal with inputs separately (QWERTY keyboard, MIDI keyboard, mouse, audio, touch, etc) swapping between tasks as needed.
-
+Programs with event driven input do not need to execute sequentially. That is to say, each section of the code deals with different inputs (QWERTY keyboard, MIDI keyboard, mouse, audio, touch, etc) and the flow of the actual program when it is running can jump between different sections as necessary.
 
 ## Exercise 1: Adding a callback
 
-We will learn more about what has to go in IAP.h in future practicals, but for now please find the line ***callbackNoteRecived*** in IAP.h and remove the two // characters (single line comment) at the start.
+To add a callback to the IAPproj template, we need to make changes in **both** the IAP.h file and in the IAP.cpp file. Let's deal with the IAP.cpp file first.
+
+1. Select the IAP.cpp file for editing
+2. Add a busy-waiting loop inside IAP::run(), between the opening **{** and closing braces **}**. Your complete IAP::run() function should look like this.
+
+```cpp
+IAP::run() 
+{
+	while (true) 
+	{
+   		aserveSleep(1000);
+	}
+}
+```
+
+1. Keep the IAP.cpp file selected for editing
+2. Add the following block of code **under** IAP::run(), **after the last closing brace }**
+
+```cpp
+void IAP::callbackNoteReceived (int note, int velocity, int channel)
+{
+   	std::cout << "Note Received: " << note;
+	std::cout <<  " Velocity: " << velocity << "\n";
+}
+```
+**Make sure you type this code exactly, and that you've understood where it should be written in the IAP.cpp file.**
+
+Now let's deal with the IAP.h file.
+
+1. Select the IAP.h file for editing
+2. Find the line ***callbackNoteRecived*** in IAP.h 
+3. Remove the two // characters (single line comment) at the start
 
 ```cpp
 //void callbackNoteReceived (int note, int velocity, int channel);
@@ -45,29 +60,13 @@ Should now look like:
 ```cpp
 void callbackNoteReceived (int note, int velocity, int channel);
 ```
-Back inside the IAP.cpp file add the following block of code **under** IAP::run(), **after the last }**
 
-```cpp
-void IAP::callbackNoteReceived (int note, int velocity, int channel)
-{
-   	std::cout << "Note Received: " << note;
-	std::cout <<  " Velocity: " << velocity << "\n";
-}
-```
-**Make sure you type this code exactly.**
+## Exercise 1 - Adding a callback - time to test!
 
-Add the following piece of code inside IAP::run(), between the opening **{** and closing braces **}**.
+Ensure that Aserve is open before running your program in Xcode.
+When you push keys on either the virtual keyboard inside Aserve, or on the physical Impulse keyboard, the console window of the IAPproj program will show information about which key is being pressed.
 
-```cpp
-while (true) 
-{
-   	aserveSleep(1000);
-}
-```
-
-Ensure that Aserve is open before running your program in Xcode. Information should be printed inside Xcode’s console window when you push keys on either the virtual keyboard inside Aserve, or on the physical Impulse keyboard.
-
-You may wonder why our program is still able to print values despite the fact our main loop is now sleeping continuously. This is because we now have two threads going on at once. A technical definition of threads is beyond the scope of IAP - but we cover them in more detail in later years.
+You may wonder how our program can print values to the console if our main IAP::run() function is sleeping continuously. This is because we now have two threads going on at once. A technical definition of threads is beyond the scope of IAP - but we cover them in more detail in later years.
 
 Part of our program is dealing with incoming MIDI, and the other part (our run loop) is free to do other things. In future we will use IAP::run() to process data and text input, and we will use callback functions such as callbackNoteReceived() for dealing with MIDI input.
 
@@ -87,7 +86,7 @@ octave = note / 12
 pitch = note % 12
 ```
 
-Covert the above into C++ code and print the values out inside our callback function. Add your code underneath the existing **std::cout** statements.
+The above is **not** C++ code... but it's close. Your task now is to work out how to convert this to C++ code and print the values out inside our callback function. Add your code underneath the existing **std::cout** statements.
 
 ## Exercise 3: Our first monophonic synthesizer
 
@@ -95,8 +94,7 @@ Music, much like many other fields, involves some mathematical principles. One o
 
 <img src="../images/Screen%20Shot%202019-02-21%20at%2012.27.15.png" height=60/>
 
-
-whereby 'f' is our frequency, and 'n' is our note number. You will need to use the power function to calculate the exponent (the part written above the number '2'). 
+where 'f' is our frequency, and 'n' is our note number. You will need to use the power function to calculate the exponent (the part written above the number '2'). 
 
 The pow() function takes two arguments x and y and returns the result of x to the power y. 
 That is, the equation: 
@@ -114,8 +112,8 @@ Do not worry if you do not understand this fully yet. Complete this exercise by 
 
 ```cpp
 1.	int freq = 440 * power;
-2.	int power = pow(2, octave);
-3.	aserveOscillator (0, freq, 1.0, 0);
+2.	int power = pow(2, octave); 
+3.	aserveOscillator (0, freq, 1.0, 1); // squarewave oscillator
 4.	int octave = (note – 69) / 12;
 ```
 
@@ -133,7 +131,7 @@ The last thing we need to do is to swap the 12 on statement 4, to be 12.0. The c
 
 ## Exercise 4: Filter Control
 
-Lets now have a go at using a second callback function, this time for the modulation wheel.
+Lets now have a go at using a second callback function, this time for the modulation wheel, we will adapt this to control the Aserve built-in low pass filter.
 
 Firstly in our IAP.h file we need to un-comment the callback function for modwheel events.
 
@@ -143,33 +141,32 @@ Firstly in our IAP.h file we need to un-comment the callback function for modwhe
     void callbackModWheelMoved (int value);
 ```
 
-Return to the  IAP.cpp and add the following code next to your note callback code.
+Return to the  IAP.cpp and add the following code **under the IAP::run() function** as you did above for the note callback.
 
 ```cpp
 void IAP::callbackModWheelMoved (int value)
 {
+	std::cout << "Modwheel just moved - the value is " << value << "\n";
 }
 ```
 
-Aserve has a low pass filter with a cutoff range between 20-20000hz, and our mod wheel has a range of ……
+For this exercise, we want the modwheel to control the cutoff frequency of the built-in Aserve low pass filter. The cutoff frequency has a range from 20Hz to 20,000Hz... but our modwheel has a different range.
 
-Use a std::out to print the value of the mod wheel. Write down the min and max values of the mod wheel. You can then use this formula to covert the new value to a more suitable range.
+1. Run the program.
+2. Move the modwheel to the lowest and highest position.
+3. Write down the maximum values of the mod wheel value.
+4. Use the formula below to scale and shift the value.
 
 <img src="../images/cuttoff_a.png" height=60/>
 
 ```cpp
-cutoff = ((value / [insert maximum value here].0) * 19800) + 20;
+cutoff = ((value / [insert maximum value here and remove square brackets].0) * 19800) + 20;
+aserveLPF(cutoff);
 ```
 
 **Remember if you do not declare your maximum as a floating point number we will again use integer division, which will likely result in errors.**
 
-You should now be able to call:
-
-```cpp
-aserveLPF(cutoff);
-```
-
-All being well, you now have a working monophonic synth with a simple filter control assigned to the keyboards modwheel. If you can’t hear the effect taking place, try changing the wave type of our synth to use either a square or saw (wave type 1 or 2).
+All being well, you now have a working monophonic synth with a simple filter control assigned to the keyboards modwheel. If you can’t hear the effect taking place, try checking the wave type of your `aserveOscillator()`, a square (wave type 1) waveform will allow you to easily hear the effect.
 
 ## Debug Exercise
 
@@ -191,10 +188,10 @@ To improve the range of controls for the filter you may use the following formul
 cutoff = ( pow((value / [insert maximum value here and remove square brackets].0), 3.0) * 19800) + 20;
 ```
 
-This will apply a logarithmic scale to the filter control to gives us a more natural sounding filter control. You may also wish to adjust the constants 19800 and 20 to observe what effect this might have over the program.
+This will apply a non-linear scale to the filter control to gives us a more natural sounding filter sweep. You may also wish to adjust the constants 19800 and 20 and observe what effect this has.
 
 ## Homework
-Add in the pitchbend callback, and use this to control one of the other aserve filters, remember to first print the pitchbend value to help you work out the min and max values for entering into the cutoff formula.  As an additional challenge work out how to get the synthesizer to react to velocity values.
+Add in a pitchbend callback,  use this to control one of the other aserve filters, remember to first print the pitchbend value to help you work out the min and max values for entering into the cutoff formula.  As an additional challenge work out how to get the synthesizer to react to velocity values.
 
 ## Conclusion
 Ensure that you understand how to use callback functions before next weeks practical, as they will be used in every practical in future. 
@@ -209,5 +206,16 @@ Knowledge of the following will be assumed in next week’s practical:
 
 
 
+## Videos
+
+The following videos may help you during this session:
+
+### Aserve Programming 2 - callbacks
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ZJXi2eIq--0/0.jpg)](http://www.youtube.com/watch?v=ZJXi2eIq--0)
+
+### Operators
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/yPNMVlxy1B0/0.jpg)](http://www.youtube.com/watch?v=yPNMVlxy1B0)
 
 
