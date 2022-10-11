@@ -148,32 +148,45 @@ And now it should look like:
     void callbackModWheelMoved (int value);
 ```
 
-Return to the  IAP.cpp and add the following code **under the IAP::run() function** as you did above for the note callback.
+Return to the  IAP.cpp and add the following code **under the IAP::run() function** as you did above for the note callback. Your IAP.cpp should look something like this:
 
 ```cpp
+IAP::run() 
+{
+	while (true) 
+	{
+   		aserveSleep(1000);
+	}
+}
+
 void IAP::callbackModWheelMoved (int value)
 {
 	std::cout << "Modwheel just moved - the value is " << value << "\n";
 }
 ```
 
-For this exercise, we want the modwheel to control the cutoff frequency of the built-in Aserve low pass filter. The cutoff frequency has a range from 20Hz to 20,000Hz... but our modwheel has a different range.
+For this exercise, we want the modwheel to control the cutoff frequency of the built-in Aserve low pass filter. This will muffle and un-muffle the sound as we move the modwheel. The cutoff frequency has a range from 20Hz to 20,000Hz... but our modwheel has a different range.
 
 1. Run the program.
 2. Move the modwheel to the lowest and highest position.
-3. Write down the maximum values of the mod wheel value.
+3. Watch the console output and write down the maximum value of the mod wheel value.
 4. Use the formula below to scale and shift the value.
 
 <img src="../images/cuttoff_a.png" height=60/>
 
 ```cpp
-cutoff = ((value / [insert maximum value here and remove square brackets].0) * 19800) + 20;
-aserveLPF(cutoff);
+
+void IAP::callbackModWheelMoved (int value)
+{
+	std::cout << "Modwheel just moved - the value is " << value << "\n";
+
+	float cutoff = ((value / [insert maximum value here and remove square brackets].0) * 19800) + 20;
+	aserveLPF(cutoff);	
+}
+
 ```
 
-**Remember if you do not declare your maximum as a floating point number we will again use integer division, which will likely result in errors.**
-
-All being well, you now have a working monophonic synth with a simple filter control assigned to the keyboards modwheel. If you can’t hear the effect taking place, try checking the wave type of your `aserveOscillator()`, a square (wave type 1) waveform will allow you to easily hear the effect.
+All being well, you now have a working monophonic synth with a simple filter control assigned to the modwheel. If you can’t hear the muffling effect taking place, try checking the wave type of your `aserveOscillator()`, a square (wave type 1) waveform will allow you to easily hear the effect.
 
 ## Debug Exercise
 
