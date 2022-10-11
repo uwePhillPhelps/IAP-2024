@@ -117,7 +117,7 @@ Do not worry if you do not understand this fully yet. Complete this exercise by 
 4.	int octave = (note – 69) / 12;
 ```
 
-Run and test your program before moving on.
+Run and test your program before moving on. You *may* notice some weird behaviours. Read on below...
 
 ## Error
 
