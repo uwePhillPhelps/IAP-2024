@@ -123,11 +123,10 @@ Run and test your program before moving on. You *may* notice some weird behaviou
 
 You should notice that there is an error when we run our program. That is no matter what note we play, we hear the note A, in different octaves.
 
-The reason that the program does not work correctly is due to using integers. Since note frequencies have decimal parts, we will need to replace some of the *int* datatypes with *float* datatypes. Think carefully about which ones to replace.
+The reason that the program does not work correctly is due to using integers. Since note frequencies have decimal parts, we will need to replace some of the *int* datatypes with *float* datatypes.
 
 The last thing we need to do is to swap the 12 on statement 4, to be 12.0. The constant 12 is not the same as 12.0, to ensure we use floating point datatypes everywhere we have to specify 12.0. Try swapping these two values and witness the result.
 
-**As an optional challenge try writing the frequency conversion equation on one line of code**
 
 ## Exercise 4: Filter Control
 
@@ -192,6 +191,13 @@ This will apply a non-linear scale to the filter control to gives us a more natu
 
 ## Homework
 Add in a pitchbend callback,  use this to control one of the other aserve filters, remember to first print the pitchbend value to help you work out the min and max values for entering into the cutoff formula.  As an additional challenge work out how to get the synthesizer to react to velocity values.
+
+**As an optional challenge try writing the frequency conversion equation from exercise on one line of code**
+*hint* It might look a bit like this:
+
+```cpp
+	float frequency = 440 * pow(.../12.0...);
+```
 
 ## Conclusion
 Ensure that you understand how to use callback functions before next weeks practical, as they will be used in every practical in future. 
