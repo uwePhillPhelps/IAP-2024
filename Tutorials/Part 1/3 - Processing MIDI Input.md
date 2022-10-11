@@ -130,13 +130,21 @@ The last thing we need to do is to swap the 12 on statement 4, to be 12.0. The c
 
 ## Exercise 4: Filter Control
 
-Lets now have a go at using a second callback function, this time for the modulation wheel, we will adapt this to control the Aserve built-in low pass filter.
+Lets now have a go at using a second callback function, this time for the modulation wheel (circled below). We will adapt this to control the Aserve built-in low pass filter:
 
-Firstly in our IAP.h file we need to un-comment the callback function for modwheel events.
+<img src="../images/aserveModWheel.png">
 
+
+Firstly in our IAP.h file we need to un-comment the callback function for modwheel events:
+
+Before it looks like:
 ```cpp
     //void callbackModWheelMoved (int value);
+```
 
+And now it should look like:
+
+```cpp
     void callbackModWheelMoved (int value);
 ```
 
@@ -198,7 +206,6 @@ Add in a pitchbend callback,  use this to control one of the other aserve filter
 ```cpp
 	float frequency = 440 * pow(.../12.0...);
 ```
-
 ## Conclusion
 Ensure that you understand how to use callback functions before next weeks practical, as they will be used in every practical in future. 
 
