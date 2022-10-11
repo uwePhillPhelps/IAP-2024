@@ -79,14 +79,14 @@ Inside our note received function we simply print the values we receive. Do not 
 
 ## Exercise 2: Printing Values for Octave and Pitch
 
-Inside our note callback we want to print two more useful pieces of information. We can use the following formulae to work out pitch and octave from the note number.
+Inside our note callback we want to print two more useful pieces of information. We can use the following formulae to work out pitch and octave from the note number. The below is **not** C++ code... but it's close.
 
 ```cpp
 octave = note / 12
 pitch = note % 12
 ```
 
-The above is **not** C++ code... but it's close. Your task now is to work out how to convert this to C++ code and print the values out inside our callback function. Add your code underneath the existing **std::cout** statements.
+ Your task now is to work out how to convert this to C++ code and print the values out inside our callback function. Add your code underneath the existing **std::cout** statements.
 
 ## Exercise 3: Our first monophonic synthesizer
 
