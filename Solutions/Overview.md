@@ -48,10 +48,6 @@ You only need to follow these steps when Aserve shows the "invalid path" message
  
 On **very rare** occasions where you need to manually tell Aserve the location of your project and Solutions folder. To do this open settings -> unit test setup (from the dropdown menu). **Speak to a member of staff before changing any of the settings - normally setup should complete automatically as described above.**
 
-## Bulk testing
-
-Aserve can re-test all of the solutions currently saved in the unit test folder. To do this open Aserve, run the project once, then close the project. From the drop down settings menu select *run folder of tests*. This may take some time and Aserve will lock-up during this process.  Before using this option ensure you save and take a backup of your entire project folder. Several windows will popup automatically, you will need to close these manually after the test is run.
-
 # The Tests
 
 The table bellow outlines each test and the tutorial exercise they are based on. Please note that some tutorials will need adapting for the purpose of validating the unit tests.
