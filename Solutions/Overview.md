@@ -4,7 +4,7 @@ Testing code is part of good software development practice. Unit tests are usual
 
 Certain exercises in the tutorials are milestones along your journey learning C++. Aserve can automatically send messages to your iapProj program in xcode to see if your solution to the exercise responds in the expected way.
 
-Aserve will try to link to your IAP `Solutions` folder to keep copies of code which has passed and failed. **You will be required to submit your solutions folder for assessment - so be sure to keep it up to date**
+ Aserve will try to link `iapProj` code to the `Solutions` folder, and will automatically keep copies of code which has passed and failed. **You will be required to hand-in code for assessment. Be sure to keep backups of your `IAP-master` folder!**
 
 This document outlines each of unit tests Aserve can perform with details of inputs and expected outcomes.
 
@@ -20,33 +20,17 @@ Once open you should see the unit test panel appear on the right hand side.
 
 # Description
 
-Each of the tests are listed in the scrolling menu, the coloured circle depicts the current state of each test. Red means the test failed, orange means the test is currently running and green means the test has passed. To run a test, call the `aserveBeginUnitTest()` function from your iapProj program code. For example to run test number 3, you should call `aserveBeginUnitTest( 3 );`. Aserve will automatically begin running the test number provided. Helpful error messages and hints on potential problems are shown in the Aserve user interface, so be sure to check carefully.
+Each of the tests are listed in the scrolling menu, the coloured circle depicts the current state of each test. Red means the test failed, orange means the test is currently running and green means the test has passed. 
+
+The first time you open Aserve, or if you have quit and restarted Aserve, these circles will be grey. Aserve will try to link `iapProj` code to the IAP `Solutions` folder, and will automatically keep copies of code which has passed and failed. **It is important to keep backups of your IAP-master folder**
+
+To run a test, call the `aserveBeginUnitTest()` function from your iapProj program code. For example to run test number 3, you should call `aserveBeginUnitTest( 3 );`. Aserve will automatically begin running the test number provided. Helpful error messages and hints on potential problems are shown in the Aserve user interface, so be sure to check carefully.
 
 # Saving
 
 Once a test has been run the solution to the test will be copied from your Xcode project to the Solutions/Unit Tests folder inside your project folder. The files are prepended with *Failed* if the test fails or *Pass* if they pass. When re-opening Aserve, this folder is scanned and the interface updates accordingly, keeping track of each test. It is important that you **do not** manually edit the files in this folder. You should ensure that you keep a backup copy of each unit test that has passed inside codebook.
 
 <img src="Images/unittestfiles.png"/>
-
-## File paths
-
-When your project runs it sends Aserve a message specifying the location of your project and source files. This only needs to happen once. If you close Aserve for any reason, you will need to re run your project once to set the file paths. This all happens automatically and you most likely will never see any error messages because of this. However the unit test will fail if the paths are not set correctly.
-
-The ` Invalid unit test ___ path ` message appears when Aserve doesn't know where your iapProj code is. Aserve needs to know where it can find your IAP.h and IAP.cpp files, and your Solutions folder is so that it can correctly store the `_PASSED` or `_FAILED` `.h` and `.cpp` files
-
-Here's a sure fire way to ensure Aserve knows where everything is:
-1. First start Aserve.
-* Then start Xcode, load the iapProj.
-* Do not tell Aserve to start a Unit Test yet.
-
-2. Edit your Xcode iapProj to make a single call to aserveSleep() in IAP:run. The program does not need to do anything else.
-* Build, run, and wait for this simple program to complete and connect to Aserve.
-
-3. Now reset your Xcode iapProj to use your Unit Test code.
- 
-You only need to follow these steps when Aserve shows the "invalid path" message.
- 
-On **very rare** occasions where you need to manually tell Aserve the location of your project and Solutions folder. To do this open settings -> unit test setup (from the dropdown menu). **Speak to a member of staff before changing any of the settings - normally setup should complete automatically as described above.**
 
 # The Tests
 
@@ -216,6 +200,23 @@ For this you will need to adapt your solution to unit test 7. Ensure UT7 is pass
 | 7 | CC 116 with a value of 127 | All notes sent previously should be randomly shuffled |
 | 8 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
 
+## File paths
 
+When your project runs it sends Aserve a message specifying the location of your project and source files. This only needs to happen once. If you close Aserve for any reason, you will need to re run your project once to set the file paths. This all happens automatically and you most likely will never see any error messages because of this. However the unit test will fail if the paths are not set correctly.
 
+The ` Invalid unit test ___ path ` message appears when Aserve doesn't know where your iapProj code is. Aserve needs to know where it can find your IAP.h and IAP.cpp files, and your Solutions folder is so that it can correctly store the `_PASSED` or `_FAILED` `.h` and `.cpp` files
+
+Here's a sure fire way to ensure Aserve knows where everything is:
+1. First start Aserve.
+* Then start Xcode, load the iapProj.
+* Do not tell Aserve to start a Unit Test yet.
+
+2. Edit your Xcode iapProj to make a single call to aserveSleep() in IAP:run. The program does not need to do anything else.
+* Build, run, and wait for this simple program to complete and connect to Aserve.
+
+3. Now reset your Xcode iapProj to use your Unit Test code.
+ 
+You only need to follow these steps when Aserve shows the "invalid path" message.
+ 
+On **very rare** occasions where you need to manually tell Aserve the location of your project and Solutions folder. To do this open settings -> unit test setup (from the dropdown menu). **Speak to a member of staff before changing any of the settings - normally setup should complete automatically as described above.**
 
