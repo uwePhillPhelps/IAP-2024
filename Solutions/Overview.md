@@ -4,7 +4,7 @@ Testing code is part of good software development practice. Unit tests are usual
 
 Certain exercises in the tutorials are milestones along your journey learning C++. Aserve can automatically send messages to your iapProj program in xcode to see if your solution to the exercise responds in the expected way.
 
-Aserve will try to link to the IAP `Solutions` folder to keep copies of code which has passed and failed. **You will be required to submit your solutions folder for assessment - so be sure to keep up to date backups of your `IAP-master` folder. Your codebook files and solutions folders are very important**
+ Aserve will try to link `iapProj` code to the `Solutions` folder, and will automatically keep copies of code which has passed and failed. **You will be required to hand-in code for assessment. Be sure to keep backups of your `IAP-master` folder!**
 
 This document outlines each of unit tests Aserve can perform with details of inputs and expected outcomes.
 
@@ -20,9 +20,11 @@ Once open you should see the unit test panel appear on the right hand side.
 
 # Description
 
-Each of the tests are listed in the scrolling menu, the coloured circle depicts the current state of each test. Red means the test failed, orange means the test is currently running and green means the test has passed. To run a test, call the `aserveBeginUnitTest()` function from your iapProj program code. For example to run test number 3, you should call `aserveBeginUnitTest( 3 );`. Aserve will automatically begin running the test number provided. Helpful error messages and hints on potential problems are shown in the Aserve user interface, so be sure to check carefully.
+Each of the tests are listed in the scrolling menu, the coloured circle depicts the current state of each test. Red means the test failed, orange means the test is currently running and green means the test has passed. 
 
-The first time you open Aserve, or if you have quit and restarted Aserve, these circles will be grey. Aserve will try to link to the IAP `Solutions` folder to keep copies of code which has passed and failed. **You must keep this Solutions folder inside your IAP-master folder**
+The first time you open Aserve, or if you have quit and restarted Aserve, these circles will be grey. Aserve will try to link `iapProj` code to the IAP `Solutions` folder, and will automatically keep copies of code which has passed and failed. **It is important to keep backups of your IAP-master folder**
+
+To run a test, call the `aserveBeginUnitTest()` function from your iapProj program code. For example to run test number 3, you should call `aserveBeginUnitTest( 3 );`. Aserve will automatically begin running the test number provided. Helpful error messages and hints on potential problems are shown in the Aserve user interface, so be sure to check carefully.
 
 # Saving
 
