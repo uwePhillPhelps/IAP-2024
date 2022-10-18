@@ -9,14 +9,6 @@ In this practical we will learn how common functionality in larger programs can 
 
 Practicals from here on will assume knowledge of functions so please ensure you complete this week’s practical. This is a very IMPORTANT practical.
 
-## Videos
-
-Please use the following videos for help during this session:
-
-### Functions
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Cbj72bZrxaE/0.jpg)](http://www.youtube.com/watch?v=Cbj72bZrxaE)
-
 ## Motivation
 
 C++ 'functions' enable multiple statements to be executed by a single statement referred to as a function call. We have already written programs which use functions, e.g. aserveOscillator(), pow() are both function calls. However, an important part of any programming language is to define your own functions - to group multiple statements together which can be called.  If you know how to do this, any large complex program can be divided into smaller blocks of code. This makes programs easier to design, read and maintain. 
@@ -221,5 +213,10 @@ Understanding of the following will be assumed next week:
 2. How to declare, define and call your own functions.
 3. How to pass values into functions. 
 
+## Videos
 
+The following videos may help during this session:
 
+### Functions
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Cbj72bZrxaE/0.jpg)](http://www.youtube.com/watch?v=Cbj72bZrxaE)
