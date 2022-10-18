@@ -54,36 +54,21 @@ If we look closely at our program, we can see that we have two variables with th
 
 # Exercise 2: Printing address
 
-To print the address of a variable you can use the following line of code:
+The & symbol is used to get the address of a variable. 
+To print the address of the modwheel callback `wave` variable:
 
 ```cpp
-  std::cout << "Address of variable : " << &wave << "\n";
+  std::cout << "Address of CallbackModWheelMoved wave : " << &wave << "\n";
 ```
 
-The & symbol is used to get the address of a variable, make sure you place one of these statements in both the mod wheel and note callbacks. Modify each so you can distinguish each print statement appropriately. 
+Modify your code to print the address of BOTH of the variables named `wave`, in both `callbackModWheelMoved` and `callbackNoteReceived`.
 
-Now when you run the program again you should see that the address printed for each of the wave variables is different. (note that you will have different address values to those shown bellow)
-
-```cpp
-Address of variable wave (mod): 0x1013d2990
-Address of variable wave (note): 0x1013d2988
-```
-
-The reason for this issue is because of our **variable scope**. When you declare a variable inside a function it exists only for as long as the function is being called. In the code bellow we can see that **int wave** will only exist when the function is called and then disappear once the function exits. 
+Your output should look something like this (remember to move both the modwheel and press a key!).
+The address of each wave variable is different.
 
 ```cpp
-void IAP::callbackModWheelMoved (int value)
-{
-    int wave = 0; // declare new variable here
-    if (value >= 64 ) 
-    {
-        wave = 1;
-    }
-    else  
-    {
-    	wave = 0;
-    }
-} // int wave will out of scope here.
+Address of callbackModWheelMoved wave: 0x1013d2990
+Address of callbackNoteReceived wave: 0x1013d2988
 ```
 
 ## Exercise 3: Shared variables
@@ -96,15 +81,16 @@ To fix this issue we need to add a **shared variable** to our IAP.h file. Shared
 int wave = 0;
 ```
 
-Go back to our IAP.cpp file and delete both occasions where our old int wave variables were being declared. Re-run our program and check to ensure that our wave type switch code is working correctly. You should also see the same address value is now printed in both callbacks (again your exact address will be different to those shown bellow).
+Go back to our IAP.cpp file and delete both occasions where our old int wave variables were being declared. Re-run our program and check to ensure that our wave type switch code is working correctly. 
+
+If you still have the address printing code, you should also see the same address value is now printed.
 
 ```cpp
-Address of variable wave (mod): 0x7fff5fbff7bc
-Address of variable wave (note): 0x7fff5fbff7bc
+Address of callbackModWheelMoved wave: 0x1013d2988
+Address of callbackNoteReceived wave: 0x1013d2988
 ```
 
 <img src="../images/sharedvariables.png" height=300/>
-
 
 Note that in both functions they are now sharing the same single variable wave.
 
