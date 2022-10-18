@@ -24,10 +24,12 @@ If the condition is true then the statements enclosed by braces are executed, an
 
 ## Conditions 
 
-Comparison operators may be used to construct a *conditional* expression. For example, we may wish to display a warning if the temperature of a boiler exceeds 99 degrees centigrade. If the current temperature was stored in a variable called 'temp' the corresponding if statement would be as follows: 
+Comparison operators may be used to construct a *conditional* expression. For example, we may wish to display a warning if the temperature of a boiler exceeds 99 degrees centigrade. If the current temperature was stored in a variable called 'temperature' the corresponding if statement would be as follows: 
+
+**The below code is for example only - do not copy this into your iapProj**
 
 ```cpp
-if(temp > 99)
+if(temperature > 99)
    {
        std::cout << "Warning boiler is BOILING\n";
    }
@@ -36,7 +38,7 @@ if(temp > 99)
 Similarly, if a message was to be displayed when temp was less than or equal to 0 degrees centigrade: 
 
 ```cpp
-    if(temp <= 0 )
+    if(temperature <= 0 )
     {
         std::cout << "Warning boiler is FREEZING\n";
     }
@@ -65,13 +67,15 @@ Reload your solution to exercise 3 from practical 3. Ensure that you use both th
 
 **If you have not yet completed practical 3, please ensure you do.**
 
-Modify the if statement to only play an oscillator when the input note is above 60.
+Modify your monophonic synthesiser *with an if statement* such that an oscillator is played only when the note is above 60.
 
 ## What else?
 
 Often it is desirable to perform one action when a condition is true and another when it is false. For example, when withdrawing money from a cash machine, the underlying program will check that there are sufficient funds in the account before issuing cash, otherwise an error message is displayed. 
 
 The general form of the basic if..else statement is as follows: 
+
+**The below code is for example only - do not copy this into your iapProj**
 
 ```cpp
     if(condition)
@@ -90,7 +94,7 @@ If the outcome of the condition is true (i.e. not zero) then code block 1 will b
 
 Building on exercise 1. Use an if-else statement to switch the oscillator on if the velocity received is above 0, else switch the oscillator off. You will no longer need the if statement from exercise 1.
 
- The flow chart for this is given bellow:
+ The flow chart for this is given below (T means true, F means false):
 
 <img src="../images/if_else.png" height=300/>
 
@@ -150,63 +154,55 @@ Once you have finished this exercise you will find that the sample will trigger 
 
 ## Nested if statements
 
-On occasions were a more complex decision making process is required, we can place if structures inside other if structures. This is called "nesting". For example:
+On occasions were a more complex decision making process is required, we can place if structures inside other if structures. This is called "nesting". 
+
+For example, you might arrange an if statement (in your note received callback) for a solo sound and a bass line sound, nested inside another if statement to check if keys are pushed or released.
 
 ```cpp
-if (time < 1800) 
+if (velocity > 0 )  // key is pushed?
 {
-  if (tiredness > 1.0) 
+  if (note > 60)    // which key?
   {
-    std::cout << "Drink Coffee! \n";
+    std::cout << "Solo time - square wave oscillator! \n";
   }
   else 
   {
-  std::cout << "Drink water! \n";
+    std::cout << "Bass line - sine wave oscillator! \n";
   }
 }
-else if (time > 2000) 
+else  // key is released
 {
-  if (tiredness > 1.0) 
-  {
-    std::cout << "Go To Sleep! \n";
-  }
-  else 
-  {
-    std::cout << "Drink Tea! \n";
-  }
+  std::cout << "Silence please! \n";
 }
 ```
 
 ## Exercise 4: Fixing the drum sampler
 
-The drum sampler has an error. The code we've written so far will trigger sample playback when a pad is pushed and when a pad is released.
+The drum sampler has a deliberate error. The code we've written so far will trigger sample playback when a pad is pushed and when a pad is released.
 
-To fix our drum sampler we need to apply the following logic.
-```cpp
-if (note is on) 
-{
-  //if structure from exercise 3.
-}
-```
-Your drum sampler should now only trigger samples when the pad is pushed down. 
+Your drum sampler should **only trigger samples when a pad is pushed down**. 
+
+To fix our drum sampler you need to apply a similar logic to the section above.
 
 ## Debug & Challenge Exercise
 
-Open up the <a href="../../Code%20Exercises/Tutorial%204/Debug">debug folder</a> for this practical. Load both `IAP.cpp` and `IAP.h` files into the project. You must fix the program so that it runs a basic monophonic synth correctly. 
+Open up the <a href="../../Code%20Exercises/Tutorial%204/Debug">debug folder</a> for this practical. 
 
-Issues include typos, numerical errors, out of range numbers and others. Make sure you save your solution for this to CodeBook.
+1. Click the debug folder link above, download the files.
+2. Replace your iapProj `IAP.cpp` and `IAP.h` with the files you just downloaded.
+3. Fix the code so that it runs correctly. 
 
+The provided debug code **should be** a basic monophonic synth, but there are problems to fix The issues include typos, numerical errors, out of range numbers and others. Make sure you save your solution for this to CodeBook.
 
 ## Important Material
 
-Knowledge of the following will be assumed in next week’s practical:
+Next week’s practical will assume knowledge of the following.
 
 1.	Simple if statements.
 2.	Conditional expressions with comparison operators.
 3.	Simple if..else statements. 
 4.	Nested if..else if statements. 
 5.	Trigger samples with Aserve
-
 
 ## Videos
 
