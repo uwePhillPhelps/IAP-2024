@@ -20,67 +20,6 @@ It is possible to write your program **without** using custom functions, however
 -	Repetitive
 -	Potentially error prone (e.g. typos in repetitions)
 
-
-## First function
-
-To illustrate when we might to make a function, open up an empty project and copy the following code to the run() in IAP.cpp. Study the code inside the main run loop.
-
-```cpp
-  int numberA = 0;
-  std::cout << "Please enter a number : \n";
-  std::cin >> numberA;
-
-  int numberB = 0;
-  std::cout << "Please enter a number : \n";
-  std::cin >> numberB;
-
-  int numberC = 0;
-  std::cout << "Please enter a number : \n";
-  std::cin >> numberC;
-
-  int numberD = 0;
-  std::cout << "Please enter a number : \n";
-  std::cin >> numberD;
-```
-
-Study the code above. 
-
-There are four groups of statements, each marginally different. If we look closely, the only difference is the variable we are storing our data in. 
-
-If you find yourself writing code like this, you should re-write it as a function. 
-Doing so avoids duplication of code, and makes your code easier to change.
-
-
-## Exercise 1: Our first function
-
-In the IAP.h file, place the following line of code under the FUNCTIONS label, after the run function that is already there.
-
-```cpp
-int readNumber ();
-```
-
-Back in our IAP.cpp file we need to write the following code under our main run() function.
-
-```cpp
-int IAP::readNumber ()
-{
-    int number = 0;
-    std::cout << "Please enter a number : \n";
-    std::cin >> number;
-	   return number;
-}
-```
-
-*The IAP:: part of our statements, means that this function is owned by the IAP class. Classes will be explored in later practical’s.*
-
-We can now remove repeated blocks of code in our IAP run function to use our new readNumber function.
-
-```cpp
-int numberA = readNumber();
-```
-
-Make sure the program operates as it did previously. You should now be able to see how much more clear the code is to read. We will now look at functions in more detail.
-
 ## Declaring Functions
 
 When declaring your own function, there are two steps that should be taken before it can be used (or called). 
@@ -125,17 +64,92 @@ void setNote (int note, int velocity, int wave);
 
 Function definitions should appear in IAP.cpp separated from the IAP::run() function. The first line of the definition should match the declaration, but have the IAP:: statement placed between the return type and function name. This must be followed by opening and closing braces that enclose the statements that are to be executed when the function is called. Note that the semi-colon included in the declaration is not used in the definition.
 
+## First function
+
+To illustrate when we might to make a function, open up an empty project and copy the following code to the IAP::run() in IAP.cpp. 
+
+Study the code below.
+
+```cpp
+  int numberA = 0;
+  std::cout << "Please enter a number : \n";
+  std::cin >> numberA;
+
+  int numberB = 0;
+  std::cout << "Please enter a number : \n";
+  std::cin >> numberB;
+
+  int numberC = 0;
+  std::cout << "Please enter a number : \n";
+  std::cin >> numberC;
+
+  int numberD = 0;
+  std::cout << "Please enter a number : \n";
+  std::cin >> numberD;
+```
+
+Study the code above. 
+
+There are four groups of statements, each marginally different. If we look closely, the only difference is the variable we are storing our data in. 
+
+If you find yourself writing code like this, you should re-write it as a function. 
+Doing so avoids duplication of code, and makes your code easier to change.
+
+
+## Exercise 1: Our first function
+
+1. Select the IAP.h file for editing
+2. Place the following line of code under the FUNCTIONS label, after the run function that is already there.
+
+```cpp
+int readNumber ();
+```
+
+1. Select the IAP.cpp file for editing
+2. Add the following code under our main run() function.
+
+```cpp
+int IAP::readNumber ()
+{
+    int number = 0;
+    std::cout << "Please enter a number : \n";
+    std::cin >> number;
+	   return number;
+}
+```
+
+*The IAP:: part of our statements, means that this function is owned by the IAP class. Classes will be explored in later practical’s.*
+
+We can now remove use our new readNumber function, and the overall code is simple and readable.
+
+```cpp
+int numberA = readNumber();
+int numberB = readNumber();
+int numberC = readNumber();
+int numberD = readNumber();
+```
+
+Make sure the program operates as it did previously. You should now be able to see how much more clear the code is to read. We will now look at functions in more detail.
+
 ## Exercise 2: mtof function
 
-Back in practical 3 we used a formula for converting note numbers into frequencies. This formula will be used frequently throughout this module, so it would make sense to put this code inside a function. Download the practical 5.2 files from [here](../../Code%20Exercises/Tutorial%205/Exercise%202) and copy in the code for both the .h and .cpp file.
+Back in practical 3 we used a formula for converting note numbers into frequencies. This formula is commonly known as the "MIDI to Frequency" equation. This is often shortened to "mtof". We'll use this equation throughout this module, so it would make sense to put this code inside a function. 
 
-The prototype for the mtof function looks like this:
+Download the practical 5.2 files from [here](../../Code%20Exercises/Tutorial%205/Exercise%202) and copy in the code for both the .h and .cpp file.
+
+1. Click the folder link above, download the files.
+2. Replace your iapProj `IAP.cpp` and `IAP.h` with the files you just downloaded.
+3. Read and follow the tasks below
+
+The prototype for our mtof function looks like this. 
 
 ```cpp
 float mtof (int note);
 ```
 
-Our mtof function takes an int (midi note number) as its argument and returns a float (frequency).  The steps to achieve this our as follows:
+Our mtof function takes an int (midi note number) as its argument and returns a float (frequency).  
+
+You can do these steps below in almost any order, but if you follow them as written, you'll have an iapProj that converts note numbers to frequencies simply, and using a function called `mtof`.
 
 1. Add the mtof function **declaration** to the IAP.h file.
 2. Add the mtof function **definition** to the IAP.cpp file.
@@ -144,7 +158,12 @@ Our mtof function takes an int (midi note number) as its argument and returns a 
 5. Use the mtof function to calculate our frequency value.
 6. Pass the frequency value to our oscillator function.	  
 
-Now we have an mtof function it should be very easy to add a second oscillator whose frequency value is 7 semitones higher than our original note. 
+With our mtof function, it is now easy to add a second call for a **harmonised frequency value**  7 semitones higher than our original note, for example.
+
+```cpp
+float frequencyA = mtof(note);
+float frequencyB = mtof(note + 7);
+```
 
 ## Exercise 3: Chord Machine 
 
