@@ -7,20 +7,6 @@ In this practical we will learn how to control program flow using 'if' statement
 3.	How to set up and use simple if..else statements.
 4.	How to set up and use nested if..else if statements.
 
-
-## Videos
-
-Please use the following videos for help during this session:
-
-### Aserve Programming 3 - sample playback
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/3wzw3ZkkdVM/0.jpg)](http://www.youtube.com/watch?v=3wzw3ZkkdVM)
-
-### If statements
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/dvdHsb7Kndk/0.jpg)](http://www.youtube.com/watch?v=dvdHsb7Kndk)
-
-
 ## Flow Control
 
 So far we have explored event driven programming, but we have used the same code each time an event happens. Often, you'll want to design programs that react to events in different ways depending on *conditions*. For example, in real life we turn lights on when outside is dark, and turn them off when outside is light. We can represent this in code using if statements.
@@ -220,3 +206,16 @@ Knowledge of the following will be assumed in next week’s practical:
 3.	Simple if..else statements. 
 4.	Nested if..else if statements. 
 5.	Trigger samples with Aserve
+
+
+## Videos
+
+The following videos may help during this session:
+
+### Aserve Programming 3 - sample playback
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/3wzw3ZkkdVM/0.jpg)](http://www.youtube.com/watch?v=3wzw3ZkkdVM)
+
+### If statements
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/dvdHsb7Kndk/0.jpg)](http://www.youtube.com/watch?v=dvdHsb7Kndk)

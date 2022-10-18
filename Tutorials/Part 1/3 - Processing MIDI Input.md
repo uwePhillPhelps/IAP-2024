@@ -25,7 +25,7 @@ To add a callback to the IAPproj template, we need to make changes in **both** t
 2. Add a busy-waiting loop inside IAP::run(), between the opening **{** and closing braces **}**. Your complete IAP::run() function should look like this.
 
 ```cpp
-IAP::run() 
+void IAP::run() 
 {
 	while (true) 
 	{
