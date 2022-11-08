@@ -12,7 +12,7 @@
 
 void IAP::run ()
 {
-    std::cout << "Hello word!\n";
+    std::cout << "Hello! \n";
 }
 
 
