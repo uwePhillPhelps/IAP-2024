@@ -104,6 +104,8 @@ In case it helps to visualise, below is an annotated screenshot of a pianoroll s
 
 <img src="../images/FixNoteOff-pianoroll.png" />
 
+## Exercise 4: Fix noteoff - What's wrong?
+
 The cause of the problem is that our iapProj program cannot (yet) 'remember' that an earlier note is being held when the second note is released.  The iapProj simply switches off the oscillator if the note velocity is zero.
 
 The desired behaviour is that the oscillator should be switched off only if the velocity is zero and the released note number matches the 'remembered' note being played by the oscillator. 
@@ -111,6 +113,8 @@ The desired behaviour is that the oscillator should be switched off only if the 
 We can fix this by *adding a shared variable* to remember the last note number pressed between calls to callbackNoteReceived(). 
 
 We will then *modify our if statement* inside the callbackNoteReceived(), such that the shared variable is checked to see if it matches the note number of the ‘note off’ message. 
+
+## Exercise 4: Fix noteoff - Let's fix it!
 
 The steps to complete this are as follows: 
 
