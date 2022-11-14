@@ -94,7 +94,7 @@ Address of callbackNoteReceived wave: 0x1013d2988
 
 Note that in both functions they are now sharing the same single variable wave.
 
-## Exercise 4: Fix noteoff
+## Exercise 4: Fix noteoff - We have a problem!
 
 For a number of weeks, you will have encountered a bug with the monophonic synths that we have been building. 
 
@@ -104,7 +104,7 @@ In case it helps to visualise, below is an annotated screenshot of a pianoroll s
 
 <img src="../images/FixNoteOff-pianoroll.png" />
 
-## Exercise 4: Fix noteoff - What's wrong?
+## Exercise 4: Fix noteoff - A possible solution
 
 The cause of the problem is that our iapProj program cannot (yet) 'remember' that an earlier note is being held when the second note is released.  The iapProj simply switches off the oscillator if the note velocity is zero.
 
