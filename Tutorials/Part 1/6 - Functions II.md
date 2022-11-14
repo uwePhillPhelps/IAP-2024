@@ -100,6 +100,10 @@ For a number of weeks, you will have encountered a bug with the monophonic synth
 
 If you press and hold a note with your left hand and then a second note with your right hand, you will notice that the oscillator is stolen by the most recently pressed note - the right hand note. If you now release the left hand note the oscillator should stop, even though the right hand note is still pressed. 
 
+In case it helps to visualise, below is an annotated screenshot of a pianoroll showing the events descried in the paragraph above.
+
+<img src="../images/FixNoteOff-pianoroll.png" />
+
 The cause of the problem is that our iapProj program cannot (yet) 'remember' that an earlier note is being held when the second note is released.  The iapProj simply switches off the oscillator if the note velocity is zero.
 
 The desired behaviour is that the oscillator should be switched off only if the velocity is zero and the released note number matches the 'remembered' note being played by the oscillator. 
