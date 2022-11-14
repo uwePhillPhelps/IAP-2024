@@ -106,7 +106,7 @@ In case it helps to visualise, below is an annotated screenshot of a pianoroll s
 
 ## Exercise 4: Fix noteoff - A possible solution
 
-The cause of the problem is that our iapProj program cannot (yet) 'remember' that an earlier note is being held when the second note is released.  The iapProj simply switches off the oscillator if the note velocity is zero.
+The cause of the problem is that our iapProj program cannot (yet) 'remember' that a particular note is being held when a note is released.  The iapProj simply switches off the oscillator if the note velocity is zero.
 
 The desired behaviour is that the oscillator should be switched off only if the velocity is zero and the released note number matches the 'remembered' note being played by the oscillator. 
 
