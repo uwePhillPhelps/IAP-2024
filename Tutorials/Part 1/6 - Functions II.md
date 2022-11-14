@@ -96,9 +96,17 @@ Note that in both functions they are now sharing the same single variable wave.
 
 ## Exercise 4: Fix noteoff
 
-For a number of weeks, you should have encountered a bug with the monophonic synths that we have been building. If you press and hold a note with your left hand and then a second note with your right hand, you will notice that the oscillator is stolen by the most recently pressed note - the right hand note. If you now release the left hand note the oscillator should stop, even though the right hand note is still pressed. 
+For a number of weeks, you will have encountered a bug with the monophonic synths that we have been building. 
 
-Extend the previous program such that the oscillator is only switched off when the note number of the ‘note off’ message matches the note being played by the oscillator. 
+If you press and hold a note with your left hand and then a second note with your right hand, you will notice that the oscillator is stolen by the most recently pressed note - the right hand note. If you now release the left hand note the oscillator should stop, even though the right hand note is still pressed. 
+
+The cause of the problem is that our iapProj program cannot (yet) 'remember' that an earlier note is being held when the second note is released.  The iapProj simply switches off the oscillator if the note velocity is zero.
+
+The desired behaviour is that the oscillator should be switched off only if the velocity is zero and the released note number matches the 'remembered' note being played by the oscillator. 
+
+We can fix this by *adding a shared variable* to remember the last note number pressed between calls to callbackNoteReceived(). 
+
+We will then *modify our if statement* inside the callbackNoteReceived(), such that the shared variable is checked to see if it matches the note number of the ‘note off’ message. 
 
 The steps to complete this are as follows: 
 
