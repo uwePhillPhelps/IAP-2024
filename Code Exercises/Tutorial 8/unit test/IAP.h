@@ -20,7 +20,7 @@ public:
     
     //---------------------------------------------------------------------------------
     // SHARED VARIABLES (IAP member variables)
-    int modwheelVal;
+    int modwheelVal = 0;
 
     //---------------------------------------------------------------------------------
     // FUNCTIONS (IAP class methods)
