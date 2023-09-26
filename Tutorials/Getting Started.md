@@ -20,10 +20,6 @@ Whilst you are free to move ahead at your own pace if you wish, it is very impor
 
 ### OSX Users
 
-A video guide for setting up XCode on MacOS is here: <a href="https://www.youtube.com/watch?v=OQFYdAl54XE">MacOS setup video</a>
-
-For those of you on OSX 10.15+ please watch this version instead: <a href="https://www.youtube.com/watch?v=OQFYdAl54XE">MacOS setup Catalina</a>
-
 Download the IAP repository (which contains all of the required materials and applications)
 
 ::arrow_right:: [Download master branch zip file](../../../archive/refs/heads/master.zip) ::arrow_left::
@@ -38,19 +34,22 @@ Please join the Apple developer network (at no cost) here:
 
 http://developer.apple.com/programs/register/
 
-### Windows
+A video guide for setting up XCode on MacOS is here: <a href="https://www.youtube.com/watch?v=OQFYdAl54XE">MacOS setup</a>
 
-A video guide for setting up Visual Studio on Windows is here: <a href="https://www.youtube.com/watch?v=_bTzXlonKeo">Windows setup video</a>
+If you have an older mac, this video might be more helpful:  <a href="https://www.youtube.com/watch?v=OQFYdAl54XE">Older MacOS setup video</a>
+
+### Windows
 
 Download the IAP repository (which contains all of the required materials and applications)
 
 ::arrow_right:: [Download windows branch zip file](../../../archive/refs/heads/windows.zip) ::arrow_left::
 
-For windows users you will need to download Microsoft's Visual Studio:
+For windows users you will need to download Microsoft's Visual Studio.
+We recommend and support Visual Studio 2019, but it is possible to use both newer and older versions.
 
 https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&source=VSLandingPage&cid=2011
 
-The setup video above mentions Visual studio 2017 (for compatibility) but we recommend and support Visual Studio 2019.
+A video guide for setting up Visual Studio on Windows is here: <a href="https://www.youtube.com/watch?v=_bTzXlonKeo">Windows setup video</a> The setup video describes Visual studio 2017 (for compatibility) but we recommend and support Visual Studio 2019.
 
 ## Opening the IAP Project
 
