@@ -1,9 +1,9 @@
 # Tutorial 1 – Familiarisation 
 
-This practical is designed to help familiarise you with the development tools that will be used for Introductory Audio Programming. You will be developing software in the programming language C++ using the Apple Integrated Development Environment (IDE) called Xcode. By the end of this session you should be familiar with: 
+This practical is designed to help familiarise you with the development tools that will be used for Introductory Audio Programming. You will be developing software in the programming language C++ using the Apple Integrated Development Environment (IDE) called Xcode or, on Windows, the Microsoft Visual Studio IDE. By the end of this session you should be familiar with: 
 
 1.	The Apple workstations in the faculty labs. 
-2.	The Xcode development environment.
+2.	The Xcode or Visual Studio development environment.
 3.	The Aserve application.
 4.	The structure of a basic C++ program. 
 
