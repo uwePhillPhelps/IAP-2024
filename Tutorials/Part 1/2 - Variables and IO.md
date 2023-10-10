@@ -74,7 +74,7 @@ In the above code snippet we declare a variable called age of type int and give 
 
 
 ## Exercise 1: Basic input
-Copy the following code into your run loop.
+Copy the following code into your run function.
 
 ```cpp
 void IAP::run ()
@@ -90,7 +90,9 @@ Note that as we are supply the value of the variable age via the std::cin comman
 
 ## Exercise 2: Frequency Input Into Aserve
 
-Firstly, clear the main run loop and then copy and rearrange the following code into the correct order so that it executes correctly.
+The code below is deliberately in the wrong order, an exercise for you to rearrange. 
+
+Firstly, begin with a blank IAP::run function and then copy and rearrange each line of the code below into the correct order.
 
 ```cpp
 1.	std::cin >> frequency;
@@ -131,7 +133,7 @@ This is a **loop** and it enables any code that is between the { and {} to be re
 
 ## Variable initialization and introduction to debugging
 
-Save your solution to the previous exercise and add the following code to your main run loop.
+Save your solution to the previous exercise and add the following code to your IAP::run function.
 
 ```cpp
 void IAP::run ()
