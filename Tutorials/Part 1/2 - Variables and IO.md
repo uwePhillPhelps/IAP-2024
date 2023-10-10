@@ -8,7 +8,7 @@ In this practical, we will build on last week’s work by enabling our programs 
 4.	A basic loop for repeating blocks of code.  
 
 ## Getting stated
-Ensure that your run function is empty, and that any work from last week is appropriately saved.
+Ensure that your IAP::run function is empty, and that any work from last week is appropriately saved.
 
 ## Recap
 
@@ -92,7 +92,7 @@ Note that as we are supply the value of the variable age via the std::cin comman
 
 The code below is deliberately in the wrong order, an exercise for you to rearrange. 
 
-Firstly, begin with a blank IAP::run function and then copy and rearrange each line of the code below into the correct order.
+Firstly, be sure your IAP::run function is empty, then add each line of the code below in the correct order.
 
 ```cpp
 1.	std::cin >> frequency;
