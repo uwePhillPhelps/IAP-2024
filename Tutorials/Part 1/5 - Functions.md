@@ -120,7 +120,7 @@ int IAP::readNumber ()
 
 *The IAP:: part of our statements, means that this function is owned by the IAP class. Classes will be explored in later practical’s.*
 
-We can now remove use our new readNumber function, and the overall code is simple and readable.
+We can now remove our previous code in the 'run()' function and replace it with our new 'readNumber()' function instead. The overall code is now simple and readable:
 
 ```cpp
 int numberA = readNumber();
