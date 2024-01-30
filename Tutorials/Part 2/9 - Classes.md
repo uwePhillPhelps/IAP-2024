@@ -186,7 +186,25 @@ Stop note should check the supplied note number against the lastNote member vari
 
 This function should simply copy the input argument and set the currentWavetype member variable.
 
-Once you have completed the above you should replace the comments inside the callback functions to call our synthesisers’s member functions. You should now have a fully functioning synthesiser class.
+Once you have completed the above you should make an instance of your IAPSynth class in the `SHARED VARIABLES` section of your IAP class:
+
+```cpp
+class IAP : public AserveComs  {
+public:
+    // SHARED VARIABLES
+    IAPSynth synth;
+```
+
+You can then replace the comments inside the starting point callback functions to call your `synth` member functions. For example:
+
+```cpp
+void IAP::callbackNoteReceived  (int note, int velocity, int channel)
+{
+    if (velocity > 0) {
+        /* play note */
+        synth.playNote( note );
+    }
+```
 
 
 ## Why use classes at all?
