@@ -88,21 +88,28 @@ You are supplied with the start of a very basic generative music application ava
 
 
 
-## Random number generation
+## A note about random number generation
 
-The **arc4random()** function can be used to generate random numbers, to generate numbers in a given range we can do the following:
+The **arc4random()** function can generate a randomised sequence of numbers. Each time you call the function it will generate a new number from a randomised sequence. We might generate numbers in a given range with the following.
 
 ```cpp
     int note = arc4random() % 128;
 ```
 
-The modulo (%) operator is used to limit values so that they are less than the value supplied, in this case up to and including the value of 127. To produce values between 5 & 10 we could do the following.
+Here the modulo (%) operator is used to restrict values so that they are less than the value supplied, in this case up to and including the value of 127. To produce values between 5 & 10 we could do the following.
 
 ```cpp
     int num = (arc4random() % 6) + 5;
 ```
+If your system does not support `arc4random()`, you may use a similar technique shown below.
 
-The current application generates numbers in the range 0-127, which is not ideally suited to a musical application.
+```cpp
+    Random r;
+    int num = r.nextInt( Range<int>(5, 10) ); // between 5 and 10 inclusive
+```
+## Extensions
+
+Currently, the supplied generative music application code generates numbers in the range 0-127, which is not well tuned for a musical application.
 
 1.	First change the range of numbers, so that they are generated in the range 48-72.
 2.	Pass each note through the **majorScale** function we developed last term.
