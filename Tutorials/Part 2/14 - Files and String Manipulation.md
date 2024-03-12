@@ -67,7 +67,7 @@ Once we are done with the file we need to close it. We simply call the member fu
 Please download the supplied [Tutorial 14 Exercise 1 text file](../../Code%20Exercises/Tutorial%2014/exercise1.txt) and place the file in the following location:
 
 ```cpp
-“Your iap project folder”/iapProj/Builds/MacOSX/build/Debug/
+“Your iap project folder”/iapProj(M1)/Builds/MacOSX/build/Debug/
 ```
 
 *If you have recently downloaded a fresh iapProj the above folder will not exist. The folder is created as part of xcode's compilation process, so you may need to first run a build, then copy the file*
@@ -151,11 +151,11 @@ Adapt and modify your solution to the previous exercise so that it reads in the 
 
 ## Writing to a file
 
-Writing to a file is similar to reading from one. But instead we use the **ofstream** data type. Note that we must also change the **option** argument on the open() call as well.
+Writing to a file is similar to reading from one. But instead we use the **ofstream** data type.
 
 ```cpp
   std::ofstream fileOutputStream;
-  fileOutputStream.open("file.txt", std::ofstream::out);
+  fileOutputStream.open("file.txt");
 ```
 
 Once the file is open, we can simply write data to the file using the same method we use to write data to the std::out stream. 
@@ -174,19 +174,36 @@ as before we can combine multiple statements with multiple << operators.
 
 ## Exercise 3: Writing to our file
 
-Continuing on from the previous exercise, adapt your solution so that you first write the contents of the **"exercise1.txt"** file before trying to read it. Some suggested steps to achieve this are as follows. *Note your solution to exercise 2 should go after the code your write specifically for this exercise.*
+Let's practice writing to files now. Add lines to the top of your `IAP::run()` such that you first write lines to your **"exercise1.txt"** file before the existing code reads it. *You should keep the solution to exercise 2 in the `IAP::run()` function and add lines above it to write data to the file.*
 	
-1.	Open file for writing
-2.	Write at least 2 note numbers to this file
-3.	Close file
-4.	Solution to exercise 2.
+1.	Open output stream file for writing
+2.	Write at least 2 lines with note numbers to the output stream
+3.	Close output stream
+4.	**exercise 2** Open file for reading... etc...
 
+Something like the below could work:
+```cpp
+void IAP::run()
+{
+  std::ofstream fileOutputStream;
+  fileOutputStream.open("exercise1.txt");
+  if( fileOutputStream.is_open() )
+  {
+    fileOutputStream << 60 << "\n";
+    fileOutputStream.close();
+  }
 
-*Note that all code should be written inside the run() function. Specify the note value manually for this exercise.*
+  std::ifstream fileInputStream;
+  if( ifstream.is_open() )
+  {
+    // ... etc
+  }
+}
+```
 
 ## Exercise 4: Full sequencer
 
-For this exercise we will adapt our solution from the vector practical, exercise 3. **You will need to complete that exercise first if you have not done so already.**
+For this exercise we will adapt our solution from the vector practical, exercise 3. **You will need to complete the vector practical exercise first if you have not done so already.**
 
 For this exercise we will add a feature whereby if the user pushes the record button each of the values in the noteList are saved to a text file on a new line. If the user pushes the play button the current noteList is cleared and each note number in the file is loaded into the noteList vector. 
 
