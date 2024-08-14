@@ -161,7 +161,7 @@ You only need to follow these steps when Aserve shows the "invalid path" message
 On **very rare** occasions where you need to manually tell Aserve the location of your project and Solutions folder. To do this open settings -> unit test setup (from the dropdown menu). **Speak to a member of staff before changing any of the settings - normally setup should complete automatically as described above.**
 
 # Sorting, Reversing, Shuffling
-*Tests: <a href="../Tutorials/Part%202/13%20-%20Constants%20and%20Algorithms%20II.md">Exercise 13.4</a>
+*Tests: <a href="../Tutorials/Part%202/12%20-%20Constants%20and%20Algorithms.md">Exercise 12.2</a>
 
 As a challenge, adapt and extend your solution to unit test 7. You will only need one vector, and you only need to store note-on note numbers. **Once the playback for-loop has ended you should set the playButton to be false** (so that the sequence plays once, not loop). Aserve will send various CC commands and these should perform various algorithims on the stored sequence, before playing it back.
 
