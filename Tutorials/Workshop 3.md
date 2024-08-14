@@ -18,7 +18,7 @@ We provide several files as a starting point. These files are compatible with th
 
 If you accidentally open the supplied Logic DAW project, an error message you of a required, missing component.
 
-! here a screenshot of the error message !
+! a screenshot of the error message !
 
 The supplied xcode project and code will build this missing component, allowing you to experiment with simple audio effect processing such as:
 * Gain
@@ -59,6 +59,10 @@ We need to drag the `IAPAudioPlug.component` into this 'home' library folder, so
 
 1. Open the downloaded Logic DAW project
 2. Voila! Plugin do the things. Happy fun time exploration yay!
+
+If everything has gone well, you will see the IAPaudioplug controls, similar to the screenshot below.
+
+![a screenshot of the IAPaudioplug controls](./images/IAPaudioplug.png) 
 
 Creative prompts
 * Go and change the code, rebuild, delete the old component and add in the new component, and relaunch the Logic Project 
