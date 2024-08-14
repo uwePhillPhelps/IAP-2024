@@ -1,4 +1,4 @@
-# Constants and Algorithms
+# Tutorial 12 - Constants and Algorithms
 
 This tutorial is broken into two different parts. The first looks at constants, defines and enums. The second explores a few more algorithims that can be applied specifically to arrays and other data containers.
 
