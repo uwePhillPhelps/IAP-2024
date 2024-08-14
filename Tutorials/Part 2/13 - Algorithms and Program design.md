@@ -16,7 +16,7 @@ The projects are as follows:
 
 ## Polyphonic Synthesizer
 
-Firstly, download and open the supplied [Polyphonic Synth CPP and H files](../../Code%20Exercises/Tutorial%2012/Polyphonic%20Synth) and copy them into your project, replacing both IAP.h and IAP.cpp with the supplied files.
+Firstly, download and open the supplied [Polyphonic Synth CPP and H files](../../Code%20Exercises/Tutorial%2013/Polyphonic%20Synth) and copy them into your project, replacing both IAP.h and IAP.cpp with the supplied files.
 
 Historically in previous practical’s we have simply updated the frequency of an oscillator each time a new note is played, and by keeping the channel number the same each time we have limited ourselves to a monophonic synth. As Aserve has 24 channels, we can in theory have 24 oscillators all at different frequencies playing at once. Therefore, what we want to do is apply the following logic:
 
@@ -73,7 +73,7 @@ Once you have setup the basic arpeggiator there are a few extensions we can appl
 
 ## Generative music
 
-You are supplied with the start of a very basic generative music application available here [Tutorial 12 Generative Music Application code](../../Code%20Exercises/Tutorial%2012/Generative%20Music%20Application). However, it does not sound very good. There are a number of things we can do to improve this application.
+You are supplied with the start of a very basic generative music application available here [Tutorial 12 Generative Music Application code](../../Code%20Exercises/Tutorial%2013/Generative%20Music%20Application). However, it does not sound very good. There are a number of things we can do to improve this application.
 
 ## Random number generation
 
@@ -113,7 +113,7 @@ Try experimenting with different values inside the rhythm values array including
 
 ## Attack and Release Envelopes.
 
-Firstly, download and open the supplied files [Attack and Release CPP and H files](../../Code%20Exercises/Tutorial%2012/AR%20Synth) and copy them into your project.
+Firstly, download and open the supplied files [Attack and Release CPP and H files](../../Code%20Exercises/Tutorial%2013/AR%20Synth) and copy them into your project.
 
 For this exercise you will fill in the blanks by following the comments in the supplied file. All the **shared variables** you will require for this program are provided for you, and you should not need to declare any others. A brief description of the program is provided bellow.
 
