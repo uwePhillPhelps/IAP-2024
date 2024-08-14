@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="yuv0Ah" name="iapProj" projectType="consoleapp" useAppConfig="0"
+<JUCERPROJECT id="yuv0Ah" name="iapProjM" projectType="consoleapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="1" displaySplashScreen="1" jucerFormatVersion="1">
-  <MAINGROUP id="MgUOnT" name="iapProj">
-    <GROUP id="{89F0227B-1362-9811-F309-6D61E19B1D7C}" name="iapProj">
+  <MAINGROUP id="MgUOnT" name="iapProjM">
+    <GROUP id="{89F0227B-1362-9811-F309-6D61E19B1D7C}" name="iapProjM">
       <FILE id="EiMmaw" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="ohA0N9" name="Aserve.h" compile="0" resource="0" file="Source/Aserve.h"/>
       <FILE id="AbfVyI" name="AserveComs.cpp" compile="1" resource="0" file="Source/AserveComs.cpp"/>
