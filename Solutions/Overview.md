@@ -163,11 +163,11 @@ On **very rare** occasions where you need to manually tell Aserve the location o
 # Sorting, Reversing, Shuffling
 *Tests: <a href="../Tutorials/Part%202/12%20-%20Constants%20and%20Algorithms.md">Exercise 12.2</a>
 
-As a challenge, adapt and extend your solution to unit test 7. You will only need one vector, and you only need to store note-on note numbers. **Once the playback for-loop has ended you should set the playButton to be false** (so that the sequence plays once, not loop). Aserve will send various CC commands and these should perform various algorithims on the stored sequence, before playing it back.
+As a challenge, adapt and extend your solution to unit test 7. You will only need one vector, and you only need to store note-on note numbers. Commands from buttons should modify the stored sequence (to sort it, or shuffle it, or reverse it) before playing it back.  **Once the playback for-loop has ended you should set the playButton to be false** (so that the sequence plays once, not loop). 
 
-| # | Input From Aserve | Output expected from project |
+| # | Input | Output expected from project |
 | --- | --- | --- |
-| 1 | 10 MIDI messages 5 note on, 5 note off | Each note should be synthesised | 
+| 1 | MIDI messages (e.g. 5 note on, 5 note off) | Each note should be synthesised | 
 | 2 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
 | 3 | CC 112 with a value of 127 | All notes sent previously should be sorted into assending order |
 | 4 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
