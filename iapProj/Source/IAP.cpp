@@ -33,7 +33,7 @@
 
  **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
-#define BPM 300
+#define BPM 160
 
 #define USE_DRUMS true
 #define USE_CHORDS true
@@ -46,20 +46,22 @@
 
 std::string keySignature = "C Minor";
 
+
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****
 
- You should also have access to a series of audio samples.
+ If you wish, you may enable the USE_DESKTOP_SOUNDS feature below
  Please make a folder on your desktop called 'sounds' and place 4 samples in it.
- You should name these samples 1, 2, 3, and 4:
  
+ 0.wav
  1.wav
  2.wav
  3.wav
- 4.wav
  
  These samples will play sequentially at crotchet rhythm based on your BPM above.
  If you have additional samples to the ones provided, please use them too!
 */
+
+#define USE_DESKTOP_SOUNDS false
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****
  
@@ -73,30 +75,38 @@ std::string keySignature = "C Minor";
 
 void IAP::run ()
 {
-    aserveLoadDefaultSounds();
+    if( USE_DESKTOP_SOUNDS )
+    {
+        aserveLoadSample(0, "~/Desktop/sounds/0.wav");
+        aserveLoadSample(1, "~/Desktop/sounds/1.wav");
+        aserveLoadSample(2, "~/Desktop/sounds/2.wav");
+        aserveLoadSample(3, "~/Desktop/sounds/3.wav");
+    }
+    else
+    {
+        aserveLoadDefaultSounds();
+    }
+    
     musicTools.currentKeySignature = keySignature;
     musicTools.getPitchClassesOfKey(musicTools.currentKeySignature);
-  
-  
+    
     while(true)
     {
         if(USE_DRUMS)
         {
             aservePlaySample(0, 1.0);
-            aserveSleep( BPMToMS(BPM));
+            aserveSleep( BPMToMS(BPM) );
             aservePlaySample(1, 1.0);
-            aserveSleep( BPMToMS(BPM));
+            aserveSleep( BPMToMS(BPM) );
             aservePlaySample(2, 1.0);
-            aserveSleep( BPMToMS(BPM));
+            aserveSleep( BPMToMS(BPM) );
             aservePlaySample(3, 1.0);
-            aserveSleep( BPMToMS(BPM));
+            aserveSleep( BPMToMS(BPM) );
         }
         else
         {
-            aserveSleep(BPMToMS(BPM*4));
+            aserveSleep( BPMToMS(BPM*4) );
         }
-      
-      
     }
 }
 
@@ -105,7 +115,6 @@ void IAP::callbackNoteReceived(int note, int velocity, int channel)
     if(velocity > 0) //Note on message received
     {
       
-        //if(musicTools.isChordMode)
         if (USE_CHORDS)
         {
             if(musicTools.isMajor)
@@ -158,15 +167,9 @@ void IAP::callbackNoteReceived(int note, int velocity, int channel)
           
 
         }
-
-      
-     
-    
     }
     else //Note off message received
     {
-        //if(musicTools.isChordMode)
-      
         aserveOscillator(0, 0, 0, 1);
 
         if(USE_CHORDS)
@@ -189,26 +192,20 @@ void IAP::callbackNoteReceived(int note, int velocity, int channel)
             aserveOscillator(5, 0, 0, 0);
             aserveOscillator(7, 0, 0, 0);
         }
-      
-      
-      
+        
     }
 }
 
 void IAP::callbackCCValueChanged(int cc, int value)
 {
-    if(cc == 51)
-    {
-        musicTools.changeKeySignature();
-    }
-  
-    if(cc == 52)
-    {
-        musicTools.toggleChordMode();
-    }
+    if(cc == 51){ musicTools.changeKeySignature(); }
+    if(cc == 52){ musicTools.toggleChordMode(); }
 }
 
-
+void IAP::callbackModWheelMoved (int value)
+{
+    aserveLPF( (value+5) * 100 );
+}
 
 
 

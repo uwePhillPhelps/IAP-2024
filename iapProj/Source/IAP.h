@@ -159,7 +159,7 @@ public:
     //---------------------------------------------------------------------------------
     // CALLBACK FUNCTIONS
     void callbackNoteReceived  (int note, int velocity, int channel);
-    // void callbackModWheelMoved (int value);
+    void callbackModWheelMoved (int value);
     //void callbackPitchbendWheelMoved (int value);
     void callbackCCValueChanged (int cc, int value);
     
