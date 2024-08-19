@@ -230,7 +230,7 @@ aserveSleep(1000);
 ```
 The following code will now play a 1kz, 2khz and 4kz tone at the same time. Using this technique program in the following chord sequence. 
 
-[![Music notation showing 4 semibreve chords on a treble clef stave. These chords are notated as text after this image.](../images/metascore.png")
+[![Music notation showing 4 semibreve chords on a treble clef stave. These chords are notated as text after this image.](../images/metascore.png)
 
 Chords | Note
 --- | ---
