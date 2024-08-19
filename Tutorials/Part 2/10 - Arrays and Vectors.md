@@ -120,7 +120,7 @@ What values do you need to make the sequence of amplitudes gradually fade out?
 
 ## Exercise 3: Building a vector music sequencer
 
-Our knowledge of vectors will help to build a fully fledged note sequencer. The steps to achieve this are as follows. Use the supplied template [Tutorial 10 Exercise 3 code](../../Code%20Exercises/Tutorial%2010/Exercise%203) for starting this exercise. 
+Our knowledge of vectors will help to build a fully fledged note sequencer. The steps to achieve this are as follows. Use the [supplied starting point code](../../Code%20Exercises/Tutorial%2010/Exercise%203) and copy them into your project overriding the contents of your existing .cpp and .h files.
 
 Notice the following features in `IAP.h`:
 1.	A shared variable of type std::vector called `noteVector` is declared
@@ -128,17 +128,15 @@ Notice the following features in `IAP.h`:
 3.	The note and control change callbacks are enabled
 
 And now explore the following features in `IAP.cpp`:
-1.  The first few lines of the run() function set up a three note sequence in the `noteVector`
-2.  The main while(true) loop will never end but the `if( playMode )` section inside will either
-a.  Play all notes in the vector, in order, with a gap of half a second between each note
-b.  ...or wait for notes to be recorded
+1.  The control change callback changes `playMode` to false when the stop button is pushed
+2.  The note callback adds received notes to the `noteVector`
 
-3.  The control change callback changes `playMode` to false when the stop button is pushed
-4.  The note callback adds received notes to the `noteVector`
+3.  The first few lines of the run() function set up a three note sequence in the `noteVector`
+4.  The main while(true) loop contains an `if( playMode )` section inside which either
+    *  plays all notes in the vector, in order, with a gap of half a second between each
+    *  ...or waits for notes to be recorded simply displaying number of recorded notes so far
 
-Your task is to modify the code:
-
-## Note callback
+## Exercise 3a: Modify the note callback
 
 Let's fix some deliberate problems with the supplied program. Right now, we only use aserve oscillators when we are in the playback loop, which makes it difficult to hear what you're recording!
 
@@ -158,9 +156,9 @@ if( velocity is above zero ){
 }
 ```
 
-## CC callback
+## Exercise 3b: Modify the CC callback
 
-Let's fix a deliberate problem with the supplied program. Right now, you can stop playback by pressing the stop button, but you may never restart it again.
+Now let's fix a deliberate problem with the supplied program. Right now, you can stop playback by pressing the stop button, but you may never restart it again.
 
 Inside the CC callback set the `playMode` variable to be true if the incoming cc number matches that of the ‘play’ button.
 
@@ -169,11 +167,9 @@ Do you remember how to erase and reset the size of a vector to zero?
 
 ## Exercise 4: Refactoring 
 
-For this exercise we will be refactoring a badly written program using arrays. We do this because it is extremely common for beginner programmers to copy-paste almost-identical steps to create a sequence. The supplied code is a sequencer prgram that uses 
+For this exercise we will be refactoring a deliberately badly written program using arrays. It is quite common for beginner programmers to copy-paste almost-identical steps to create a sequence, and we want you to know that there are just a few steps to take to make this kind of code more elegant.
 
-You will need to download [Tutorial 10 Exercise 4 code](../../Code%20Exercises/Tutorial%2010/Exercise%204), and copy them into your project overriding the contents of your existing .cpp and .h files.
-
-**Note for this exercise we will be using the IAPSynth class that we built during last weeks practical. You will need to complete last weeks practical before starting this one. You will need to add the IAPSynth class to the top of IAP.h.**
+You will need to download [supplied starting point code](../../Code%20Exercises/Tutorial%2010/Exercise%204), and copy them into your project overriding the contents of your existing .cpp and .h files.
 
 The current program is designed as follows. As a slider is moved and the callback is triggered the first 4 slider values (CC41 – CC44) are checked and their current position stored in 1 of 4 slider variables. These variables are then used as `note’ values to trigger notes in our synth. We therefore have a 4 step step-sequencer. The program should work without error; however, it is inefficient. Follow the steps bellow to refactor this program using an array.
 
