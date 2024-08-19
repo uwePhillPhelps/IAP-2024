@@ -112,22 +112,18 @@ std::cout displays the text enclosed by quotation marks on the console; however,
 
 ## Keeping a reference archive of your work
 
-To help you keep a reference of your work to help with future practicals and assignments, we have developed a handy application called `CodeBook`. 
+To help you keep a reference of your work to help with future practicals and assignments, we recommend you store your code from each week's exercise on your student OneDrive storage. If you are unsure on the UWE OneDrive service, you can ask a staff member or [you can read more online here](https://www.uwe.ac.uk/study/it-services/data-storage#onedrive).
 
-<img src="../images/codebook.png" />
+We recommend using the following method to store your work:
+1. Create a folder for your IAP work called "IAP"
+2. Each week, add a new folder to your IAP folder and name it the same name as the exercise. For example, week one is called "Part 1 - Familiarisation".
+3. In this folder, you can add the .cpp and .h files for each excersie you complete. You should rename these .cpp and .h files to match the name of the exercise you have most recently completed. In "Part 1 - Familiarisation" for example, you might call your files "Exercise 1: Hello World".
+4. Each time you complete an exercise, you can then upload the .cpp and .h files from your project and rename them accordingly.
 
-This application helps you take a snapshot of your work, with neatly organised spaces for each and every exercise of each and every practical. 
+To see this in action, please see the GIF below:
 
-1.	In finder, navigate to the IAP `apps` folder and open CodeBook.app.
-2.	On the left hand side of the application you should headers for each week.
-    * If codebook loads blank, use `File > Load` to pick `iap.xml` from `codebook files` folder
-3.	Within weekly headers you should see labels for each exercise.
-    * By default all headers are 'collapsed', double-click to expand/re-collapse them
-4.	Copy and paste the contents of `IAP.cpp` and paste it into `Exercise 1: Hello World` in codebook. 
-5.	You can now work on the next exercise in `IAP.cpp` in Xcode without the risk of losing any work. 
-6.	Ensure that you complete and then **save each exercise** with `File > Save'.
+<img src="../images/saving_code.gif" />
 
-Code book stores files in a `code book files` folder, you should avoid manual edits to this folder and **back it up carefully**.
 
 ## Aserve 2.0
 
@@ -269,10 +265,10 @@ Lets program something a little more modern. Do not worry if you do not get time
 
 A table of events is given in the appendix.
 
-## Exercise: Homework
+## Challenge Exercise: Program a song of your chocie!
+Each week, we will provide you with a challenge exercise to complete. These are NOT compulsary, however they are a great way for you to solidify your skills from each week or to practice further.  
 
-
-Your homework task for this week is to program in your own choice of music, using what we have learnt in this session, or: Complete the Mario theme exercise.
+Your challenge exercise for this week is to program in your own choice of music using what we have learned in this session.
 
 ## Finishing Up
 
