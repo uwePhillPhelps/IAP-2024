@@ -17,23 +17,20 @@ When writing a program that stores a single value, previously you have created a
     int note4;
 ```
 
-This method is acceptable, to a point, but becomes cumbersome when we require many more variables (imagine trying to store a sequence of 1000 integer notes, or one second of stereo CD quality audio (2 × 44100 floats)!). Arrays allow us to create any number of variables of the same type in a single statement. For example, an array of integer variables for our four note numbers can be created by the following declaration: 
+This method is acceptable, to a point, but becomes cumbersome when we require many more variables (imagine trying to store a sequence of 1000 integer notes!). Arrays allow us to create any number of variables of the same type in a single statement. For example, an array of integer variables for our four note numbers can be created by the following declaration: 
 
 ```cpp
 std::array<int, 4> notes;
 ```
 
-Each element of the array can be used like any normal variable, but must be accessed using the element index in the correct format. This is achieved by writing the array name followed by an element number (**index**) enclosed within the **square brackets [].** The array syntax for setting each element of the notes array is shown below. 
+To use elements of the array you must specify the element number (**index**) enclosed within **square brackets [].** Example code for storing and recalling elements is shown below. 
 
 ```cpp
 notes[0] = 60; //set the first element to be 60
 notes[3] = 67; //set the last element to be 67
-```
 
-Note that array indices always start at 0 for the first element and go up to the array’s size minus one. Note that doing the following is invalid.
-
-```cpp
-notes[4] = 69; //ERRROR! out of bounds
+std::cout << "The value of element 0 is " << notes[0] << "\n"; // display the first element
+std::cout << "The value of element 3 is " << notes[3] << "\n"; // display the last element
 ```
 
 An array can only store values within it's initially declared size:
@@ -43,13 +40,11 @@ An array can only store values within it's initially declared size:
   notes[10] = 80; //ERRROR! out of bounds
 ```
 
-We cannot therefore store more than 4 values in this array without creating another array. 
-
-In a general sequencer program, when you cannot pre-determine how many values we might want to store, there is another storage data type we can use. The **vector!**
+We cannot therefore store more than 4 values in this array without creating another array. In general, when you cannot pre-determine how many values we might want to store, there is another storage data type we can use. The **vector!**
 
 ## Recap - Vectors
 
-A vector is a special type of array that does not have a fixed size, instead elements can be continuously added and the vector will resize automatically. To declare a vector type we do the following:
+A vector is a special type of array that does not have a fixed size, instead elements can be added (or removed) and the vector will resize automatically. To declare a vector type we do the following:
 
 ```cpp
   std::vector<int> noteVector;
@@ -106,14 +101,14 @@ If you want to store forty instead of four elements, you simply change the array
 The lines in the code below are deliberately scrambled, your task is to rearrange the lines. Place the lines inside your run() function. Read the code comments carefully for hints. The completed 'correct' program should use an array to hold a sequence of four notes, and play these back in order on an aserve oscillator. A gap of half a second should be heard between each note.
 
 ```cpp
-1.	 int note = notes[i];                            // get the note at index 'i'
-2.	 aserveSleep(500);                               // wait for half a second
+1.   int note = notes[i];                            // get the note at index 'i'
+2.   aserveSleep(500);                               // wait for half a second
 3.   float frequency = 440 * pow(2, (note-69)/12.0); // calculate current note frequency
 4.   float amplitude = 0.5;                          // fixed amplitude
-5.	 for (int i = 0; i < notes.size(); i++) {        // process every note, in order
+5.   for (int i = 0; i < notes.size(); i++) {        // process every note, in order
 6.   std::array<int, 4> notes = {60, 64, 67, 72};    // store four notes
-7.	 }                                               // time to loop back around
-8.	 aserveOscillator(0, frequency, amplitude, 1);   // let's hear the current note
+7.   }                                               // time to loop back around
+8.   aserveOscillator(0, frequency, amplitude, 1);   // let's hear the current note
 ```
 
 ## Exercise 2: A second array for amplitudes
