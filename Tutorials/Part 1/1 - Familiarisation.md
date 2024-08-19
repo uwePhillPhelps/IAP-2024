@@ -350,8 +350,8 @@ Order |	Note | Duration | Order | Note | Duration
 The following videos may help you during this session:
 
 ### Printing text
-![A video link to YouTube for "Printing Text"](http://img.youtube.com/vi/oAFGNsZ6MPc/0.jpg)](http://www.youtube.com/watch?v=oAFGNsZ6MPc)
+[![A video link to YouTube for "Printing Text"](http://img.youtube.com/vi/oAFGNsZ6MPc/0.jpg)](http://www.youtube.com/watch?v=oAFGNsZ6MPc)
 
 
 ### Programming Aserve
-![A video link to YouTube for "Programming AServe"](http://img.youtube.com/vi/Pfclu24116U/0.jpg)](http://www.youtube.com/watch?v=Pfclu24116U)
+[![A video link to YouTube for "Programming AServe"](http://img.youtube.com/vi/Pfclu24116U/0.jpg)](http://www.youtube.com/watch?v=Pfclu24116U)
