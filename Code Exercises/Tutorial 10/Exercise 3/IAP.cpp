@@ -1,6 +1,12 @@
 //
 //  IAP.cpp
 //
+//  This program is the starting point for a music sequencer
+//  we use a vector to store note numbers and play then back.
+//
+//  The functionality is extremely minimal, with several areas
+//  for improvement as described in the tutorial.
+//
 
 #include "IAP.h"
 #include <iostream>
