@@ -1,4 +1,4 @@
-# Tutorial 12 - Constants and Algorithms
+# Tutorial 11 - Constants and Algorithms
 
 This tutorial is broken into two different parts. The first looks at constants, defines and enums. The second explores a few more algorithims that can be applied specifically to arrays and other data containers.
 
@@ -160,7 +160,7 @@ However, be aware than you can only assign values to waveType that were specifie
 
 ## Exercise 1: Code refactoring
 
-Download the supplied [starting point CPP and H files](../../Code%20Exercises/Extra%20Tutorial/enums) and copy them into your project. The supplied code is **deliberately messy** and would strongly benefit from refactoring, cleaning, and tidying using the techniques we have discussed. Practice these techniques by cleaning up, tidying, and refactoring the code.
+Download the supplied [starting point CPP and H files](../../Code%20Exercises/Tutorial%2011/enums) and copy them into your project. The supplied code is **deliberately messy** and would strongly benefit from refactoring, cleaning, and tidying using the techniques we have discussed. Practice these techniques by cleaning up, tidying, and refactoring the code.
 
 1.	You should make any variables const that are not going to be modified after being initiliased
 2.	Replace any arbitrary literals with constants
@@ -251,5 +251,5 @@ You can use this to shuffle or randomize the order of the elements within an arr
 
 ## Exercise 2: Sort, Reverse, Randomize
 
-To conclude this tutorial, you should try out each of the 3 functions discussed previously. A placeholder for this exercise can be found here [Tutorial 13 sorting getting started](../../Code%20Exercises/Extra%20Tutorial/sorting/getting%20started.txt).
+To conclude this tutorial, you should try out each of the 3 functions discussed previously. A placeholder for this exercise can be found here [Tutorial 13 sorting getting started](../../Code%20Exercises/Tutorial%2011/sorting/getting%20started.txt).
 

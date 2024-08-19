@@ -203,6 +203,6 @@ Some steps for getting started are provided bellow:
 
 ## Debug & Challenge Exercise: Snake
 
-A version of Snake has been partially completed but is broken and requires you to fix the many errors. Download the files from here [Tutorial 15 snake debug](../../Code%20Exercises/Tutorial%2015/Debug).
+A version of Snake has been partially completed but is broken and requires you to fix the many errors. Download the files from here [Tutorial 15 snake debug](../../Code%20Exercises/Tutorial%2014/Debug).
 
 

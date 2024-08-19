@@ -1,10 +1,10 @@
-# Tutorial 14 – Files & String manipulation
+# Tutorial 13 – Files & String manipulation
 
 In this practical you will learn how data can be written to, and read from files. This enables text, variable values and other program data to be saved into an external file on the computer’s file system between program runs. 
 
 On successful completion of this practical you will understand: 
 
-1. How to create, open, and close files. 
+1. How to create, open, and close files.
 2. How to write data to a file
 3. How to read data from a file 
 4. How to manipulate std::string
@@ -64,7 +64,7 @@ Once we are done with the file we need to close it. We simply call the member fu
 
 ## Exercise 1: Reading from a file
 
-Please download the supplied [Tutorial 14 Exercise 1 text file](../../Code%20Exercises/Tutorial%2014/exercise1.txt) and place the file in the following location:
+Please download the supplied [Tutorial 14 Exercise 1 text file](../../Code%20Exercises/Tutorial%2013/exercise1.txt) and place the file in the following location:
 
 ```cpp
 “Your iap project folder”/iapProj/Builds/MacOSX/build/Debug/
@@ -279,7 +279,7 @@ The function should do the following:
 4.	Return true;
 
 
-To test your code, download the supplied [Tutorial 14 string split test](../../Code%20Exercises/Tutorial%2014/string%20split%20unit%20test.txt). Add this code to your run() function. **Read the comments carefully and check that you getting the correct values printed out.**
+To test your code, download the supplied [Tutorial 14 string split test](../../Code%20Exercises/Tutorial%2013/string%20split%20unit%20test.txt). Add this code to your run() function. **Read the comments carefully and check that you getting the correct values printed out.**
 
 
 
