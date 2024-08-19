@@ -122,7 +122,7 @@ We recommend using the following method to store your work:
 
 To see this in action, please see the GIF below:
 
-[![a gif showing the creation of folders on onedrive in the following hierarchy: IAP -> Part 1 Familiarisation. 2 text files are then added to this folder and renamed to "Exercise 1 - Hello World IAP.cpp" and "Exercise 1 - Hello World IAP.h"  ](../images/saving_code.gif)
+![a gif showing the creation of folders on onedrive in the following hierarchy: IAP -> Part 1 Familiarisation. 2 text files are then added to this folder and renamed to "Exercise 1 - Hello World IAP.cpp" and "Exercise 1 - Hello World IAP.h"  ](../images/saving_code.gif)
 
 
 
@@ -143,7 +143,7 @@ Broadly speaking:
 * Aserve will send messages to your Xcode program when MIDI keyboard controls are moved
     * your `iapproj` program can respond by telling Aserve to make sound or become silent
     
-[![A flowchat showing functionality between XCode and Aserve. A box labelled "Your Program" points from XCode to Aserve. As a result, AServe oscillators and samples make noise. A MIDI Keyboard flows from AServe to "Your Program" in XCode"](../images/AserveXcodeYourProgram.png)
+![A flowchat showing functionality between XCode and Aserve. A box labelled "Your Program" points from XCode to Aserve. As a result, AServe oscillators and samples make noise. A MIDI Keyboard flows from AServe to "Your Program" in XCode"](../images/AserveXcodeYourProgram.png)
 
 We'll explore the second scenario (responding to MIDI controls) in later practicals, for now let's start with something simple.
 
@@ -187,7 +187,7 @@ Make sure you save your solution to this exercise to codeBook before moving on.
 
 ## Exercise 3: Sequential Programming
 
-[![A musical score representing the song Greensleeves. This is notated as text after this image.](../images/score_greensleves.png)
+![A musical score representing the song Greensleeves. This is notated as text after this image.](../images/score_greensleves.png)
 
 The score for the first four bars of Greensleeves is shown above. Program the score using the aserveOscillator(), and aserveSleep() functions. Do not worry if you are unable to read music, the note names and durations are indicated below and a table showing the standard piano note names, frequencies, and durations are provided at the end of this practical. 
 
@@ -230,7 +230,7 @@ aserveSleep(1000);
 ```
 The following code will now play a 1kz, 2khz and 4kz tone at the same time. Using this technique program in the following chord sequence. 
 
-[![Music notation showing 4 semibreve chords on a treble clef stave. These chords are notated as text after this image.](../images/metascore.png)
+![Music notation showing 4 semibreve chords on a treble clef stave. These chords are notated as text after this image.](../images/metascore.png)
 
 Chords | Note
 --- | ---
@@ -262,8 +262,7 @@ aserveSleep(1000); //rest duration
 ## Mario Theme
 Lets program something a little more modern. Do not worry if you do not get time to complete this exercise.
 
-<img src="../images/marioscore.png" />
-[![A musical score showing the Mario theme tune. A table of events is given in the appendix.
+![A musical score showing the Mario theme tune. A table of events is given in the appendix.
  ](../images/marioscore.png)
 
 A table of events is given in the appendix.
@@ -289,7 +288,7 @@ Make sure that you have a good understanding of the following before we return n
 
 ## Appendix Item A: Standard Piano Note Names and Frequencies 
 
-[![A chart showing note octaves to frequencies. A table represents this after this image.](../images/freq_note_map.png)
+![A chart showing note octaves to frequencies. A table represents this after this image.](../images/freq_note_map.png)
 
 | Note  | Octave 0 | Octave 1 | Octave 2  | Octave 3  | Octave 4  | Octave 5  | Octave 6   | Octave 7   | Octave 8   |
 | ----- | -------- | -------- | --------- | --------- | --------- | --------- | ---------- | ---------- | ---------- |
@@ -351,9 +350,8 @@ Order |	Note | Duration | Order | Note | Duration
 The following videos may help you during this session:
 
 ### Printing text
-
-[![A video link to YouTube for "Printing Text"](http://img.youtube.com/vi/oAFGNsZ6MPc/0.jpg)](http://www.youtube.com/watch?v=oAFGNsZ6MPc)
+![A video link to YouTube for "Printing Text"](http://img.youtube.com/vi/oAFGNsZ6MPc/0.jpg)](http://www.youtube.com/watch?v=oAFGNsZ6MPc)
 
 
 ### Programming Aserve
-[![A video link to YouTube for "Programming AServe"](http://img.youtube.com/vi/Pfclu24116U/0.jpg)](http://www.youtube.com/watch?v=Pfclu24116U)
+![A video link to YouTube for "Programming AServe"](http://img.youtube.com/vi/Pfclu24116U/0.jpg)](http://www.youtube.com/watch?v=Pfclu24116U)
