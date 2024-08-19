@@ -1,4 +1,4 @@
-# Tutorial 16 – Some more C++
+# Tutorial 15 – Some more C++
 
 In this practical we will learn about a few additional topics that you might find useful for the assignment, as well as learning more about C++.
 
