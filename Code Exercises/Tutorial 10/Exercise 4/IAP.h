@@ -1,29 +1,50 @@
-
-
 //
 //  IAP.h
-//  IAPProjectDevelopmentTest1
-//
-//  Created by Samuel Hunt on 16/07/2018.
-//  Copyright (c) 2018 SJHDevelopment. All rights reserved.
 //
 
 #ifndef __IAPProjectDevelopmentTest1__IAP__
 #define __IAPProjectDevelopmentTest1__IAP__
 
-
 #include "AserveComs.h"
 
-//Add your IAP synth class here..
+class IAPSynth : public AserveComs {
+public:
+    void playNote (int note, int velocity)
+    {
+        float freq = mtof(note);
+        float amp = velocity / 127.0;
+        lastNote = note;
+        aserveOscillator(0, freq, amp, currentWavetype);
+    }
+    void stopNote (int note)
+    {
+        if (lastNote == note) {
+            aserveOscillator(0, 0, 0, 0);
+            lastNote = 0;
+        }
+    }
+    void setWaveType (int wave)
+    {
+        currentWavetype = wave;
+    }
+    float mtof (int note)
+    {
+        return 440.0 * pow(2.0, (note - 69.0)/ 12.0);
+    }
+private:
+    int lastNote = 0;
+    int currentWavetype = 0;
+};
 
 class IAP : public AserveComs  {
 public:
     
     //---------------------------------------------------------------------------------
     // SHARED VARIABLES
-    std::vector<int> noteVector;
-    int playMode = false;
-
+    IAPSynth synth;
+    
+    int slider1, slider2, slider3, slider4;
+    
     //---------------------------------------------------------------------------------
     // FUNCTIONS
     void run ();
@@ -31,14 +52,14 @@ public:
     //---------------------------------------------------------------------------------
     // CALLBACK FUNCTIONS
     
-    void callbackNoteReceived  (int note, int velocity, int channel);
+    //void callbackNoteReceived  (int note, int velocity, int channel);
     //void callbackModWheelMoved (int value);
     //void callbackPitchbendWheelMoved (int value);
     void callbackCCValueChanged (int cc, int value);
     
     //void callbackMIDIRecived (MIDI message);
     //void callbackPixelGrid (int x, int y);
-    
+
 private:
     
 };
