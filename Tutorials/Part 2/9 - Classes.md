@@ -9,9 +9,9 @@ In this practical you will learn how to make use of classes. On successful compl
 
 ## Class
 
-In the real world we are used to seeing, discussing, and using objects. For example, your mobile phone is one of many mobile phones in the world. However, it shares a number of characteristics and features with all other phones, for example making calls. We can think of a generic mobile phone as the **class or data type** and your specific phone as the **instance or variable name.** 
+In the real world we are used to seeing, discussing, and using objects. For example, your phone is one of many phones in the world. However, it shares a number of characteristics and features with all other phones, for example making calls. We can think of a generic phone as a **class of object** and your specific phone as the **instance of one.** 
 
-Using object oriented terminology, we can say that a very primitive mobile phone **class** has some **data**, for example contacts and some **methods** for acting on those contact, i.e. call a contact, add contact, delete contact.
+Using object oriented terminology, we might say  a very primitive mobile phone **class** stores **data** like contacts and has **methods** for acting on the data, i.e. call a contact, add contact, delete contact.
 
 ## Person
 
@@ -28,47 +28,38 @@ To illustrate further let’s think about a generic person. A generic person has
 
 ## Exercise 1: Person Class
 
-To help conceptualize the topics we have discussed so far you will now create your own **person** class. Firstly, navigate to your IAP.h file and add the following:
+To help conceptualize the topics we have discussed so far you will now create your own **person** class. 
+
+Firstly, navigate to your IAP.h file and add the following **under** the `#include "AserveComs.h"` and **above** the `class IAP : public AserveComs {` 
 
 ```cpp
-//---------------------------------------------------------------------------------
-// USER CREATED CLASS
-// new class starts here
+//...
+#include "AserveComs.h"
 
+//---------------------------------------------------------------------------------
 class Person {
 public:
-    
+    std::string name;
 };
+//---------------------------------------------------------------------------------
 
-// new class ends here
 class IAP : public AserveComs  {
-public:
-
+//...
 ```
 
 ## Syntax
 
 The **class** keyword in C++ is used when we want to define a class, following from this keyword is the name (**Person**) of the class. By convention class names should always start with a capital letter.
 
-The **Public** keyword is used to define parts of our class that are visible to other parts of the program. For now, we will just leave this in place, and this will be discussed again at the end of this practical. For more information on the public keyword and its alternatives see the lecture slides.
+The **public** keyword is used to define parts of our class that are visible to other parts of the program. We'll expand on the concept later in the practical.
 
 A **brace** should always follow the class name, and the class definition ends with a closing **brace and semicolon**.
 
-## Member variables
-
-Now that we have our class definition we want to add some **member variables** to it. Member variables are like normal variables except that they define some **property** about our **class**. A single example is given bellow. **For this exercise choose at least 3 of the features from the previous page and add them as member variables.**
-
-
-```cpp
-  class Person {
-  public:
-      std::string name; //member variable
-  };
-```
+A **property** (like our `Person`s name) 'belong' to the class, and can be said to be **members** or **member variables** of the class.
 
 ## Instance
 
-To create an instance of our person add the following line of code to our shared variables label in our IAP class. *note that shared variables are actually member variables of our IAP class.
+Lower down in the IAP.h file... let's create an **instance** of our person, add the following line of code to our shared variables label in our IAP class. *note that shared variables are actually member variables of our IAP class.
 
 ```cpp
   //---------------------------------------------------------------------------------
@@ -76,89 +67,87 @@ To create an instance of our person add the following line of code to our shared
   Person student; // we have added a person type
 ```
 
-Finally lets set some of the **student’s** member variables.
+Finally lets use member variables.
 
 ## The dot syntax 
 
-To set or access a class’s member variables we simply use the dot operator. For example, in the below example we are setting the member variable called **name** inside the **instance** student to be “sam”.
+In the IAP.cpp file, edit your IAP::run() function to set and access our member variables of our shared `Person`. We can simply use the dot operator. For example, below we set the **name** inside the student **instance** to “sam”.
 
 ```cpp
+void IAP::run()
+{
     student.name = "Sam";
     std::cout << "Person’s name is: " << student.name;
+}
 ```
 
-To complete this exercise set all of the member variables in your student instance inside the IAP::run() function. Make sure you print all of the values to ensure this has worked correctly.
+To complete this exercise set all of the member variables in your student instance inside the IAP::run() function. Make sure you set and print all of the values to ensure this has worked correctly. Set and print the age, height, etc...
 
-## Exercise 2: Adding a second person.
+## Exercise 2: Class methods
 
-Repeating the steps from the previous exercise add another **instance** of the person class, this time called **lecturer.** *You do not need to add another class definition or alter our existing Person class definition.*
-
-1.	Remember to set all of **lecturer’s** member variables
-2.	Print out all of **lecturer’s** member variables.
-
-## Exercise 3: Class methods
-
-You should have noticed from the previous exercise that we have some unnecessary code duplication going on (yours should look much larger than what is shown below). We currently have two blocks of code that are printing the contents of our person class. To refactor this program, we can add a **method** to our **person class** called **print.**
+When we add a second `Person` instance, for example a lecturer, we begin to add unnecessary code duplication (your solution to exercise 1 above will look much more messy and inelegant than below). Repeated blocks of code printing different contents of different person class instances. 
 
 ```cpp
 
 void IAP::run ()
 {
     student.name = "Sam";
+    student.age  = 19;
+    
     lecturer.name = "Phil";
+    lecture.age   = 103;
     //set all other member variables
     
     std::cout << "Person's name is: " << student.name;
-    std::cout << "Person's name is: " << lecturer.name;
-    //print all other member variables
+    std::cout << " and their age is: " << student.age;
     
+    std::cout << "Person's name is: " << lecturer.name;
+    std::cout << " and their age is: " << lecturer.age;
+    
+    //print all other member variables
 }
 ```
 
+This can be **much more elegant and concice** if we use a **method** as part of our **person class** called **introduceYourself()** acting directly on the data.
+
 ## Class methods
 
-Class methods are functions that live inside a class definition and normally act upon the state of the class in someway. A class method has access to all of a classes member variables, without needing to use the **dot operator.** For example, you might have a method called calculateBMI which uses a person’s age, height and weight (member variables). 
+Class methods are functions that live inside a class definition and normally act upon the state of the class in someway. A class method has access to all of a classes member variables, **without needing to use the dot operator.** 
 
-To add a class method simply define a function within the class’s definition, underneath the public label, and before the ending brace. The function should be called **print** and neither takes arguments or returns one.
+To add a class method simply define a function within the class’s definition, underneath the public label, and before the ending brace. The function should be called **introduceYourself** and takes no arguments nor returns any value. In other words, a 'void' function.
 
-## What about the function declaration?
-
-You may be wondering where we put the function declaration for our person class, for the sake of simplicity we can combine them together. Note that we do not need to supply the Person:: namespace in front of *someFunction* when combining the **definition** and **declaration**.
+Back in the IAP.h file, find your Person class definition and edit it to look like this below...
 
 ```cpp
 class Person {
 public:
     std::string name;
+    int         age; 
     
-    // class method definition & declaration
-    void print ()
+    // class method definition and declaration
+    void introduceYourself ()
     {
-
+        std::cout << "Hi, my name is " << name;
+        std::cout << " and my age is " << age;
     }
 };
 ```
 
-You should add the relevant printing code from the previous exercise so that your person’s **print** method prints all of the person’s member variables.
+Make sure you add all of the printing code from the previous exercise so that you display age, height, name, and any other property you have added as part of their introduction.
 
-To complete this exercise remove the print code from your IAP::run() function and replace it with a call to the person’s **print** method. *Note that both student and lecturer should call print.*
+Finally, we can complete the exercise by removing the repetitive print code from your IAP::run() back in the IAP.cpp file, replacing with a single call to each person’s **introduceYourself** method. *Note that both student and lecturer should introduce themselves.*
 
 ```cpp
-    student.print();
-    lecturer.print();
+    student.introduceYourself();
+    lecturer.introduceYourself();
 ```
+Compare your code from before and after refactoring to see how much cleaner, more elgant, and more concice this technique is!
 
 ## Exercise 4. Making a Synth class
 
-The material for starting this practical is supplied here [Tutorial 09 Exercise 4 code](../../Code%20Exercises/Tutorial%209/Exercise%204), copy and paste the contents of both IAP.h and IAP.cpp into your project.
+This stuff about `Person`s and `age`s is just practice, now comes the time where we show you the musical benefits of using object oriented programming! 
 
-Our IAPSynth class looks slightly different to our previous class definition, as this class **inherits** from AserveComs. Inheritance is not something that we will cover on this course. 
-
-```cpp
-    // Normal bit  |-- ignore this --|
-    class IAPSynth : public AserveComs {
-```
-
-We will now add some functionality to our IAPSynth class.
+Please download the [supplied starting point code](../../Code%20Exercises/Tutorial%209/Exercise%204), copy and paste the contents of both IAP.h and IAP.cpp into your project.
 
 Add the following methods to our IAPSynth class.
 
@@ -210,7 +199,6 @@ void IAP::callbackNoteReceived  (int note, int velocity, int channel)
 ## Why use classes at all?
 
 It would perhaps seem like more work to offload our code for turning oscillators on/off into a separate a class than simply doing it inside the callback functions. However, there are several good reasons for doing this. Firstly, all our relevant code for synthesis is now grouped in one place, meaning that our IAP class is less cluttered and more concise. Secondly we can add features to our synthesizer class without affecting our current code. Finally, we can now easily change the mapping between features of our synth (i.e. setting wavetype) and the control input (callbacks from Aserve).
-
 
 
 ## Public vs Private
