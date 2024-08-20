@@ -47,10 +47,10 @@ You will write all of your code for tutorials in a project called `iapProj`. Thi
 
 # ...and beyond!
 
+Windows Visual Studio compatible project files and a windows .exe executable of Aserve is also available on the [windows branch](../../tree/windows) of this repository.
+
 A python front end for the project can be found here:
 
 <a href="https://github.com/Sjhunt93/IAP-Python">IAP-Python</a>
 
-note this is an experimental feature and is not complete! 
-
-Windows Visual Studio compatible project files are also available on the `windows` branch of this repository.
+note this is experimental feature and is not complete! 
