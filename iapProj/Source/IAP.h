@@ -1,5 +1,5 @@
 //  IAP.h
-//  Last updated 2024 aug 19
+//  Last updated 2024 aug 20
 
 #ifndef __IAPProjectDevelopmentTest1__IAP__
 #define __IAPProjectDevelopmentTest1__IAP__
@@ -105,28 +105,27 @@ public:
     
     int transposeNotesToPitchClass(int note)
     {
+        int pitchClass = note % 12;
+        bool foundNote = false;
         
-    int pitchClass = note % 12;
-    bool foundNote = false;
-    
-    for(int i = 0; i < currentPitchClassSet.size(); i++)
-    {
-        if(currentPitchClassSet[i] == pitchClass)
+        for(int i = 0; i < currentPitchClassSet.size(); i++)
         {
-            foundNote = true;
-            break;
+            if(currentPitchClassSet[i] == pitchClass)
+            {
+                foundNote = true;
+                break;
+            }
         }
+        
+        if(!foundNote) note++;
+        
+        return note;
     }
     
-    if(!foundNote) note++;
-    
-    return note;
-}
-    
-    float mtof(int note){
-    return 440.0 * (pow(2, (note-69.0) / 12.0));
-    
-}
+    float mtof(float note)
+    {
+        return 440.0 * (pow(2, (note-69.0) / 12.0));
+    }
     
     void changeKeySignature()
     {
@@ -141,7 +140,6 @@ public:
     {
         if(isChordMode) { isChordMode = false; std::cout << "Chord Mode Activated\n"; }
             else        { isChordMode = true;  std::cout << "Chord Mode Activated\n"; }
-        
     }
   
 };

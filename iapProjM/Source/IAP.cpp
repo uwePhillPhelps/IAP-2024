@@ -1,5 +1,5 @@
 //  IAP.cpp
-//  Last updated 2024 aug 19
+//  Last updated 2024 aug 20
 
 #include "IAP.h"
 #include <iostream>
@@ -8,7 +8,7 @@
 
  Welcome to the Introductory Audio Programming demo!
  Here we have developed a synthesiser and sample playback system for you to experiment with.
- Below are a series of VARIABLES you can change to affect how the system works.
+ Below are a series of DEFINITIONS you can change to affect how the system works.
  You can do this by altering the relevant piece of code. For example:
  
  #define BPM 180
@@ -114,58 +114,32 @@ void IAP::callbackNoteReceived(int note, int velocity, int channel)
 {
     if(velocity > 0) //Note on message received
     {
-      
         if (USE_CHORDS)
         {
-            if(musicTools.isMajor)
-            {
-                int transposedNoteRoot = musicTools.transposeNotesToPitchClass(note);
-                int transposedNoteThird = musicTools.transposeNotesToPitchClass(note + 4);
-                int transposedNoteFifth = musicTools.transposeNotesToPitchClass(note + 7);
-              
-                aserveOscillator(0, musicTools.mtof(transposedNoteRoot), 0.5, 1);
-                if(USE_LOW_OCTAVE) aserveOscillator(3, musicTools.mtof(transposedNoteRoot - LOW_OCTAVE_MOD), 0.25, 1);
-                if(USE_HIGH_OCTAVE)aserveOscillator(4, musicTools.mtof(transposedNoteRoot + HIGH_OCTAVE_MOD), 0.25, 1);
+            int transposedNoteRoot = musicTools.transposeNotesToPitchClass(note);
+            int transposedNoteFifth = musicTools.transposeNotesToPitchClass(note + 7);
+            
+            int transposedNoteThird = musicTools.transposeNotesToPitchClass(note + 3);
+            if(musicTools.isMajor){ transposedNoteThird = musicTools.transposeNotesToPitchClass(note + 3); }
+                
+            aserveOscillator(0, musicTools.mtof(transposedNoteRoot), 0.5, 1);
+            if(USE_LOW_OCTAVE)  aserveOscillator(3, musicTools.mtof(transposedNoteRoot - LOW_OCTAVE_MOD), 0.25, 1);
+            if(USE_HIGH_OCTAVE) aserveOscillator(4, musicTools.mtof(transposedNoteRoot + HIGH_OCTAVE_MOD), 0.25, 1);
 
-                aserveOscillator(1, musicTools.mtof(transposedNoteThird), 0.5, 1);
-                if(USE_LOW_OCTAVE) aserveOscillator(5, musicTools.mtof(transposedNoteThird + LOW_OCTAVE_MOD), 0.25, 1);
-                if(USE_HIGH_OCTAVE)aserveOscillator(6, musicTools.mtof(transposedNoteThird + HIGH_OCTAVE_MOD), 0.25, 1);
+            aserveOscillator(1, musicTools.mtof(transposedNoteThird), 0.5, 1);
+            if(USE_LOW_OCTAVE)  aserveOscillator(5, musicTools.mtof(transposedNoteThird + LOW_OCTAVE_MOD), 0.25, 1);
+            if(USE_HIGH_OCTAVE) aserveOscillator(6, musicTools.mtof(transposedNoteThird + HIGH_OCTAVE_MOD), 0.25, 1);
 
-                aserveOscillator(2, musicTools.mtof(transposedNoteFifth), 0.5, 1);
-                if(USE_HIGH_OCTAVE) aserveOscillator(7, musicTools.mtof(transposedNoteFifth + HIGH_OCTAVE_MOD), 0.25, 1);
-                if(USE_LOW_OCTAVE)aserveOscillator(8, musicTools.mtof(transposedNoteFifth - LOW_OCTAVE_MOD), 0.25, 1);
-
-
-            }
-            else
-            {
-                int transposedNoteRoot = musicTools.transposeNotesToPitchClass(note);
-                int transposedNoteThird = musicTools.transposeNotesToPitchClass(note + 3);
-                int transposedNoteFifth = musicTools.transposeNotesToPitchClass(note + 7);
-              
-                aserveOscillator(0, musicTools.mtof(transposedNoteRoot), 0.5, 1);
-                if(USE_LOW_OCTAVE) aserveOscillator(3, musicTools.mtof(transposedNoteRoot - LOW_OCTAVE_MOD), 0.25, 1);
-                if(USE_HIGH_OCTAVE)aserveOscillator(4, musicTools.mtof(transposedNoteRoot + HIGH_OCTAVE_MOD), 0.25, 1);
-
-                aserveOscillator(1, musicTools.mtof(transposedNoteThird), 0.5, 1);
-                if(USE_LOW_OCTAVE) aserveOscillator(5, musicTools.mtof(transposedNoteThird + LOW_OCTAVE_MOD), 0.25, 1);
-                if(USE_HIGH_OCTAVE)aserveOscillator(6, musicTools.mtof(transposedNoteThird + HIGH_OCTAVE_MOD), 0.25, 1);
-
-                aserveOscillator(2, musicTools.mtof(transposedNoteFifth), 0.5, 1);
-                if(USE_HIGH_OCTAVE) aserveOscillator(7, musicTools.mtof(transposedNoteFifth + HIGH_OCTAVE_MOD), 0.25, 1);
-                if(USE_LOW_OCTAVE)aserveOscillator(8, musicTools.mtof(transposedNoteFifth - LOW_OCTAVE_MOD), 0.25, 1);
-
-            }
+            aserveOscillator(2, musicTools.mtof(transposedNoteFifth), 0.5, 1);
+            if(USE_HIGH_OCTAVE) aserveOscillator(7, musicTools.mtof(transposedNoteFifth + HIGH_OCTAVE_MOD), 0.25, 1);
+            if(USE_LOW_OCTAVE)  aserveOscillator(8, musicTools.mtof(transposedNoteFifth - LOW_OCTAVE_MOD), 0.25, 1);
         }
         else
         {
             int transposedNote = musicTools.transposeNotesToPitchClass(note);
             aserveOscillator(0, musicTools.mtof(transposedNote), 0.5, 1);
             if(USE_HIGH_OCTAVE) aserveOscillator(3, musicTools.mtof(transposedNote + HIGH_OCTAVE_MOD), 0.25, 1);
-            if(USE_LOW_OCTAVE)aserveOscillator(4, musicTools.mtof(transposedNote - LOW_OCTAVE_MOD), 0.25, 1);
-
-          
-
+            if(USE_LOW_OCTAVE)  aserveOscillator(4, musicTools.mtof(transposedNote - LOW_OCTAVE_MOD), 0.25, 1);
         }
     }
     else //Note off message received
@@ -176,7 +150,6 @@ void IAP::callbackNoteReceived(int note, int velocity, int channel)
         {
             aserveOscillator(1, 0, 0, 1);
             aserveOscillator(2, 0, 0, 1);
-       
         }
       
         if(USE_HIGH_OCTAVE)
