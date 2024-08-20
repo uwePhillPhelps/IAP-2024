@@ -37,19 +37,15 @@ Certain exercises in the tutorials are important milestones along your journey l
 
 <a href="Tutorials/C%2B%2B%20Quick%20Reference.md">C++ Quick Reference Guide</a>
 
-# Applications 
+# Aserve application
 
-### Aserve 2.0
-is a light weight audio client that contains a number of basic audio generating functions as well as provide MIDI input/output.
-
-### Codebook
-Codebook is a application for storing the solutions to each exercise.
+This is a light weight audio client-server application with basic audio generating functions as well as providing MIDI input/output for control.
 
 # iapProj code
 
-You will write all of your code for tutorials in a project called `iapProj`. This is a pre-configured xcode/visual studio project which includes all the files needed (including JUCE 5) to control and co-operate with Aserve. See the `iapProj/Builds` folder for MacOS Xcode and Windows Visual Studio compatible project files.
+You will write all of your code for tutorials in a project called `iapProj`. This is a pre-configured project which includes all the files needed (including the JUCE library) to control and co-operate with Aserve. See the `iapProj/Builds` folder for MacOS Xcode. 
 
-# Pyhton
+# ...and beyond!
 
 A python front end for the project can be found here:
 
@@ -57,4 +53,4 @@ A python front end for the project can be found here:
 
 note this is an experimental feature and is not complete! 
 
-
+Windows Visual Studio compatible project files are also available on the `windows` branch of this repository.
