@@ -23,7 +23,7 @@ This method is acceptable, to a point, but becomes cumbersome when we require ma
 std::array<int, 4> notes;
 ```
 
-To use elements of the array you must specify the element number (**index**) enclosed within **square brackets [].** Example code for storing and recalling elements is shown below. 
+Now you must use an (**index**) enclosed within **square brackets []** to use a specific element of the array. Example code for storing and recalling elements is shown below. 
 
 ```cpp
 notes[0] = 60; //set the first element to be 60
@@ -33,24 +33,24 @@ std::cout << "The value of element 0 is " << notes[0] << "\n"; // display the fi
 std::cout << "The value of element 3 is " << notes[3] << "\n"; // display the last element
 ```
 
-An array can only store values within it's initially declared size:
+Remember that arrays can only store values within their declared size...
 
 ```cpp
   notes[9] = 78;  //ERRROR! out of bounds
   notes[10] = 80; //ERRROR! out of bounds
 ```
 
-We cannot therefore store more than 4 values in this array without creating another array. In general, when you cannot pre-determine how many values we might want to store, there is another storage data type we can use. The **vector!**
+We cannot therefore store more than 4 values in this array without creating another array. In situatins where it is impossible to pre-determine how many values to store, another storage data type is preferred.... the **vector!**
 
 ## Recap - Vectors
 
-A vector is a special type of array that does not have a fixed size, instead elements can be added (or removed) and the vector will resize automatically. To declare a vector type we do the following:
+A vector does not have a fixed size, instead elements can be added (or removed) and the vector will resize automatically. To declare a vector type we do the following:
 
 ```cpp
   std::vector<int> noteVector;
 ```
 
-std::vector is another template class, you must specify the type of data the vector will store within the triangle brackets. In this example the vector is specified to hold ints.
+std::vector is another template class, you must specify the type of data the vector will store within the triangle brackets. In this example the vector is specified to hold integers.
 
 Vectors are like "stretchy arrays". They can automatically expand to hold more data as you add it. Here we use the class method push_back(), like so:
 
@@ -111,23 +111,41 @@ The lines in the code below are deliberately scrambled, your task is to rearrang
 8.   aserveOscillator(0, frequency, amplitude, 1);   // let's hear the current note
 ```
 
-## Exercise 2: A second array for amplitudes
+## Exercise 2: Sorting
 
-If we want our simple sequencer to gradually fade in or fade out the amplitude of the notes, we need to extend the code in the previous exercise. We'll add a **float** array called `amps` for storing four amplitude values. Then modify the fixed amplitude in the code above ** = 0.5 ** value to get the ampltude at index `i` from your `amps[]` array. **You will not need to create another for loop**.
+Standard algorithms exist to reverse and sort values stored in arrays, we simply need to include the algorithm library and call the appropriate function.
 
-Try a sequence of amplitudes like this `{0.3, 0.5, 0.7 0.9}` to hear the notes get gradually louder.
-What values do you need to make the sequence of amplitudes gradually fade out?
+```cpp
+  #include <algorithm>
+```
+
+Now, for example, to sort our array of notes into ascending order we can simply write
+
+```cpp
+  std::sort( notes.begin(), notes.end() );
+```
+
+This function takes two arguments called **iterators**. We will cover these in detail towards the end of this module, for now we can simply use them without worrying too much about them. As we want to sort the entire array we can use the **begin** and **end**  iterators. 
+
+### Exercise 2a - Reverse and Shuffle
+
+Extend the size of the array to store 10 integers and...
+
+1.  Add more note values to the initialiser e.g. `{60, 64, 67, 72, 50, 49, 37, 52, 50, 54 }`
+2.  Experiment with using `std::sort`, `std::reverse`, and `std::random_shuffle`
 
 ## Exercise 3: Building a vector music sequencer
 
-Our knowledge of vectors will help to build a fully fledged note sequencer. The steps to achieve this are as follows. Use the [supplied starting point code](../../Code%20Exercises/Tutorial%2010/Exercise%203) and copy them into your project overriding the contents of your existing .cpp and .h files.
+Our knowledge of vectors will help to build a fully fledged note sequencer. The steps to achieve this are as follows. Use the [supplied starting point code](../../Code%20Exercises/Tutorial%2010/Exercise%203) and copy into your project overriding the contents of your existing .cpp and .h files.
 
 Notice the following features in `IAP.h`:
+
 1.	A shared variable of type std::vector called `noteVector` is declared
 2.	A shared variable of type bool called `playMode` is declared
 3.	The note and control change callbacks are enabled
 
 And now explore the following features in `IAP.cpp`:
+
 1.  The control change callback changes `playMode` to false when the stop button is pushed
 2.  The note callback adds received notes to the `noteVector`
 
@@ -136,9 +154,9 @@ And now explore the following features in `IAP.cpp`:
     *  plays all notes in the vector, in order, with a gap of half a second between each
     *  ...or waits for notes to be recorded simply displaying number of recorded notes so far
 
-## Exercise 3a: Modify the note callback
+### Exercise 3a: Modify the note callback
 
-Let's fix some deliberate problems with the supplied program. Right now, we only use aserve oscillators when we are in the playback loop, which makes it difficult to hear what you're recording!
+Let's fix some deliberate problems with the supplied program. Right now, we only use aserve oscillators when we are in the playback loop, which makes it difficult to hear what we're recording!
 
 Inside the note callback function add lines to play the currently received note on an oscillator.
 
@@ -156,7 +174,7 @@ if( velocity is above zero ){
 }
 ```
 
-## Exercise 3b: Modify the CC callback
+### Exercise 3b: Modify the CC callback
 
 Now let's fix a deliberate problem with the supplied program. Right now, you can stop playback by pressing the stop button, but you may never restart it again.
 
@@ -165,62 +183,58 @@ Inside the CC callback set the `playMode` variable to be true if the incoming cc
 Can you add a feature to clear the recording when the rewind button is pressed?
 Do you remember how to erase and reset the size of a vector to zero?
 
+**Before moving on, save your solution to your codebook.**
+
 ## Exercise 4: Refactoring 
 
-For this exercise we will be refactoring a deliberately badly written program using arrays. It is quite common for beginner programmers to copy-paste almost-identical steps to create a sequence, and we want you to know that there are just a few steps to take to make this kind of code more elegant.
+It is quite common but **is bad practice and quickly leads to messy code** to copy-paste almost-identical steps to create a sequence, We want you to see **how easy it is to tidy messy copy-pasted code** into beautiful, elegant, and concise code.
 
-You will need to download [supplied starting point code](../../Code%20Exercises/Tutorial%2010/Exercise%204), and copy them into your project overriding the contents of your existing .cpp and .h files.
+Please download the [supplied starting point code](../../Code%20Exercises/Tutorial%2010/Exercise%204), and copy into your project overriding the contents of existing .cpp and .h files.
 
-The current program is designed as follows. As a slider is moved and the callback is triggered the first 4 slider values (CC41 – CC44) are checked and their current position stored in 1 of 4 slider variables. These variables are then used as `note’ values to trigger notes in our synth. We therefore have a 4 step step-sequencer. The program should work without error; however, it is inefficient. Follow the steps bellow to refactor this program using an array.
+The supplied code is **deliberately repetitive and inelegant**. The purpose is for the first four slider values (CC41 – CC44) to be stored in 1 of 4 slider variables. These variables are then used as `note’ values to trigger notes in our synth. We therefore have a 4 beat step-sequencer. The program will work without error; however, it is inelegant. Follow the steps bellow to refactor this program using an array.
 
 1.	Remove the 4 slider variable declarations from IAP.h and replace this with a single **std::array** declaration called sliderValues. This array should have 4 elements.
 2.	Inside our CC callback replace each old slider variable to use the sliderValues array.
 3.	Inside our run() function replace each old slider variable to use the sliderValues array.
 
-Your program should operate as it did previously, however it is not much more concise than the previous version. However, we can still do more!
-
+Your program should operate as before, however it is now primed for steps to make it concise.
 
 ### Part 1
-1.	Inside the our **run()** function create a for-loop that starts at 0 and goes up to the value of sliderValues.size().
-2.	You can now place a single call to **synth.playNote**, and **aserveSleep** inside the for loop.
-3.	Think carefully about how you might access each element of the array.
+Think about how you might access array elements using a **for-loop index** 
 
-**Ensure you test your program before moving on!**
+1.	In the **run()** function add a for-loop from `0` to `sliderValues.size()`
+2.	You can now reduce all of the repetition with a single call to **synth.playNote**, and **aserveSleep** inside the for-loop
 
 ### Part 2
+
+Think about how the slider CC are numbered consecutively from 41. A simple calculation can determine the array element index. 
+
 1.	Remove the switch case structure from the CC callback. 
-2.	Then add the following code inside the if-statement
+2.	Replace it with the following code **inside the if-statement**
 
 ```cpp
 sliderValues[cc-41] = value;
 ```
 
-Your finished program should operate exactly the same as before but this time be a lot more concise. The process of refactoring is about restructuring existing code so that it is cleaner and more concise without changing its functionality. If you compare the program you had at the start of this exercise with what we have ended up with, you should clearly see the difference.
+Here 41 is subtracted from the slider CC to get an array index between 0..3. Perfect.
 
-**Before moving on and saving your solution to code book, ensure that your program is suitability commented.**
+### Wrapping up
 
-## Exercise 4: 8-step sequencer 
+Your finished program is now concise and elegant. Nice job!
 
-It should now be relatively easy to extend our program to use 8 rather than 4 steps. Something that would have been much harder had we used 8 single variables instead of an array. To achieve this:
+The process of refactoring is about restructuring existing code so that it is cleaner and more concise without changing its functionality. If you compare the program you had at the start of this exercise with what we have ended up with, you should clearly see the difference.
 
-1.	Change your **arrayValues** array to be 8 elements in size rather than 4
-2.	Modify the the CC callback accordingly 
+**Before moving on and saving your solution to code book, ensure that your program is commented.**
 
-By changing only two lines of code we have gone from having a 4-step sequencer to an 8-step sequencer. Using arrays allows our programs to scale very quickly and we end up writing a lot less code.
+## Extension suggestion: 8-step sequencer 
 
-## Exercise 5: Amplitude control
+It should now be relatively easy to extend our program to use 8 rather than 4 steps. Something that would have been much harder had we used 8 variables and repetitive code. To achieve this:
 
-Add a second array called **rotaryValues**, that get their values from the 8 rotary controls on the impulse keyboard. These values should control the velocity argument of the synth.playNote function call.
+1.	Expand your array size to contain 8 elements rather than 4
+2.	Modify the the CC callback statement accordingly
 
-## Challenges
+By changing only two lines of code we have gone from having a 4-step sequencer to an 8-step sequencer. Using arrays allows our programs to scale very quickly and we end up writing a lot less code!
 
-A number of improvements can be made to this program. Feel free to try adding your own features also.
+## Extension suggestion: Amplitude control
 
-1.	Before writing the CC’s value into the sliderValues array, scale it so that it has a range between 48 and 72.
-2.	Before passing the sliderValue into the playNote function call, pass it through one of the scale functions we developed last term, therefore creating a more ‘musical’ application.
-3.	Modify the for loop so that it plays in reverse.
-4.	Add an option so that the user can toggle between the loop playing forward and the loop playing backwards.
-
-
-
-
+Add a second array called **rotaryValues**, that get their values from the 8 rotary controls on the impulse keyboard. These values should **control the velocity** of the synth.playNote function call.
