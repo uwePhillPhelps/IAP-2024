@@ -1,11 +1,10 @@
 # Tutorial 9 – Classes
 
-In this practical you will learn how to make use of classes. On successful completion of this practical you will have an understanding of: 
+In this practical you will learn about objects and classes. On successful completion of this practical you will have an understanding of: 
 
 1. The basics of defining a class
 2. Class member variables
-3. Class methods (functions)
-
+3. Class methods (also known as functions)
 
 ## Class
 
@@ -25,12 +24,11 @@ To illustrate further let’s think about a generic person. A generic person has
 | Age |	int |
 | Name | std::string |
 
-
 ## Exercise 1: Person Class
 
 To help conceptualize the topics we have discussed so far you will now create your own **person** class. 
 
-Firstly, navigate to your IAP.h file and add the following **under** the `#include "AserveComs.h"` and **above** the `class IAP : public AserveComs {` 
+Firstly, navigate to your IAP.h file and add the following **under** the `#include ...` and **above** the `class IAP ...`  
 
 ```cpp
 //...
@@ -46,6 +44,9 @@ public:
 class IAP : public AserveComs  {
 //...
 ```
+You might like to think of our 'person' class as a blueprint for a generic person, the class describes the kind of information a person might know about themselves, whilst each 'instance' we create is a different person with different information.
+
+![a diagram illustrating a class declaration and an instance. Our person has a name variable. Our instance is a student whos name is Sam](../images/classPersonStudent.png)
 
 ## Syntax
 
@@ -133,9 +134,13 @@ public:
 };
 ```
 
-Make sure you add all of the printing code from the previous exercise so that you display age, height, name, and any other property you have added as part of their introduction.
+![a diagram illustrating a Person class with a class method to introduce themselves](../images/classIntroduceYourself.png)
 
-Finally, we can complete the exercise by removing the repetitive print code from your IAP::run() back in the IAP.cpp file, replacing with a single call to each person’s **introduceYourself** method. *Note that both student and lecturer should introduce themselves.*
+You might like to think of any person we create from our blueprint having the "skill" or "ability" to introduce themselves. We can complete the exercise by removing the repetitive print code from your IAP::run() back in the IAP.cpp file, replacing with a single call to each person’s **introduceYourself** method. 
+
+Make sure our person blueprint introduces all of their properties: age, height, name, and any other property you have added as part of their introduction.
+
+*Note that both student and lecturer should introduce themselves.* 
 
 ```cpp
     student.introduceYourself();
@@ -145,7 +150,7 @@ Compare your code from before and after refactoring to see how much cleaner, mor
 
 ## Exercise 4. Making a Synth class
 
-This stuff about `Person`s and `age`s is just practice, now comes the time where we show you the musical benefits of using object oriented programming! 
+This stuff about `Person` is just practice. Now we will explore musical benefits of defining our own classes. 
 
 Please download the [supplied starting point code](../../Code%20Exercises/Tutorial%209/Exercise%204), copy and paste the contents of both IAP.h and IAP.cpp into your project.
 
