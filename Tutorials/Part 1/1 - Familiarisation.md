@@ -124,6 +124,10 @@ To see this in action, please see the GIF below:
 
 ![a gif showing the creation of folders on onedrive in the following hierarchy: IAP -> Part 1 Familiarisation. 2 text files are then added to this folder and renamed to "Exercise 1 - Hello World IAP.cpp" and "Exercise 1 - Hello World IAP.h"  ](../images/saving_code.gif)
 
+For future sessions, you will want to start with empty IAP.cpp and IAP.h files in your project. It is important to note this does not mean the ENTIRE FILE should be empty, however it should be the same as when you downloaded the project files for the first time. You can find blank versions of these files in the [getting started guide](../Getting%20Started.md).
+
+<img src="images/xcode.png" />
+
 
 
 ## Aserve 2.0
