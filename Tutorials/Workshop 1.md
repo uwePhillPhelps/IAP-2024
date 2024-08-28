@@ -30,18 +30,17 @@ Staff can help you set up your own machine for working off-campus. For now, let'
 
 Once you have downloaded the materials, the next step is to open the code project:
 
-1. Head to the iapProj-M folder (the IAP project for Apple M-series CPUs)
+<img src="images/filestruct.png" alt="screenshot of the file and folder structure of the downloaded materials. applications are stored in the apps folder, project files are stored in the iapProj folders">
+
+1. You're looking for the iapProj-M folder (the IAP project for Apple M-series CPUs)
 2. Expand the folder structure until you can see the Builds > MacOSX > iapProj.xcodeproj file
+3. Double click this to open the Xcode editor application automatically load in our project
 
-Double click this to open the Xcode application.
+You may need to accept and close various warnings and welcoming information screens and messages shown below.
 
-You may need to click thru to accept and close various warnings and welcoming information screens and messages shown below.
+<img src="images/IAPprojTrust.png" / alt="you may safely accept a warning to open the files downloaded"><img src="images/WhatsNewInXcode.png" / alt="you may safely close any welcoming information screen explaining 'what is new in xcode'">
 
-<img src="images/IAPprojTrust.png" / alt="a screenshot showing a typical warning dialogue for files downloaded from the internet. the dialogue asks the question are you sure you want to open this?">
-
-<img src="images/WhatsNewInXcode.png" / alt="a screenshot showing the whats new in xcode information screen">
-
-After the editor application has loaded the iapProj project 
+After the Xcode editor application has loaded
 
 1. Expand the project hierarchy until you can see the file `IAP.cpp`
 4. **Single click** on `IAP.cpp` to open it for viewing
