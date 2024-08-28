@@ -28,13 +28,11 @@ Download the IAP repository (which contains all of the required materials and ap
 
 ::➡️:: [Download master branch zip file](../../../archive/refs/heads/master.zip) ::⬅️::
 
-You will need to download Xcode from the appstore if you are working on your own machine. **University lab machines already have Xcode installed and are ready for roll fr playful exploration of introductory programming for audio** 😊👍
+You will need to download Xcode from the appstore if you are working on your own machine. **University lab machines already have Xcode installed and are ready for roll for playful exploration of introductory programming for audio** 😊👍
 
 ## Opening the IAP Project
 
-Once you have downloaded the materials, the next step is to open the code project. The image below shows the general folder structure.
-
-<img src="images/filestruct.png" height=200/>
+Once you have downloaded the materials, the next step is to open the code project:
 
 1. Head to the iapProj-M folder (the IAP project for Apple M-series CPUs)
 2. Expand the folder structure until you can see the Builds > MacOSX > iapProj.xcodeproj file
