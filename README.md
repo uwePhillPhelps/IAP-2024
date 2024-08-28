@@ -2,10 +2,6 @@
 
 IAP (Introductory Audio Programming) is a programming course designed to teach you the basics of computer programming, using the C++ language to build a range of musical applications.
 
-## Getting started
-
-Read the following <a href="Tutorials/Getting%20Started.md">guide</a> to get started. Video guides are also included.
-
 ## Tutorials
 
 ### Part I
@@ -48,6 +44,10 @@ You will write all of your code for tutorials in a project called `iapProj`. Thi
 # ...and beyond!
 
 Windows Visual Studio compatible project files and a windows .exe executable of Aserve is also available on the [windows branch](../../tree/windows) of this repository.
+
+Read the following <a href="Tutorials/Getting%20Started.md">guide</a> to set up your own machine for working off-campus. Instructions for using Microsoft Windows and Visual Studio as well as Apple MacOS and Xcode are provided separately. Video guides are also included.
+
+Both Apple Xcode and Microsoft Visual Studio are fairly heavy in terms of storage requirements **we strongly recommend working with the lab machines, as these are ready to roll and require barely more than logging in to get started** 😊👍
 
 A python front end for the project can be found here:
 
