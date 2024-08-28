@@ -24,7 +24,7 @@ Your **first task** is to download the IAP repository (which contains all of the
 
 ::➡️:: [Download master branch zip file](../../../archive/refs/heads/master.zip) ::⬅️::
 
-You will need to download Xcode from the appstore if you are working on your own machine. **University lab machines already have Xcode installed and are ready for roll for playful exploration of introductory programming for audio** 😊👍
+Staff can help you set up your own machine for working off-campus. For now, let's use the lab machines. **University lab machines already have Xcode installed and are ready for roll for playful exploration of introductory programming for audio** 😊👍 
 
 ## Opening the IAP Project
 
