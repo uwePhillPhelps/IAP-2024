@@ -144,7 +144,11 @@ if ( (time > 600 && time < 1800) || override == 0)
 
 # Exercise 3: Logical Operations
 
-Using what you have learnt about logical operators work out which of the following statements will get printed. Try and complete this exercise without using xcode.
+Examine the code below and try **without using xcode or visual studio** to predict what the program code will do.
+
+  1. Each example code fragment below will display a message.
+  2. Using what you have learnt about logical operators work out which of the following statements will get printed.
+  3. Try and complete this exercise without using xcode.
 
 ### 1:
 ```cpp
@@ -204,92 +208,57 @@ Using what you have learnt about logical operators work out which of the followi
 
 ## Exercise 4: Scale Quantization
 
+Download: [Tutorial 7 code](../../Code%20Exercises/Tutorial%207)
 
-Open exercise 7.4 and copy the code into your project, replacing the existing contents of IAP.cpp and IAP.h.
+Copy the supplied starting point code for this exercise into your project, replacing everything in your existing IAP.cpp and IAP.h files.
 
-For this exercise we are going to a make a function called majorScale that quantizes all incoming notes into the C major scale. One method of doing scale quantization is to check the pitch class of a note, and if it is not in the current scale, to increment the note by 1. For example, the pitch C# would get increment by 1 to be D.
+For this exercise we are going to show a method for "quantizing" all incoming notes into the C major scale. 
 
-1. Firstly, add a new function declaration to your IAP.h file, called majorScale that takes **one int argument** called note, and has **int** as its return type.
-2. Add the definition to the IAP.cpp file.
+One method of doing scale quantization is to check the pitch class of a note, and if it is not in the current scale, to increment the note by 1. For example, the pitch C# could get incremented to D.
 
-### To build the majorScale function.
+This exercise will happen in stages. We'll first modify our note callback, then we'll tidy up by moving our quantisation code into a function.
 
-1. Inside the function compute the pitch of a note by doing the following sum:
-	*pitch = note % 12*
-2. If the value of pitch is, 1, 3, 6, 8 or 10, increment the value of note by 1.
-3. Return note from the function.
+## Modifying the note callback for a major scale
 
-You should now be able to pass the incoming note from the note callback to this new function, before calculating the frequency.
+1. Compute the pitch of a note by using the 'modulo' operator:
+	`int pitch = note % 12;`
+2. If the **pitch** is, 1, 3, 6, 8 or 10, increment the **note** by 1.
 
-```cpp
-note = majorScale(note);
-```
+If you insert this code before calculating the frequency, every note that you play will be 'quantized' to a C major scale before being heard.
 
 *There are multiple ways to check the value of pitch in step 2 above, think carefully about what we have learnt so far and apply the most appropriate method.*
 
+## Exploring other scales
 
-## Switch Case.
-
-A switch/case structure can often be used in place of a multi-way selection if...else if structure to create more readable and efficient flow control. If an if...else if structure tests an integer variable against a number of constant values, a switch/case structure is the preferred method.
- 
-For example, a nested if structure may be used to display the days of the working week by testing the integer variable **day**, which represents the days Monday to Friday with a number in the range 0-4. 
+Probably the simplest method to quantise is to use an if-statement like below:
 
 ```cpp
-    if( day == 0 )
-    {
-        std::cout << "Monday\n";
-    }
-    else if( day == 1 )
-    {
-        std::cout << "Tuesday\n";
-    }
-    else if( day == 2 )
-    {
-        std::cout << "Wednesday\n";
-    }
-    else if( day == 3 )
-    {
-        std::cout << "Thursday\n";
-    }
-    else if( day == 4 )
-    {
-        std::cout << "Friday\n";
-    }
-    else
-    {
-        std::cout << "Invalid!\n";
-    }
+int pitch = note % 12;                         // compute the pitch
+if( pitch == 1 || pitch == 3 || pitch == 6 ) { // notes that are 'outside' our scale...
+	note = note + 1;                       // ...are quantised to be 'inside'
+}
+float frequency = 440 * pow( 2, (note-69) ...  // calculate frequency
 ```
 
-As the variable day (in the example on the previous page) is compared with constants, this nested if structure may be replaced by the more elegant switch/case structure: 
+Try exploring different sets of pitches in the if-statement
+  1. the complete list of pitches you need **for C major** is 1,3,6,8,10
+  2. which pitches do you need to list to quantise **for Eb pentatonic minor**?
+  3. can you think of other scales that would complement or contrast with those so far?
+
+## Switching between scale quantisations
+
+It should become obvious whilst you experiment, that switching seamlessly between various quantisation modes would be very useful indeed!
+To do this effectively we need to keep code for quantising to different scales, select the desired scale, etc.
+
+The supplied starting point code includes **some** of the required steps, but not all. 
+It might be helpful to if your note callback looked something like this:
 
 ```cpp
-    switch (day)
-    {
-        case 0:
-            std::cout << "Monday\n";
-            break;
-        case 1:
-            std::cout << "Tuesday\n";
-            break;
-        case 2:
-            std::cout << "Wednesday\n";
-            break;
-        case 3:
-            std::cout << "Thursday\n";
-            break;
-        case 4:
-            std::cout << "Friday\n";
-            break;
-        default:
-	    std::cout << "Invalid!\n";
-            break;
-    }
+int pitch = note % 12;                                     // compute the pitch
+if ( desiredScale == 0 ) note = majorScale( pitch );       // modify the note
+if ( desiredScale == 1 ) note = pentatonicScale( pitch );  // depending on the selected scale
+float frequency = 440 * pow( 2, (note-69) ...              // calculate frequency
 ```
-
-The variable enclosed in the brackets, day in this example, is tested against each case from top to bottom. If a matching case is found, the subsequent statements are executed until the break statement is reached, whereupon the switch/case structure terminates. If the variable does not match a specified case, the default case is executed. 
-
-Omission of the break keyword results in all statements preceding the next break statement being executed. This enables multiple cases to *fall through*, such that one set of statements can be executed for multiple cases. We will discuss this again shortly but first.
 
 ## Exercise 5: A Second Scale
 
