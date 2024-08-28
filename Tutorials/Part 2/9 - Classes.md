@@ -28,7 +28,8 @@ To illustrate further let’s think about a generic person. A generic person has
 
 To help conceptualize the topics we have discussed so far you will now create your own **person** class. 
 
-Firstly, navigate to your IAP.h file and add the following **under** the `#include ...` and **above** the `class IAP ...`  
+  1. navigate to your IAP.h file
+  2. add the following **under** the `#include ...` and **above** the `class IAP ...`  
 
 ```cpp
 //...
@@ -60,15 +61,16 @@ A **property** (like our `Person`s name) 'belong' to the class, and can be said 
 
 ## Instance
 
-Lower down in the IAP.h file... let's create an **instance** of our person, add the following line of code to our shared variables label in our IAP class. *note that shared variables are actually member variables of our IAP class.
+Now let's create an **instance** of our person
+
+  1. Lower down in the IAP.h file...
+  2. add the following line of code to our shared variables label in our IAP class. *note that shared variables we create in the IAP class are actually 'member variables' of our IAP class.
 
 ```cpp
   //---------------------------------------------------------------------------------
   // SHARED VARIABLES (IAP member variables)
   Person student; // we have added a person type
 ```
-
-Finally lets use member variables.
 
 ## The dot syntax 
 
@@ -81,12 +83,11 @@ void IAP::run()
     std::cout << "Person’s name is: " << student.name;
 }
 ```
-
 To complete this exercise set all of the member variables in your student instance inside the IAP::run() function. Make sure you set and print all of the values to ensure this has worked correctly. Set and print the age, height, etc...
 
 ## Exercise 2: Class methods
 
-When we add a second `Person` instance, for example a lecturer, we begin to add unnecessary code duplication (your solution to exercise 1 above will look much more messy and inelegant than below). Repeated blocks of code printing different contents of different person class instances. 
+As we add a more `Person` instances, for example a lecturer, we begin to add unnecessary code duplication (your solution to exercise 1 above could look much more messy and inelegant than the example below). Repeated blocks of code are printing different contents of different person class instances. 
 
 ```cpp
 
