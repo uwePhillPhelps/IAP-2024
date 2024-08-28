@@ -10,4 +10,37 @@ This workshop will introduce the tools used on the module in a creative and play
 2.	The Xcode development environment.
 3.	The Aserve application and some of its features. 
 
-## Getting started
+## About IAP
+
+Programmed electronic devices are abundant in every sector of the music industry. In whichever area you choose to focus your studies - in the creation or use of audio technology - an intimate understanding of the inner workings of these devices will naturally enhance your abilities.
+
+Throughout this module you will learn important fundamental programming skills and concepts by writing programs that perform audio and music related tasks. 
+
+## Weekly tasks
+
+All IAP learning materials are provided upfront - organised so that you can work at your own pace - but we will examine topics in classes on a week by week schedule. Each tutorial introduces a new programming concept which will be explored and exercised in the C++ programming language. 
+
+Whilst you are free to move ahead at your own pace if you wish, it is very important that all exercises are completed in the intended order as the material is incremental; that is, each practical builds upon the last. **It is very important to attend support sessions. Poor attendance often results in poor grades. The secret here to passing this module (and achieving a state of music tech bliss) is to follow the schedule week-by-week!**
+
+## Getting the tools
+
+Download the IAP repository (which contains all of the required materials and applications)
+
+::arrow_right:: [Download master branch zip file](../../../archive/refs/heads/master.zip) ::arrow_left::
+
+You will need to download Xcode from the appstore if you are working on your own machine. **University lab machines already have Xcode installed and are ready for roll fr playful exploration of introductory programming for audio** 😊👍
+
+## Opening the IAP Project
+
+Once you have downloaded the materials and installed either MacOS Xcode or Windows Visual Studio, the next step is to open the code project for your platform. The image below shows the folder structure.
+
+<img src="images/filestruct.png" height=200/>
+
+Once your editor application has started:
+
+1. Expand the project hierarchy until you can see the file `IAP.cpp`
+2. **Single click** on `IAP.cpp` to open it for viewing. 
+
+If you double-click by mistake, close the separate window that will appear, and try again. Ensure your Xcode window looks the same as the screenshot below. 
+
+<img src="images/xcode.png" />
