@@ -32,14 +32,25 @@ You will need to download Xcode from the appstore if you are working on your own
 
 ## Opening the IAP Project
 
-Once you have downloaded the materials and installed either MacOS Xcode or Windows Visual Studio, the next step is to open the code project for your platform. The image below shows the folder structure.
+Once you have downloaded the materials, the next step is to open the code project. The image below shows the general folder structure.
 
 <img src="images/filestruct.png" height=200/>
 
-Once your editor application has started:
+1. Head to the iapProj-M folder (the IAP project for Apple M-series CPUs)
+2. Expand the folder structure until you can see the Builds > MacOSX > iapProj.xcodeproj file
+
+Double click this to open the Xcode application.
+
+You may need to click thru to accept and close various warnings and welcoming information screens and messages shown below.
+
+<img src="images/IAPprojTrust.png" / alt="a screenshot showing a typical warning dialogue for files downloaded from the internet. the dialogue asks the question are you sure you want to open this?">
+
+<img src="images/WhatsNewInXcode.png" / alt="a screenshot showing the whats new in xcode information screen">
+
+After the editor application has loaded the iapProj project 
 
 1. Expand the project hierarchy until you can see the file `IAP.cpp`
-2. **Single click** on `IAP.cpp` to open it for viewing. 
+4. **Single click** on `IAP.cpp` to open it for viewing
 
 If you double-click by mistake, close the separate window that will appear, and try again. Ensure your Xcode window looks the same as the screenshot below. 
 
