@@ -241,28 +241,32 @@ float frequency = 440 * pow( 2, (note-69) ...  // calculate frequency
 ```
 
 Try exploring different sets of pitches in the if-statement
-  1. the complete list of pitches you need **for C major** is 1,3,6,8,10
-  2. which pitches do you need to list to quantise **for Eb pentatonic minor**?
+  1. the complete list of pitches you need to quantise **for C major** is 1,3,6,8,10
+  2. which pitches do you need to list to quantise **for C minor**?
   3. can you think of other scales that would complement or contrast with those so far?
 
 ## Switching between scale quantisations
 
-It should become obvious whilst you experiment, that switching seamlessly between various quantisation modes would be very useful indeed!
-To do this effectively we need to keep code for quantising to different scales, select the desired scale, etc.
+It should become obvious whilst you experiment, that switching seamlessly between various quantisations would be musically useful and creative!
+To do this effectively we should move code for quantising to different scales to named **functions** and decide which scale to use.
 
-The supplied starting point code includes **some** of the required steps, but not all. 
-It might be helpful to if your note callback looked something like this:
+The supplied starting point code includes **some** of the required steps for a program like this, but not all.
+
+A good series of steps to follow might be
+  1. add a shared variable `desiredScale` (in the IAP.h file)
+  2. 3. examine the comments in the cc callback which give some further hints
+  3. move the scale quantisation code to a function (in the IAP.h file)
+  4. edit your note callback to something like this below
 
 ```cpp
-int pitch = note % 12;                                     // compute the pitch
-if ( desiredScale == 0 ) note = majorScale( pitch );       // modify the note
-if ( desiredScale == 1 ) note = pentatonicScale( pitch );  // depending on the selected scale
-float frequency = 440 * pow( 2, (note-69) ...              // calculate frequency
+if ( desiredScale == 0 ) note = majorScale( note );      // depending on the selected scale
+if ( desiredScale == 1 ) note = pentatonicScale( note ); // we can quantise note differently
+float frequency = 440 * pow( 2, (note-69) ...            // calculate frequency
 ```
 
-## Exercise 5: A Second Scale
+## Hints for a pentatonic scale
 
-Using the steps as before add another function to your project called pentatonicMajorScale. This time we will use switch case rather than an if statement to decide if we need to move a pitch up or down. For this exercise use a single case for each relevant pitch. A table of pitches to check for and how much to modify the input note by, is given on the next page.
+A table of pitches to check for and how much to modify the input note by, is given below.
 
 | Pitch | Change Note |
 | --- | --- |
@@ -274,72 +278,38 @@ Using the steps as before add another function to your project called pentatonic
 | 10 | Decrement by 1 |
 | 11 | Increment by 1 |
 
-
-Note that a variable can be increment by 1 by using the shorthand ++ operator. For example
+Note that a variable can be incremented by 1 by using the shorthand ++ operator. For example
 
 ```cpp
 note++;
 ```
-This is equivalent to doing:
+Is equivalent to:
 
 ```cpp
 note = note + 1;
 ```
 The -- operator can be used to decrement by 1.
 
-## Multiple switch case 
+## Hints for using switch-case 
 
-When using an if statement you can use the || operator to check for multiple conditions inside a single if statement.
-
-```cpp
-if (day == 5 || day == 6) 
-{
-	std::cout << "It’s the weekend!";
-}
-```
-
-We can do the same with a switch case. Note that we can have multiple case statements, but we must eventually have a break tag. In this example if day is either equal to 5 or 6, then ‘It’s the weekend’ will get printed. 
+We have been using the 'logical or' operator `||` for multiple conditions inside a single if statement.
 
 ```cpp
-	case 5:
-	case 6:
-   		std::cout << "It's the weekend!";
-	break;
+if( pitch == 10 || pitch == 11 ){ note--; }
 ```
 
-A common error is to use a switch case but forget to use a break tag!
+It is sometimes **clearer to read, and/or more concise** to use a switch case. Note that we can have multiple case statements, but we must eventually have a break tag. In this example if pitch is either equal to 10 or 11, then our note variable will be modified. 
 
 ```cpp
-switch (day)
-{
-        case 0:
-            std::cout << "Monday\n";
-        case 1:
-            std::cout << "Tuesday\n";
-            break;
-        case 2:
-            std::cout << "Wednesday\n";
-            break;
-}
-
+   switch( note )
+   {
+	case 10:
+	case 11:
+   		note--;
+        break;
+   }
 ```
-
-If the variable day is equal to 0, then both Monday and Tuesday will be printed, as the user has forgot to put a break tag before case 1.
 
 ## Challenge Exercise: Refactoring
 
-Refactor your solution to exercise 5 by using a switch case, with a collection of cases for the pitches that result in the output note being increment by 1, and a second collection of cases for the pitches that result in the output note being decrement by 1.
-
-## Important Material
-
-Knowledge of the following will be assumed in next week’s practical: 
-
-1. While loop conditions. 
-2. logical operators.
-3. Using a basic string 
-4. Switch/case statements. 
-
-
-
-
-
+Refactor your scale quantisation code to using a switch case. The pentatonic scale requires a collection of cases for the pitches that result in the output note being increment by 1, and a second collection of cases for the pitches that result in the output note being decrement by 1.
