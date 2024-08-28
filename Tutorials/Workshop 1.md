@@ -26,9 +26,28 @@ Your **first task** is to download the IAP repository (which contains all of the
 
 Staff can help you set up your own machine for working off-campus. For now, let's use the lab machines. **University lab machines already have Xcode installed and are ready for roll for playful exploration of introductory programming for audio** 😊👍 
 
-## Opening the IAP Project
+## Aserve and the IAP project working together
 
-Once you have downloaded the materials, the next step is to open the code project:
+Once you have downloaded the materials, the next step is to open the iap Aserve application.
+
+1. Navigate to the apps folder of the IAP materials that you have downloaded and
+2. Open the `Aserve226` application **by right-clicking and choosing the `OPEN` menu option**
+3. You may see security warnings (shown below)
+   a. please accept the security warnings to open the application
+
+<img src="images/AserveRightclick.png" alt="use the right-click menu to open the aserve226 application" height="300px"></img>
+<img src="images/AserveTrust.png" alt="you may safely accept a warning to open the files downloaded" height="300px"></img>
+
+If successful, you will see the Aserve application window open as shwown below...
+
+<img src="images/aserve_screen_shot_a.png" alt="screenshot of the aserve application window"></img>
+
+...but you'll quickly notice that there is no sound (nor much of a response at all!) when you move the Aserve controls, dials, sliders, or press keys.
+The aserve application works in tandem with the iapProj materials provided, and on this module we will teach you how to design and write programs that control how Aserve makes sound in response to your controls. 😀
+
+<img src="images/AserveXcodeYourProgram.png" alt="diagram showing how the aserve application works in tandem with the iapProj materials provided - on this module we will introduce audio programming concepts"></img>
+
+## Opening the IAP Project
 
 <img src="images/filestruct.png" alt="screenshot of the file and folder structure of the downloaded materials" height="200px"></img>
 
