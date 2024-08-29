@@ -4,31 +4,21 @@ Welcome to IAP (Introductory audio programming)
 
 <img src="images/start-ignition.jpeg" alt="ignition" height="200px"></img><img src="images/filestruct.png" alt="screenshot of the file and folder structure of the downloaded materials" height="200px"></img>
 
-This workshop will introduce the tools used on the module in a creative and playful way. The idea is to familiarise you with the lab machines, and how we will use the hardware and software on the Introductory Audio Programming module. By the end of this session you should be familiar with: 
+This workshop will introduce the tools used on the module in a creative and playful way. The idea is to familiarise you with the lab machines, and how we will use the hardware and software on the Introductory Audio Programming module. 
 
-1.	The Apple workstations in the faculty labs. 
-2.	The Xcode development environment.
-3.	The Aserve application and some of its features. 
+## Getting started
 
-## About IAP
-
-Programmed electronic devices are abundant in every sector of the music industry. In whichever area you choose to focus your studies - in the creation or use of audio technology - an intimate understanding of the inner workings of these devices will naturally enhance your abilities.
-
-Throughout this module you will learn important fundamental programming skills and concepts by writing programs that perform audio and music related tasks. 
-
-## Weekly tasks
-
-All IAP learning materials are provided upfront - organised so that you can work at your own pace - but we will examine topics in classes on a week by week schedule. Each tutorial introduces a new programming concept which will be explored and exercised in the C++ programming language. 
-
-Your **first task** is to download the IAP repository (which contains all of the required materials and applications)
+Your **first task** is to download the IAP repository (which contains all of the required materials and applications for the module)
 
 ::➡️:: [Download master branch zip file](../../../archive/refs/heads/master.zip) ::⬅️::
 
-Staff can help you set up your own machine for working off-campus. For now, let's use the lab machines. **University lab machines already have Xcode installed and are ready for roll for playful exploration of introductory programming for audio** 😊👍 
+Staff can help you set up your own machine for working off-campus, but for now, let's use the lab machines. **University lab machines already have almost everything installed and ready to roll** 😊👍 
 
 ## Aserve and the IAP project working together
 
-Once you have downloaded the materials, the next step is to open the iap Aserve application.
+Once you have downloaded the repository, the next step is to open the Aserve application which looks like the screenshot below.
+
+<img src="images/aserve_screen_shot_a.png" alt="screenshot of the aserve application window"></img>
 
 1. Navigate to the apps folder of the IAP materials that you have downloaded and
 2. Open the `Aserve226` application **by right-clicking and choosing the `OPEN` menu option**
@@ -38,20 +28,23 @@ Once you have downloaded the materials, the next step is to open the iap Aserve 
 <img src="images/AserveRightclick.png" alt="use the right-click menu to open the aserve226 application" height="300px"></img>
 <img src="images/AserveTrust.png" alt="you may safely accept a warning to open the files downloaded" height="300px"></img>
 
-If successful, you will see the Aserve application window open as shwown below...
-
-<img src="images/aserve_screen_shot_a.png" alt="screenshot of the aserve application window"></img>
-
-...but you'll quickly notice that there is no sound (nor much of a response at all!) when you move the Aserve controls, dials, sliders, or press keys.
-The aserve application works in tandem with the iapProj materials provided, and on this module we will teach you how to design and write programs that control how Aserve makes sound in response to your controls. 😀
+If successful, the Aserve application window will open, but you'll quickly notice that there is no sound (nor much of a response at all!) when you move controls, dials, sliders, or press keys. 
 
 <img src="images/AserveXcodeYourProgram.png" alt="diagram showing how the aserve application works in tandem with the iapProj materials provided - on this module we will introduce audio programming concepts"></img>
 
+The aserve application works in tandem with the iapProj materials provided, and on this module we will teach you how to design and write programs that control how Aserve makes sound in response to your controls. 😀
+
+Code that you write on the module will act as a "decision maker". When you move controls and press keys, code will tell Aserve to generate sound.
+
 ## Opening the IAP Project
+
+For this session, we'll use ready-made code. We'll explore it more deeply in later sessions, but for now we'll use it to demonstrate some Aserve features and to explore some of the creative potential. 
+
+The next step is to open the "iapProj" in the Apple Xcode editor softwar.
 
 <img src="images/filestruct.png" alt="screenshot of the file and folder structure of the downloaded materials" height="200px"></img>
 
-1. You're looking for the iapProj-M folder (the IAP project for Apple M-series CPUs)
+1. Look for the iapProj-M folder (the IAP project for Apple M-series CPUs)
 2. Expand the folder structure until you can see the Builds > MacOSX > iapProj.xcodeproj file
 3. Double click this to open the Xcode editor application automatically load in our project
 
