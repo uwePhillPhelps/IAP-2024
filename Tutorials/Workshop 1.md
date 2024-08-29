@@ -18,7 +18,7 @@ Staff can help you set up your own machine for working off-campus, but for now, 
 
 Once you have downloaded the repository, the next step is to open the Aserve application which looks like the screenshot below.
 
-<img src="images/aserve_screen_shot_a.png" alt="screenshot of the aserve application window"></img>
+<img src="images/aserve_screen_shot_a.png" alt="screenshot of the aserve application window" height="300px"></img>
 
 1. Navigate to the apps folder of the IAP materials that you have downloaded and
 2. Open the `Aserve226` application **by right-clicking and choosing the `OPEN` menu option**
@@ -40,7 +40,7 @@ Code that you write on the module will act as a "decision maker". When you move 
 
 For this session, we'll use ready-made code. We'll explore it more deeply in later sessions, but for now we'll use it to demonstrate some Aserve features and to explore some of the creative potential. 
 
-The next step is to open the "iapProj" in the Apple Xcode editor softwar.
+The next step is to open the "iapProj" in the Apple Xcode editor software.
 
 <img src="images/filestruct.png" alt="screenshot of the file and folder structure of the downloaded materials" height="200px"></img>
 
@@ -54,9 +54,52 @@ You may need to accept and close various warnings and welcoming information scre
 
 After the Xcode editor application has loaded
 
-1. Expand the project hierarchy until you can see the file `IAP.cpp`
-4. **Single click** on `IAP.cpp` to open it for viewing
+1. Click the run button (▶️) shown in the upper left of the Xcode interface
+2. You may see additional security messages which you should accept to proceed
 
-If you double-click by mistake, close the separate window that will appear, and try again. Ensure your Xcode window looks the same as the screenshot below. 
+<img src="images/xcode15Interface.png" alt="xcode interface run button" height="100px"></img><img src="images/AccessYourDownloadsFolder.png" alt="security request for access to your downloads folder" height="200px">
 
-<img src="images/xcode.png" />
+After a short wait, a success message should appear.
+
+<img src="images/xcodeBuildSucceded.png" alt="xcode notification build succeded" height="200px">
+
+## Is this thing on?
+
+Now that our "iapProj" program is running, Aserve will make sound. Return to the Aserve application. If you've accidentally closed it don't worry, just re-open it. 😊
+
+If everything has gone to plan, Aserve will already be playing a simple drum pattern, and you can play the on-screen keys to make pitched sounds.
+You should also be able to use the physical hardware controller keyboard to trigger and control the sound.
+
+## Some suggestions for creative exploration
+
+Feel free to explore these in any order.
+
+1. -
+2. -
+3. -
+4. -
+5. -
+6. -
+7. -
+
+### A challenge?
+
+* Why not try
+
+## Wrapping up - preparing for next week
+
+Now that we're at the end of this session you should be familiar with: 
+
+1.	The Apple workstations in the faculty labs. 
+2.	The Xcode development environment.
+3.	The Aserve application and some of its features.
+
+### A little more about the module
+
+Throughout this module you will learn important fundamental programming skills and concepts by writing programs that perform audio and music related tasks. 
+
+All IAP learning materials are provided upfront - organised so that you can work at your own pace - but we will examine topics in classes on a week by week schedule. Each tutorial introduces a new programming concept which will be explored and exercised in the C++ programming language. 
+
+Programmed electronic devices are abundant in every sector of the music industry. In whichever area you choose to focus your studies - in the creation or use of audio technology - an intimate understanding of the inner workings of these devices will naturally enhance your abilities.
+
+See you next week!
