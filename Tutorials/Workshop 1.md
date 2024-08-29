@@ -72,7 +72,22 @@ You should also be able to use the physical hardware controller keyboard to trig
 
 ## Some suggestions for creative exploration
 
-Feel free to explore these in any order.
+The xcode editor should look similar to the screenshot below
+
+Use the panel on the left to select the `iapProj` > `Source` > `IAP.cpp` file for editing.
+
+<img src="images/xcode.png" alt="xcode editor with IAP.cpp file selected for editing">
+
+Scroll to reveal and read the explanatory text in the `IAP.cpp` file. The most important aspects to note are
+
+1. The behaviour of the program can be altered by editing
+2. We have prepared simple `#define` definitions for creative exploration
+3. You may break the program, but it's easy to undo with `CMD+Z` to restore a working state.
+   * Actually we encourage you to hack and break our code - it's a **great** way to test limits and gain experience!
+
+There are plenty of things you can try. Feel free to explore these in any order.
+
+Remember you can edit without "building" code. To test and run your edited code in the "iapProj" program, use the xcode run button (▶️).
 
 1. -
 2. -
