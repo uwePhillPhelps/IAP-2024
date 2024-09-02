@@ -89,17 +89,20 @@ There are plenty of things you can try. Feel free to explore these in any order.
 
 Remember you can edit without "building" code. To test and run your edited code in the "iapProj" program, use the xcode run button (▶️).
 
-1. -
-2. -
-3. -
-4. -
-5. -
-6. -
-7. -
+1. - We have set HIGH_OCTAVE_MOD and LOW_OCTAVE_MOD to be 12 and -12 respectively... could you create chords by changing these?
+2. - We have the option to USE_DRUMS... can you perform a song while the drums are playing?
+3. - Set the BPM really high... we dare ya!
+4. - Some note intervals, like a flat second (e.g. C and Db; one semitone apart) or a sharp fifth (e.g. C and F#; 6 semitone apart) sound a bit spicy... could you recreate these by changing HIGH_OCTAVE_MOD or LOW_OCTAVE_MOD?
+5. - Other intervals, like a major third (e.g. C and E; 4 notes apart) or a perfect fifth (e.g. C and G; 7 notes apart) sound quite pleasing... could you recreate these by changing HIGH_OCTAVE_MOD or LOW_OCTAVE_MOD?
+6. - Why limit yourself to one octave? Can you take HIGH_OCTAVE_MOD or LOW_OCTAVE_MOD into higher or lower realms to create a synthesiser that does Bass, Lead and Harmony lines simultaneously?
+7. - Using Chords and Octave Mods, what is the biggest chord you can make? What does this do to the sound of the synthesiser?
 
 ### A challenge?
-
-* Why not try
+If you're thinking 'Amazing! This is great and I want to delve in further!' then here are a few challenges to try. NOTE: you are NOT expected to understand the following tasks. That said, by the end of IAP, we promise these will be trivial to you; delve in at your own peril!!!
+* Can you change the chord intervals to make new chords?
+* In many Western tuning systems, it is suggested that the note A is 440Hz as a frequency and we calculate other notes based on this. Can you find this number in the IAP.h file and change it to something else? What happens?
+* In the same area that we use 440, we also divide by 12 to organise our keyboard into octaves, what happens if we change THIS number?
+* We have deliberately limited the BPM to max out at 1000... you can change this limit if you like! What happens?
 
 ## Wrapping up - preparing for next week
 
