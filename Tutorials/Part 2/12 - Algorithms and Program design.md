@@ -1,32 +1,22 @@
-# Tutorial 12 – Algorithms and Program design
+# Tutorial 12 - Algorithms and Program design
 
 This week we will explore building a number of programs and explore several algorithms. We will not be learning any new syntax this week, but rather reinforce our understanding of the concepts covered so far.
 
-You are encouraged to complete all of the programs outlined, however you may choose to do these in any order (however you will need to complete 2 before 3).
+You are encouraged to complete all of the program designs outlined below. It is desirable to complete the polyphonic synthesiser before attempting others.
 The projects are as follows:
 
-1.	Synth with attack and release envelopes
-    - Supplied as two files, comment placeholders are supplied
-2.	Polyphonic synth
+1.	Polyphonic synth
     - Supplied as a pseudocode 
-3.	Arpeggiator
+2.	Arpeggiator
     - Supplied as a flowchart file
-4.	A generative music application
+3.	A generative music application
     - Supplied as a basic program
-    
-## Program 1: Attack and Release Envelopes.
+4.	Synth with attack and release envelopes
+    - Supplied as two files, comment placeholders are supplied
 
-Firstly, download and open the supplied files [Tutorial 12 AR Synth code](../../Code%20Exercises/Tutorial%2012/AR%20Synth) and copy them into both IAP.h and IAP.cpp of your project.
+## Polyphonic Synthesizer
 
-For this exercise you will fill in the blanks by following the comments in the supplied file. All the **shared variables** you will require for this program are provided for you, and you should not need to declare any others. A brief description of the program is provided bellow.
-
-On most synthesizer it is desirable for the sound to ramp up it to its full amplitude, rather than produce its full amplitude instantaneously.  For example, a piano has a very short attack time, meaning that it reaches its full amplitude very quickly, where as a stringed instrument (e.g. violin) can gradually increase its amplitude. Release time is the opposite of attack and determines how quickly a note will reduce its amplitude to 0 (stop). In this program we will ramp the volume up and down in the run part of our program, increasing or decreasing the *amplitude* in small amounts each 1ms. The callbacks will be used to trigger the attack and release stages. 
-
-<img src="../images/asdr.png" />
-
-## Program 2: Polyphonic Synthesizer
-
-Firstly, download and open the supplied [Tutorial 12 Polyphonic Synth code](../../Code%20Exercises/Tutorial%2012/Polyphonic%20Synth) and copy them into both IAP.h and IAP.cpp.
+Firstly, download and open the supplied [Polyphonic Synth CPP and H files](../../Code%20Exercises/Tutorial%2012/Polyphonic%20Synth) and copy them into your project, replacing both IAP.h and IAP.cpp with the supplied files.
 
 Historically in previous practical’s we have simply updated the frequency of an oscillator each time a new note is played, and by keeping the channel number the same each time we have limited ourselves to a monophonic synth. As Aserve has 24 channels, we can in theory have 24 oscillators all at different frequencies playing at once. Therefore, what we want to do is apply the following logic:
 
@@ -61,16 +51,15 @@ To illustrate what should happen each time a note message is received a table of
 
 We will need to keep track of the state of each oscillator inside our program. As there are 24 oscillators it would make sense that we use an array for keeping track of each oscillators current note. You should initialize each element of the array to be -1, and use -1 to represent a free oscillator. 
 
-## Program 3: Arpegiator
+## Arpegiator
 
-To implement this program, you need to first have completed the previous exercise. Firstly, remove both calls to aserveOscillator from your callbackNoteReceived code. We will be now be controlling the synthesis of notes from within the run() function.
+We can easily adapt the polyphonic synthesiser code (in the previous exercise) to become a monophonic arpeggiator. Firstly, remove calls to aserveOscillator from your callbackNoteReceived code. We will be now be controlling the synthesis of notes from within the run() function.
 
 You will now need to implement the following flowchart inside your run loop.
 
 <img src="../images/flowchart.png" />
 
-
-## Extensions
+## Arpeggiator extensions
 
 Once you have setup the basic arpeggiator there are a few extensions we can apply. Firstly, ensure you have completed last weeks’ homework exercise. We can add a feature to this arpeggiator that controls in which order the notes are played. At the moment notes are arpeggiated in the order in which the keys are pushed down. However, we can sort the notes array so that notes are arpeggiated in either ascending or descending order. The steps to achieve this are as follows:
 
@@ -82,34 +71,25 @@ Once you have setup the basic arpeggiator there are a few extensions we can appl
 4.	Think carefully about where you might want to call setPlayOrder().
 
 
-## Program 4: Generative music
+## Generative music
 
 You are supplied with the start of a very basic generative music application available here [Tutorial 12 Generative Music Application code](../../Code%20Exercises/Tutorial%2012/Generative%20Music%20Application). However, it does not sound very good. There are a number of things we can do to improve this application.
 
+## Random number generation
 
-
-## A note about random number generation
-
-The **arc4random()** function can generate a randomised sequence of numbers. Each time you call the function it will generate a new number from a randomised sequence. We might generate numbers in a given range with the following.
+The **arc4random()** function can be used to generate random numbers, to generate numbers in a given range we can do the following:
 
 ```cpp
     int note = arc4random() % 128;
 ```
 
-Here the modulo (%) operator is used to restrict values so that they are less than the value supplied, in this case up to and including the value of 127. To produce values between 5 & 10 we could do the following.
+The modulo (%) operator is used to limit values so that they are less than the value supplied, in this case up to and including the value of 127. To produce values between 5 & 10 we could do the following.
 
 ```cpp
     int num = (arc4random() % 6) + 5;
 ```
-If your system does not support `arc4random()`, you may use a similar technique shown below.
 
-```cpp
-    Random r;
-    int num = r.nextInt( Range<int>(5, 10) ); // between 5 and 10 inclusive
-```
-## Extensions
-
-Currently, the supplied generative music application code generates numbers in the range 0-127, which is not well tuned for a musical application.
+The current application generates numbers in the range 0-127, which is not ideally suited to a musical application.
 
 1.	First change the range of numbers, so that they are generated in the range 48-72.
 2.	Pass each note through the **majorScale** function we developed last term.
@@ -131,5 +111,13 @@ Rhythm values: 125, 250, 375, 500, 750, 1000
 
 Try experimenting with different values inside the rhythm values array including adding multiples of the same value.
 
+## Attack and Release Envelopes.
 
+Firstly, download and open the supplied files [Attack and Release CPP and H files](../../Code%20Exercises/Tutorial%2012/AR%20Synth) and copy them into your project.
+
+For this exercise you will fill in the blanks by following the comments in the supplied file. All the **shared variables** you will require for this program are provided for you, and you should not need to declare any others. A brief description of the program is provided bellow.
+
+On most synthesizer it is desirable for the sound to ramp up it to its full amplitude, rather than produce its full amplitude instantaneously.  For example, a piano has a very short attack time, meaning that it reaches its full amplitude very quickly, where as a stringed instrument (e.g. violin) can gradually increase its amplitude. Release time is the opposite of attack and determines how quickly a note will reduce its amplitude to 0 (stop). In this program we will ramp the volume up and down in the run part of our program, increasing or decreasing the *amplitude* in small amounts each 1ms. The callbacks will be used to trigger the attack and release stages. 
+
+<img src="../images/asdr.png" />
 

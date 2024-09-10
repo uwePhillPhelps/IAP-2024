@@ -46,12 +46,6 @@ The table bellow outlines each test and the tutorial exercise they are based on.
 | 5 | Scale Quantisation | 7.4 | <a href="../Tutorials/Part%201/7%20-%20Switch%20and%20Combinational%20Logic.md">Scale Quantisation</a> |
 | 6 | High Frequency Test Loop | 8.3 | <a href="../Tutorials/Part%201/8%20-%20Loops.md"> High frequency test </a> |
 | 7 | Music Sequencer | 11.3 | <a href="../Tutorials/Part%202/11%20-%20Vector.md"> Exercise 3: Building a music sequencer </a> |
-| 8 | Reading From a File | 14.2 | <a href="../Tutorials/Part%202/14%20-%20Files%20and%20String%20Manipulation.md"> Synthesize file contents </a> |
-| 9 | Write to a File | 14.3 | <a href="../Tutorials/Part%202/14%20-%20Files%20and%20String%20Manipulation.md"> Writing to our file
- </a> |
- | 10 | Sorting | 13.4 | <a href="../Tutorials/Part%202/13%20-%20Constants%20and%20Algorithms%20II.md"> Sort, Reverse, Randomize </a> |
-
-
 
 
 # Test 1: Midi Note to Frequency
@@ -145,74 +139,20 @@ This unit test will test all of the features of exercise 11.3. Aserve will send 
 | 2 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should repeat |
 | 3 | CC 114 with a value of 127 | Playback should stop, oscillator state should be switched off |
 
-# Test 8: File read
-*Tests: <a href="../Tutorials/Part%202/14%20-%20Files%20and%20String%20Manipulation.md">Exercise 14.2</a>*
-
-This unit test will ensure that you know you to read information from a file. Aserve will get generate the contents of the the file named "exercise1.txt". Your program should startup and open this file, read it line-by-line convert the note number to a frequency and use Aserve's oscillator 0 to synthesize the note value. You should sleep by around 250ms between sending notes.
-
-**For this test you will need to start the test then run your program. Please ensure your program is not running before starting the unit test. Also please add the following line to the start of your program.**
-
-```cpp
-aserveSleep(10000); //Sleep for 10 seconds while unit test starts.
-```
-
-| # | Input From Aserve | Output expected from project |
-| --- | --- | --- |
-| 1 | none | Open the file and synthesize each note using Aserve oscillator 0 | 
-
-
-# Test 9: File write
-*Tests: <a href="../Tutorials/Part%202/14%20-%20Files%20and%20String%20Manipulation.md">Exercise 14.3</a>*
-
-This unit test will ensure that you know how to write information to a file. This test will send a number of MIDI note messages from aserve. The program will then send a stop message (CC 117) when this happens you will need to write all the MIDI note messages that you received into a text file called notes.txt. Aserve will wait for roughly 5 seconds before attempting to open the file and verify its contents. This test is somewhat similar to unit test 7.
-
-The format of each message should look the following:
-
-note number, velocity value 
-
-For example:
-
-60,127
-
-60,0
-
-**Note that for the test you will need to stop and re-run your project between tests.**
-
-| # | Input From Aserve | Output expected from project |
-| --- | --- | --- |
-| 1 | 30 MIDI messages 15 note on, 15 note off | Each note should be synthesised | 
-  | 2 | CC 117 with a value of 127 | The program should write the values received previously to a text file named "notes.txt" |
-
-
-# Test 10: Sorting, Reversing, Shuffling
-*Tests: <a href="../Tutorials/Part%202/13%20-%20Constants%20and%20Algorithms%20II.md">Exercise 13.4</a>
-
-For this you will need to adapt your solution to unit test 7. Ensure UT7 is passed before attempting this. You will only need one vector for unit test 10, and you only need to store note-on note numbers. **Once the playback for-loop has ended you should set the playButton to be false** (so that the sequence plays once, not loop). Aserve will send various CC commands and these should perform various algorithims on the stored sequence, before playing it back.
-
-| # | Input From Aserve | Output expected from project |
-| --- | --- | --- |
-| 1 | 10 MIDI messages 5 note on, 5 note off | Each note should be synthesised | 
-| 2 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
-| 3 | CC 112 with a value of 127 | All notes sent previously should be sorted into assending order |
-| 4 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
-| 5 | CC 113 with a value of 127 | All notes sent previously should be sorted into descending order |
-| 6 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
-| 7 | CC 116 with a value of 127 | All notes sent previously should be randomly shuffled |
-| 8 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
-
 ## File paths
 
-When your project runs it sends Aserve a message specifying the location of your project and source files. This only needs to happen once. If you close Aserve for any reason, you will need to re run your project once to set the file paths. This all happens automatically and you most likely will never see any error messages because of this. However the unit test will fail if the paths are not set correctly.
+When your project runs it sends Aserve a message specifying the location of your project and source files. This only needs to happen once. If you close Aserve for any reason, you will need to re run your project once to set the file paths. This all happens automatically and you most likely will never see any error messages because of this. However **the unit test mechanism can fail** if the paths are not set correctly.
 
-The ` Invalid unit test ___ path ` message appears when Aserve doesn't know where your iapProj code is. Aserve needs to know where it can find your IAP.h and IAP.cpp files, and your Solutions folder is so that it can correctly store the `_PASSED` or `_FAILED` `.h` and `.cpp` files
+Aserve needs to know where it can find your IAP.h and IAP.cpp files,  so that it can correctly store your `Solutions` folder. An ` Invalid unit test ___ path ` message appears when Aserve doesn't know where your iapProj code is.  
 
 Here's a sure fire way to ensure Aserve knows where everything is:
+
 1. First start Aserve.
-* Then start Xcode, load the iapProj.
-* Do not tell Aserve to start a Unit Test yet.
+ * Then start Xcode, load the iapProj.
+ * Do not tell Aserve to start a Unit Test yet.
 
 2. Edit your Xcode iapProj to make a single call to aserveSleep() in IAP:run. The program does not need to do anything else.
-* Build, run, and wait for this simple program to complete and connect to Aserve.
+ * Build, run, and wait for this simple program to complete and connect to Aserve.
 
 3. Now reset your Xcode iapProj to use your Unit Test code.
  
@@ -220,3 +160,18 @@ You only need to follow these steps when Aserve shows the "invalid path" message
  
 On **very rare** occasions where you need to manually tell Aserve the location of your project and Solutions folder. To do this open settings -> unit test setup (from the dropdown menu). **Speak to a member of staff before changing any of the settings - normally setup should complete automatically as described above.**
 
+# Sorting, Reversing, Shuffling
+*Tests: <a href="../Tutorials/Part%202/12%20-%20Constants%20and%20Algorithms.md">Exercise 12.2</a>
+
+As a challenge, adapt and extend your solution to unit test 7. You will only need one vector, and you only need to store note-on note numbers. Commands from buttons should modify the stored sequence (to sort it, or shuffle it, or reverse it) before playing it back.  **Once the playback for-loop has ended you should set the playButton to be false** (so that the sequence plays once, not loop). 
+
+| # | Input | Output expected from project |
+| --- | --- | --- |
+| 1 | MIDI messages (e.g. 5 note on, 5 note off) | Each note should be synthesised | 
+| 2 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
+| 3 | CC 112 with a value of 127 | All notes sent previously should be sorted into assending order |
+| 4 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
+| 5 | CC 113 with a value of 127 | All notes sent previously should be sorted into descending order |
+| 6 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |
+| 7 | CC 116 with a value of 127 | All notes sent previously should be randomly shuffled |
+| 8 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should not repeat |

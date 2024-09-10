@@ -135,13 +135,84 @@ Make sure the program operates as it did previously. You should now be able to s
 
 Back in practical 3 we used a formula for converting note numbers into frequencies. This formula is commonly known as the "MIDI to Frequency" equation. This is often shortened to "mtof". We'll use this equation throughout this module, so it would make sense to put this code inside a function. 
 
-Download the practical 5.2 files from [here](../../Code%20Exercises/Tutorial%205/Exercise%202) and copy in the code for both the .h and .cpp file.
+Below is some code for your IAP.cpp file that makes Aserve play midi notes:
+```cpp
 
-1. Click the folder link above, download the files.
-2. Replace your iapProj `IAP.cpp` and `IAP.h` with the files you just downloaded.
-3. Read and follow the tasks below
+//
+//  IAP.cpp
+//  IAPProjectDevelopmentTest1
+//
+//  Created by Samuel Hunt on 16/07/2018.
+//  Copyright (c) 2018 SJHDevelopment. All rights reserved.
+//
 
-The prototype for our mtof function looks like this. 
+#include "IAP.h"
+#include <iostream>
+
+// This is our main function code. Nearly Everything goes in here..
+
+void IAP::run ()
+{
+    while (true) {
+        aserveSleep(1000);
+    }
+}
+
+void IAP::callbackNoteReceived (int note, int velocity, int channel)
+{
+    float freq = 440.0 * pow(2.0, (note-69)/12.0);
+    aserveOscillator(0, freq, 1.0, 0);
+}
+```
+
+and here is the IAP.h file:
+
+```cpp
+//
+//  IAP.h
+//  IAPProjectDevelopmentTest1
+//
+//  Created by Samuel Hunt on 16/07/2018.
+//  Copyright (c) 2018 SJHDevelopment. All rights reserved.
+//
+
+#ifndef __IAPProjectDevelopmentTest1__IAP__
+#define __IAPProjectDevelopmentTest1__IAP__
+
+#include "AserveComs.h"
+
+class IAP : public AserveComs  {
+public:
+    
+    //---------------------------------------------------------------------------------
+    // SHARED VARIABLES
+
+    //---------------------------------------------------------------------------------
+    // FUNCTIONS
+
+    void run ();
+    
+    //---------------------------------------------------------------------------------
+    // CALLBACK FUNCTIONS
+
+    void callbackNoteReceived  (int note, int velocity, int channel);
+    //void callbackModWheelMoved (int value);
+    //void callbackPitchbendWheelMoved (int value);
+    //void callbackCCValueChanged (int cc, int value);
+
+    //void callbackMIDIRecived (MIDI message);
+    //void callbackPixelGrid (int x, int y);
+    
+private:
+
+};
+
+#endif /* defined(__IAPProjectDevelopmentTest1__IAP__) */
+
+```
+
+
+Now, we're going to add in an mtof function to handle converting midi notes to frequency for us. The prototype for our mtof function looks like this. 
 
 ```cpp
 float mtof (int note);
@@ -202,7 +273,7 @@ void IAP::callbackNoteReceived  (int note, int velocity, int channel)
 Add 2 or more chord functions, some suggestions for chords are given bellow. You should map these chords to the other 4 drum pads.
 
 | Chord Name | Intervals |
-| --- | --- |
+| --- | --- | --- |
 | Major 7 | +4, +7, +11 |
 | Minor 7 | +3, +7, +10 |
 | Dominant 7 | +4, +7, +10 |
@@ -214,7 +285,73 @@ Add 2 or more chord functions, some suggestions for chords are given bellow. You
 
 ## Debug Exercise.
 
-Open debug exercise 5 and then fix the broken exercise. Make sure you save your solution to codeBook.
+Below is some code that is broken, and it's your job to fix it! Can you figure out what is wrong? Replace your IAP.cpp file with this code and have a go!a
+```cpp
+//
+//  IAP.cpp
+//  IAPProjectDevelopmentTest1
+//
+//  Created by Samuel Hunt on 16/07/2018.
+//  Copyright (c) 2018 SJHDevelopment. All rights reserved.
+//
+
+#include "IAP.h"
+#include <iostream>
+
+// This is our main function code. Nearly Everything goes in here..
+
+void IAP::run ()
+{
+    
+    /*
+     The following program gives intructions to the user depending on the time of day entered.
+     
+     If the time of day is after 600 then the program should print "open windows"
+     If the time of day is after 900 but before 2000 then the program should print "unlock doors"
+     If the time of day is after 1800 then the program should print "close windows"
+     If the time of day is after 2000 then the program should print "lock doors"
+     If the time of day is after 2200 then the program should print "set alarm"
+     
+     You need to fix the following broken program.
+     
+     There are both compile time errors x3
+     and run time errors x2
+     
+     */
+    
+    int timeOfDay;
+
+    std::cout << "Enter time of day: \n";
+    std::cin >> time;
+    
+    std::cout << "Tasks to do are as follows:\n";
+
+    if (timeOfDay < 1800)
+    {
+        std::cout << "close windows\n";
+    }
+    else if (timeOfDay > 600)
+    {
+        std::cout << "open windows\n";
+    }
+    
+    if (timeOfDay > 900 ) {
+        if (timeOfDay < 2000) {
+            std::cout << "unlock doors\n";
+        }
+        if else (timeOfDay > 2000) {
+            std::cout << "lock windows\n";
+        }
+        
+    }
+    
+    if (timeOfDay > 2200) {
+        std::cout "set alarm\n";
+    }
+    
+    
+}
+```
 
 Download: [Tutorial 05 Debug code](../../Code%20Exercises/Tutorial%205/Debug)
 

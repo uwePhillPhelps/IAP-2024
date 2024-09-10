@@ -61,7 +61,7 @@ Should now look like:
 void callbackNoteReceived (int note, int velocity, int channel);
 ```
 
-## Exercise 1 - Adding a callback - time to test!
+## Exercise 2 - Adding a callback - time to test!
 
 Ensure that Aserve is open before running your program in Xcode.
 When you push keys on either the virtual keyboard inside Aserve, or on the physical Impulse keyboard, the console window of the IAPproj program will show information about which key is being pressed.
@@ -188,16 +188,6 @@ void IAP::callbackModWheelMoved (int value)
 
 All being well, you now have a working monophonic synth with a simple filter control assigned to the modwheel. If you can’t hear the muffling effect taking place, try checking the wave type of your `aserveOscillator()`, a square (wave type 1) waveform will allow you to easily hear the effect.
 
-## Debug Exercise
-
-Give a single reason to why the following code will not work.
-
-```cpp
-        int number;
-        std::cin >> number;
-        std::cout << "this number doubled is << number * 2;
-```
-
 ## Challenge Exercise: Better Filter Control
 
 To improve the range of controls for the filter you may use the following formula:
@@ -210,15 +200,6 @@ cutoff = ( pow((value / [insert maximum value here and remove square brackets].0
 
 This will apply a non-linear scale to the filter control to gives us a more natural sounding filter sweep. You may also wish to adjust the constants 19800 and 20 and observe what effect this has.
 
-## Homework
-Add in a pitchbend callback,  use this to control one of the other aserve filters, remember to first print the pitchbend value to help you work out the min and max values for entering into the cutoff formula.  As an additional challenge work out how to get the synthesizer to react to velocity values.
-
-**As an optional challenge try writing the frequency conversion equation from exercise on one line of code**
-*hint* It might look a bit like this:
-
-```cpp
-	float frequency = 440 * pow(.../12.0...);
-```
 ## Conclusion
 Ensure that you understand how to use callback functions before next weeks practical, as they will be used in every practical in future. 
 

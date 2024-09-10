@@ -73,7 +73,8 @@ std::cin >> age;
 In the above code snippet we declare a variable called age of type int and give it an initial value of 0. To get the users input we use the std::cin command, followed by the >> symbol (note the direction of flow, we want to put data from the input into age). We then specify the variable that we want to write into.
 
 
-## Exercise 1: Basic input
+
+## Exercise 1a: Basic input
 Copy the following code into your run function.
 
 ```cpp
@@ -87,6 +88,16 @@ void IAP::run ()
 ```
 
 Note that as we are supply the value of the variable age via the std::cin command, therefore the value we supply on the first line (0) is not needed. However, it is ALWAYS good practice to give a variable a default value, in this case 0.
+
+
+## Exercise 1b: Debugging
+Debugging is a term that used to mean literally removing bugs from large computers to stop them gnawing at the cables! However, nowadays, it means to search for and remove erronous bits of code from our code to make it work or to be more efficient! Given what we have learned so far, can you give two reasons why the following code will the not work?:
+
+```cpp
+std::cout >> "I am broken, please fix me…"
+```
+
+
 
 ## Exercise 2: Frequency Input Into Aserve
 
@@ -131,45 +142,6 @@ void IAP::run ()
 
 This is a **loop** and it enables any code that is between the { and {} to be repeated. The **true** part of the while loop makes this section of code repeat forever. Adjust your solution to the previous exercise by adding in a while loop.
 
-## Variable initialization and introduction to debugging
-
-Save your solution to the previous exercise and add the following code to your IAP::run function.
-
-```cpp
-void IAP::run ()
-{
-    int x = 0;
-    int y = 0;
-    x = 5;
-    y = x;
-    x = 7;
-}
-```
-
-We will open up and use the debugger to see what is happening on each line.
-
-Firstly, click on the line number where int x = 0 has been written, to drop a break point. (see below). Break points appear in blue. (note that your line numbers may be different to those shown in the figure)
-
-
-![Debug 1](../images/debug2_1.png)
-
-When you run your program you should now see that the program pauses where you have placed the break point.
-
-Ensure that the debug window (1) is being shown at the bottom of the Xcode project. We can now use the step over button (2) to manual step through the program as its running. Observe what happens on each step in the debug window (1) on each press of the step over button.
-
-![Debug 2](../images/debug2_2.png)
-
-On step 2 you should see that the variable **y** appears in the debug window and is given the value 0. Remember that before this point (step 1) the variable **y** was not known to the program.
-
-Step 3 should show how **x** now holds the number 5. Step 4 should show how both **x and y** now have the same value. Finally, the last step should should show the the program ends with **y** having a value of 5 and **x** a value of 7.
-
-![Debug 3](../images/debug2_3.png)
-
-
-Although this may seem a trivial example, debugging is a very important part of learning any programming language. We will continue to use the debugger in future practicals to fix broken code and understand what is happening on each line of a program.
-
-To end the debugging process, grab the blue break point marker and drag it away to the right to remove it.
-
 ## Operators
 
 A crucial feature of any programming language is the ability to describe operations on data. For example we can use the + operator to add two numbers together.
@@ -199,7 +171,8 @@ It is important to consider the rules of precedence when creating arithmetic exp
 
 ( 1 + 2 ) * 3 is computed as 3 * 3 = 9
 
-## Challenge Exercise: Simple Average
+
+## Console Challenge Exercise: A Simple Average
 Write a program that reads two numbers from the user and computes their average.
 To compute an average of two values, you can simply do the following (assuming that num1, num2 and result are our variables)
 
@@ -216,14 +189,8 @@ The steps for getting started are as follows:
 5.	Compute the result using the above sum
 6.	Use std::cout to print the result to the user
 
-## Debug exercise
-Give two reasons why the following code will the not work:
 
-```cpp
-std::cout >> "I am broken, please fix me…"
-```
-
-## Homework
+## Aserve Challenge Exercise: Waves, Freq and Oscs!
 Firstly, ensure that you have completed exercise 4.
 
 Extend exercise 4 to use std::cin to read in the users choice of wave type but before switching on oscillators. Secondly switch on a second oscillator that has a frequency value that is twice the value of the original. Finally add a third oscillator that is half the value of the original. You should end up with a program that switches on three oscillators at the same time with a specified base frequency, amplitude and wavetype.
