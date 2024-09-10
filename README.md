@@ -39,11 +39,11 @@ This is a light weight audio client-server application with basic audio generati
 
 # iapProj code
 
-You will write all of your code for tutorials in a project called `iapProj`. This is a pre-configured project which includes all the files needed (including the JUCE library) to control and co-operate with Aserve. See the `iapProj/Builds` folder for MacOS Xcode. 
+Your will write all of your code for tutorials in a project called `iapProj` which includes everything needed to control and co-operate with Aserve. See the <a href="Tutorials/Workshop%201.md">workshop materials</a> for more information on how Aserve and iapProj work together with your code acting as a 'decision maker' for how Aserve responds to key presses etc.
 
 # ...and beyond!
 
-Read the following <a href="Tutorials/Getting%20Started.md">guide</a> to set up your own machine for working off-campus. Instructions for using Microsoft Windows and Visual Studio as well as Apple MacOS and Xcode are provided separately (see also the [windows branch](../../tree/windows) of this repository). Video guides are included.
+Read the following <a href="Tutorials/Working%20on%20your%20own%20machine.md">guide</a> to set up your own machine for working off-campus. Instructions for using Microsoft Windows and Visual Studio as well as Apple MacOS and Xcode are provided separately (see also the [windows branch](../../tree/windows) of this repository). Video guides are included.
 
 Development environments such as Visual Studio and Xcode are fairly heavy in terms of storage requirements **we strongly recommend working with the lab machines, as these are ready to roll and require barely more than logging in to get started** 😊👍
 
