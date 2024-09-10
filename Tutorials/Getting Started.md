@@ -20,7 +20,7 @@ Whilst you are free to move ahead at your own pace if you wish, it is very impor
 
 Download the IAP repository (which contains all of the required materials and applications)
 
-::arrow_right:: [Download master branch zip file](../../../archive/refs/heads/master.zip) ::arrow_left::
+:: ➡️ :: [Download master branch zip file](../../../archive/refs/heads/master.zip) :: ⬅️ ::
 
 ## Opening the IAP Project
 
