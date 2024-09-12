@@ -41,13 +41,13 @@ If you double-click by mistake, close the separate window that will appear, and 
 
 Remember that the iapProj can be changed and edited, each week we will explore a new topic, and **it is best to begin each week's tutorial with a "clean slate"**. For this reason we have prepared starting point template files.
 
-You can reset the code in your iapProj to a "clean" state with the <a href="../../Code%20Exercises/Tutorial%201/">files provided here</a>.
+You can reset the code in your iapProj to a "clean" state with the <a target="_blank" href="../Code%20Exercises/Tutorial%201/">files provided here</a>.
  
 ### TASK: edit your iapProj files
 
 Edit **both** `IAP.cpp` and `IAP.h` in your Xcode editor. You may either:
 
-1. Copy-paste from github into the Xcode editor, replacing the existing code
+1. Copy-paste from github into the Xcode editor, replacing the existing code with the <a target="_blank" href="../Code%20Exercises/Tutorial%201/">clean files provided</a>
 2. Download from github and move the files on disk, replacing the existing code
 
 Please ask staff if you need assistance with either of these steps. We're happy to help!
