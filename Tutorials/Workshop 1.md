@@ -22,8 +22,7 @@ Once you have downloaded the repository, the next step is to open the Aserve app
 
 1. Navigate to the apps folder of the IAP materials that you have downloaded and
 2. Open the `Aserve226` application **by right-clicking and choosing the `OPEN` menu option**
-3. You may see security warnings (shown below)
-   a. please accept the security warnings to open the application
+3. You may see security warnings (shown below) please accept the security warnings
 
 <img src="images/AserveRightclick.png" alt="use the right-click menu to open the aserve226 application" height="300px"></img>
 <img src="images/AserveTrust.png" alt="you may safely accept a warning to open the files downloaded" height="300px"></img>
@@ -78,16 +77,18 @@ Use the panel on the left to select the `iapProj` > `Source` > `IAP.cpp` file fo
 
 <img src="images/xcode.png" alt="xcode editor with IAP.cpp file selected for editing">
 
-Scroll to reveal and read the explanatory text in the `IAP.cpp` file. The most important aspects to note are
+Please read the explanatory text in the `IAP.cpp` file, the most important aspects to note are:
 
 1. The behaviour of the program can be altered by editing
 2. We have prepared simple `#define` definitions for creative exploration
 3. You may break the program, but it's easy to undo with `CMD+Z` to restore a working state.
    * Actually we encourage you to hack and break our code - it's a **great** way to test limits and gain experience!
 
-There are plenty of things you can try. Feel free to explore these in any order.
+### Make a Jazz Noise Here 👍
 
-Remember you can edit without "building" code. To test and run your edited code in the "iapProj" program, use the xcode run button (▶️).
+Let's try some of the ideas below. There are plenty of ways to customise the way Aserve behaves. Feel free to explore these in any order.
+
+You can edit code directly in the Xcode editor. To test and run your edited code in the "iapProj" program, use the xcode run button (▶️).
 
 1. - We have set HIGH_OCTAVE_MOD and LOW_OCTAVE_MOD to be 12 and -12 respectively... could you create chords by changing these?
 2. - We have the option to USE_DRUMS... can you perform a song while the drums are playing?
@@ -98,7 +99,7 @@ Remember you can edit without "building" code. To test and run your edited code 
 7. - Using Chords and Octave Mods, what is the biggest chord you can make? What does this do to the sound of the synthesiser?
 
 ### A challenge?
-If you're thinking 'Amazing! This is great and I want to delve in further!' then here are a few challenges to try. NOTE: you are NOT expected to understand the following tasks. That said, by the end of IAP, we promise these will be trivial to you; delve in at your own peril!!!
+If you're thinking 'Amazing! This is great and I want to delve in further!' then here are a few challenges to try. NOTE: you are NOT expected to complete these challenge tasks, they're there if you want more! That said, by the end of IAP, we promise these will be trivial to you; delve in at your own peril!!!
 * Can you change the chord intervals to make new chords?
 * In many Western tuning systems, it is suggested that the note A is 440Hz as a frequency and we calculate other notes based on this. Can you find this number in the IAP.h file and change it to something else? What happens?
 * In the same area that we use 440, we also divide by 12 to organise our keyboard into octaves, what happens if we change THIS number?
