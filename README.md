@@ -2,9 +2,9 @@
 
 IAP (Introductory Audio Programming) is a programming course designed to teach you the basics of computer programming, using the C++ language to build a range of musical applications.
 
-## Welcome workshop
+## Welcome
 
-Follow the link to access <a href="Tutorials/Workshop%201.md">welcome workshop materials</a>.
+:: ➡️ :: Follow the link to access <a href="Tutorials/Workshop%201.md">welcome workshop materials</a> :: ⬅️ ::
 
 ## Tutorials
 
