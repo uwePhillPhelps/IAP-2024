@@ -14,7 +14,7 @@ Throughout this module you will learn important fundamental programming skills a
 
 All IAP learning materials are provided upfront - organised so that you can work at your own pace - but we will examine topics in classes on a week by week schedule. Each tutorial introduces a new programming concept which will be explored and exercised in the C++ programming language. 
 
-Whilst you are free to move ahead at your own pace if you wish, it is very important that all exercises are completed in the intended order as the material is incremental; that is, each practical builds upon the last. **It is very important to attend support sessions. Poor attendance often results in poor grades. The secret here to passing this module (and achieving a state of music tech bliss) is to follow the schedule week-by-week!**
+Whilst you are free to move ahead at your own pace if you wish, **It is very important to attend support sessions. The secret here to passing this module (and achieving a state of music tech bliss) is to ask questions and engage with the weekly support sessions!**
 
 ## The IAP repository
 
@@ -36,6 +36,21 @@ Once your editor application has started:
 If you double-click by mistake, close the separate window that will appear, and try again. Ensure your Xcode window looks the same as the screenshot below. 
 
 <img src="images/xcode.png" alt="xcode editor with IAP.cpp file selected for editing">
+
+## A clean starting point
+
+Remember that the iapProj can be changed and edited, each week we will explore a new topic, and **it is best to begin each week's tutorial with a "clean slate"**. For this reason we have prepared starting point template files.
+
+You can reset the code in your iapProj to a "clean" state with the <a href="../../Code%20Exercises/Tutorial%201/">files provided here</a>.
+ 
+### TASK: edit your iapProj files
+
+Edit **both** `IAP.cpp` and `IAP.h` in your Xcode editor. You may either:
+
+1. Copy-paste from github into the Xcode editor, replacing the existing code
+2. Download from github and move the files on disk, replacing the existing code
+
+Please ask staff if you need assistance with either of these steps. We're happy to help!
 
 ## The first tutorial exercises
 
