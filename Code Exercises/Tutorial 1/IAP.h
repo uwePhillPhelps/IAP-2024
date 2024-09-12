@@ -9,7 +9,7 @@
 
 //---------------------------------------------------------------------
 // USER CREATED CLASS
-// You might add your own classes, like 'IAPSynth' or 'Person'
+// You might add your own classes, like 'IAPSynth' or 'Person' here
 
 class IAP : public AserveComs  {
 public:
