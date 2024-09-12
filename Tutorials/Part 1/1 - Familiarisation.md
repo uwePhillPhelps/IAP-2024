@@ -9,7 +9,7 @@ This practical is designed to help familiarise you with the development tools th
 
 ## Getting started
 
-If you have not already done so, please follow the [getting started guide](../Getting%20Started.md) before attempting this practical.
+If you have not already done so, please follow the [getting started guide](../Getting%20Started.md) before attempting this practical. The last step of the guide is to set your `IAP.cpp` and `IAP.h` files to a clean starting point template. **Don't skip that step!** 😅
 
 ## What is all this stuff?
 
@@ -25,13 +25,14 @@ If you accidentally double-click, close the separate window that will appear and
 
 The code for this file will be broken down and explained below.
 
+The following assumes you have set your `IAP.cpp` and `IAP.h` files to the <a href="../../Code%20Exercises/Tutorial%201/">clean files provided</a>.
+
 ## Comments
 
-The first line of the program is a comment. You can write anything you like between the /* and */ and it will be ignored when the program is built. Comments may be written anywhere in your program and should be used judiciously to explain what’s going on and to make the code easier to understand and read. You will also see comments written by //. 
+The first line of the program is a comment. You can write anything you like after a pair of slashes `//`. Comments may be written anywhere in your program and should be used judiciously to explain what’s going on and to make the code easier to understand and read. You will also see comments written between `/*` and `*/`. 
 
 -	Use /* */ for writing comments across multiple lines
 -	Use // for writing single line comments.
-
 
 ## Include files
 
@@ -47,7 +48,7 @@ These two lines tell the compiler to include the information contained in the fi
 
 C++ programs often include a lot of code behind the scenes. We keep each part separated into different files to avoid having one massive document!
 
-## Run loop
+## Run function
 
 ```cpp
 void IAP::run () 
@@ -60,14 +61,14 @@ The run function is where our code gets executed. The opening brace of the `run(
 
 **Any code that you add to this program should go after opening brace { and before the  closing brace. }**
 
-## Exercise 1: Hello World 
+## Exercise 1: Hello Moon 
 
 Modify the run function so it matches the following:
 
 ```cpp
 void IAP::run ()
 {
-    std::cout << "Hello World! \n";
+    std::cout << "Hello Moon! \n";
 }
 ```
 
@@ -124,8 +125,7 @@ To see this in action, please see the GIF below:
 
 ![a gif showing the creation of folders on onedrive in the following hierarchy: IAP -> Part 1 Familiarisation. 2 text files are then added to this folder and renamed to "Exercise 1 - Hello World IAP.cpp" and "Exercise 1 - Hello World IAP.h"  ](../images/saving_code.gif)
 
-For future sessions, you will want to start with empty IAP.cpp and IAP.h files in your project. It is important to note this does not mean the ENTIRE FILE should be empty, however it should be the same as when you downloaded the project files for the first time. You can find blank versions of these files in the [getting started guide](../Getting%20Started.md).
-
+For future sessions, you will want to start with clean `IAP.cpp` and `IAP.h` files in your project. It is important to note this does not mean the ENTIRE FILE should be empty, however it is helpful to follow the reset instructions in the [getting started guide](../Getting%20Started.md) to reset your `IAP.cpp` and `IAP.h` files to the <a href="../../Code%20Exercises/Tutorial%201/">clean files provided</a>.
 
 ## Aserve 2.0
 
