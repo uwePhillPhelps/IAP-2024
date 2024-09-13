@@ -75,6 +75,8 @@ std::string keySignature = "C Minor";
 
 void IAP::run ()
 {
+    std::cout << "iapProj is running - have fun!\n";
+  
     if( USE_DESKTOP_SOUNDS )
     {
         aserveLoadSample(0, "~/Desktop/sounds/0.wav");
