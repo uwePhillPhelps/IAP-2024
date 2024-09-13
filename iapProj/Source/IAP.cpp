@@ -120,10 +120,10 @@ void IAP::callbackNoteReceived(int note, int velocity, int channel)
         {
             int transposedNoteRoot = musicTools.transposeNotesToPitchClass(note);
             int transposedNoteFifth = musicTools.transposeNotesToPitchClass(note + 7);
-            
+          
             int transposedNoteThird = musicTools.transposeNotesToPitchClass(note + 3);
             if(musicTools.isMajor){ transposedNoteThird = musicTools.transposeNotesToPitchClass(note + 3); }
-                
+          
             aserveOscillator(0, musicTools.mtof(transposedNoteRoot), 0.5, 1);
             if(USE_LOW_OCTAVE)  aserveOscillator(3, musicTools.mtof(transposedNoteRoot - LOW_OCTAVE_MOD), 0.25, 1);
             if(USE_HIGH_OCTAVE) aserveOscillator(4, musicTools.mtof(transposedNoteRoot + HIGH_OCTAVE_MOD), 0.25, 1);
@@ -167,14 +167,31 @@ void IAP::callbackNoteReceived(int note, int velocity, int channel)
             aserveOscillator(5, 0, 0, 0);
             aserveOscillator(7, 0, 0, 0);
         }
-        
+      
     }
 }
 
 void IAP::callbackCCValueChanged(int cc, int value)
 {
+    // buttons nearest the left (under sliders) are CC 51 and 52
     if(cc == 51){ musicTools.changeKeySignature(); }
     if(cc == 52){ musicTools.toggleChordMode(); }
+  
+    // button nearest the right (under rotary controls) is CC 117
+    if(cc == 117)
+    {
+        if( USE_DESKTOP_SOUNDS )
+        {
+            aserveLoadSample(0, "~/Desktop/sounds/0.wav");
+            aserveLoadSample(1, "~/Desktop/sounds/1.wav");
+            aserveLoadSample(2, "~/Desktop/sounds/2.wav");
+            aserveLoadSample(3, "~/Desktop/sounds/3.wav");
+        }
+        else
+        {
+            aserveLoadDefaultSounds();
+        }
+    }
 }
 
 void IAP::callbackModWheelMoved (int value)
