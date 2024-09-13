@@ -88,10 +88,13 @@ void IAP::run ()
     {
         aserveLoadDefaultSounds();
     }
-    
-    musicTools.currentKeySignature = keySignature;
-    musicTools.getPitchClassesOfKey(musicTools.currentKeySignature);
-    
+  
+    if (USE_CHORDS)
+    {
+        musicTools.currentKeySignature = keySignature;
+        musicTools.getPitchClassesOfKey(musicTools.currentKeySignature);
+    }
+  
     while(true)
     {
         if(USE_DRUMS)
