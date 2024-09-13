@@ -36,12 +36,12 @@
 #define BPM 160
 
 #define USE_DRUMS true
-#define USE_CHORDS true
+#define USE_CHORDS false
 
-#define USE_HIGH_OCTAVE true
+#define USE_HIGH_OCTAVE false
 #define HIGH_OCTAVE_MOD 12
 
-#define USE_LOW_OCTAVE true
+#define USE_LOW_OCTAVE false
 #define LOW_OCTAVE_MOD -12
 
 std::string keySignature = "C Minor";
@@ -179,9 +179,3 @@ void IAP::callbackModWheelMoved (int value)
 {
     aserveLPF( (value+5) * 100 );
 }
-
-
-
-
-
-
