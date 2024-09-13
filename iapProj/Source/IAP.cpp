@@ -77,6 +77,9 @@ void IAP::run ()
 {
     std::cout << "iapProj is running - have fun!\n";
   
+    musicTools.currentKeySignature = keySignature;
+    musicTools.getPitchClassesOfKey(musicTools.currentKeySignature);
+
     if( USE_DESKTOP_SOUNDS )
     {
         aserveLoadSample(0, "~/Desktop/sounds/0.wav");
@@ -87,12 +90,6 @@ void IAP::run ()
     else
     {
         aserveLoadDefaultSounds();
-    }
-  
-    if (USE_CHORDS)
-    {
-        musicTools.currentKeySignature = keySignature;
-        musicTools.getPitchClassesOfKey(musicTools.currentKeySignature);
     }
   
     while(true)
