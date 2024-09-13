@@ -145,11 +145,16 @@ void IAP::callbackNoteReceived(int note, int velocity, int channel)
             aserveOscillator(0, musicTools.mtof(transposedNote), 0.5, 1);
             if(USE_HIGH_OCTAVE) aserveOscillator(3, musicTools.mtof(transposedNote + HIGH_OCTAVE_MOD), 0.25, 1);
             if(USE_LOW_OCTAVE)  aserveOscillator(4, musicTools.mtof(transposedNote - LOW_OCTAVE_MOD), 0.25, 1);
+          
+            aserveOscillator(10, musicTools.mtof(transposedNote+0.2), 0.5, 1);
+            aserveOscillator(11, musicTools.mtof(transposedNote-0.2), 0.5, 1);
         }
     }
     else //Note off message received
     {
         aserveOscillator(0, 0, 0, 1);
+        aserveOscillator(10, 0, 0, 1);
+        aserveOscillator(11, 0, 0, 1);
 
         if(USE_CHORDS)
         {
