@@ -128,7 +128,7 @@ void IAP::callbackNoteReceived (int note, int velocity, int channel)
    //	int freq = 440 * power;
    //	aserveOscillator (0, freq, 0.5, 1); // squarewave oscillator
    //	int power = pow(2, octave); 
-   //	intt octave = (note – 69) / 12;
+   //	int octave = (note – 69) / 12.0;
    //
    //  THE ABOVE LINES ARE DELIBERATELY IN THE WRONG ORDER
 }
@@ -146,8 +146,17 @@ You should notice that no matter what physical key we push, we hear the sound of
 
 The reason that the program does not work correctly is due to using integers. Since note frequencies have decimal parts, we will need to replace some of the *int* datatypes with *float* datatypes.
 
-The last thing we need to do is to swap the 12 on statement 4, to be 12.0. The constant 12 is not the same as 12.0, to ensure we use floating point datatypes everywhere we have to specify 12.0. Try swapping these two values and witness the result.
+```cpp
+	int freq = 440 * pow( 2, (note-69)/12); // INTEGER frequency
+```
 
+Becomes
+
+```cpp
+	float freq = 440 * pow( 2, (note-69)/12.0); // correctly calculate FLOAT frequency
+```
+
+Note that the 'divide by 12' statement must be 'divide by 12.0'. An integer value `12` is not the same as a floating point `12.0`. We must ensure we use floating point datatypes everywhere to precicely calculate all of the fractional values. Try applying all of the required fixes and witness the result.
 
 ## Exercise 4: Filter Control
 
