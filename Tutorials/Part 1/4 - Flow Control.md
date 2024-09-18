@@ -63,11 +63,11 @@ In the examples above, the variable 'temp' was used with the literal '0' and the
 
 ## Exercise 1: Selective monophonic synth 
 
-Reload your solution to exercise 3 from practical 3. Ensure that you use both the `IAP.h` and `IAP.cpp` files. 
+Reload your solution to the final exercise of practical 3. Ensure that you use both the `IAP.h` and `IAP.cpp` files.
 
 **If you have not yet completed practical 3, please ensure you do.**
 
-Modify your monophonic synthesiser *with an if statement* such that an oscillator is played only when the note is above 60.
+Modify your monophonic synthesiser *with an if statement* such that sound is produced only when the note is **above 60**.
 
 ## What else?
 
@@ -92,11 +92,28 @@ If the outcome of the condition is true (i.e. not zero) then code block 1 will b
 
 ## Exercise 2:  Monophonic synth on/off State
 
-Building on exercise 1. Use an if-else statement to switch the oscillator on if the velocity received is above 0, else switch the oscillator off. You will no longer need the if statement from exercise 1.
+Building on exercise 1. Modify the code to to produce sound only when the **velocity is above 0**, else switch the oscillator off. 
 
- The flow chart for this is given below (T means true, F means false):
+The flow chart for this is given below (T means true, F means false):
 
 <img src="../images/if_else.png" height=300/>
+
+Pseudocode (not C++ code, but close) for the solution is:
+
+```
+when callbackNoteReceived
+{
+     if( velocity > 0 )
+     {
+       frequency = 440 * pow( 2, note-69/12 ) // calculate frequency
+       oscillator( 0, frequency, 0.5. 0 )     // use a sinewave
+     }
+     else
+     {
+       oscillator( 0, 0, 0, 0 )               // silence please
+     }
+}
+```
 
 ### If and else if
 
