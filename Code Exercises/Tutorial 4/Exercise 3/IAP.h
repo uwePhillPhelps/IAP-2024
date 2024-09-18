@@ -1,9 +1,5 @@
 //
 //  IAP.h
-//  IAPProjectDevelopmentTest1
-//
-//  Created by Samuel Hunt on 16/07/2018.
-//  Copyright (c) 2018 SJHDevelopment. All rights reserved.
 //
 
 #ifndef __IAPProjectDevelopmentTest1__IAP__
@@ -15,22 +11,25 @@
 class IAP : public AserveComs  {
 public:
     
-    //---------------------------------------------------------------------------------
-    // SHARED VARIABLES
+    //---------------------------------------------------------------------
+    // SHARED VARIABLES (IAP member variables)
+    // You might add your own variables, like 'wave' or 'currentNote'
 
-    //---------------------------------------------------------------------------------
-    // FUNCTIONS
-
+    //---------------------------------------------------------------------
+    // FUNCTIONS (IAP class methods)
+    // You might add your own functions, like 'mtof()' or 'minorChord()'
     void run ();
     
-    //---------------------------------------------------------------------------------
+    //---------------------------------------------------------------------
     // CALLBACK FUNCTIONS
 
     void callbackNoteReceived  (int note, int velocity, int channel);
-//    void callbackModWheelMoved (int value);
+
+    //void callbackModWheelMoved (int value);
     //void callbackPitchbendWheelMoved (int value);
     //void callbackCCValueChanged (int cc, int value);
-    
+    //void callbackMIDIReceived (MIDI message);
+    //void callbackPixelGrid (int x, int y);
 
 private:
 
