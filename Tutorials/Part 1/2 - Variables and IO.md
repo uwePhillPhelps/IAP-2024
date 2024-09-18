@@ -8,7 +8,8 @@ In this practical, we will build on last week’s work by enabling our programs 
 4.	A basic loop for repeating blocks of code.  
 
 ## Getting stated
-Ensure that your IAP::run function is empty, and that any work from last week is appropriately saved.
+
+Ensure that any work from last week is appropriately saved and that you have set your `IAP.cpp` and `IAP.h` files to the <a href="../../Code%20Exercises/Tutorial%201/">clean files provided</a>.
 
 ## Recap
 
