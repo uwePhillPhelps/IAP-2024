@@ -154,7 +154,7 @@ aserveLoadDefaultSounds();
 This call to Aserve will ask it to load up its default sample sounds.
 The steps to complete this exercise are as follows:
 
-1.	Write code that prints the incoming note number, to find out which note numbers each drum pad produces.
+1.	Use the code that prints the incoming note number, to find out which note numbers each drum pad produces.
 2.	Add an if statement to trigger sample playback, you must write the correct note number on the right hand side of the == operator.
 
 ```cpp
