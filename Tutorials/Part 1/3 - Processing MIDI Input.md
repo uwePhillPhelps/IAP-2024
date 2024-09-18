@@ -64,22 +64,16 @@ void callbackNoteReceived (int note, int velocity, int channel);
 ## Exercise 2 - Adding a callback - time to test!
 
 Ensure that Aserve is open before running your program in Xcode.
+
 When you push keys on either the virtual keyboard inside Aserve, or on the physical Impulse keyboard, the console window of the IAPproj program will show information about which key is being pressed.
 
 You may wonder how our program can print values to the console if our main IAP::run() function is sleeping continuously. This is because we now have two threads going on at once. A technical definition of threads is beyond the scope of IAP - but we cover them in more detail in later years.
 
-Part of our program is dealing with incoming MIDI, and the other part (our run loop) is free to do other things. In future we will use IAP::run() to process data and text input, and we will use callback functions such as callbackNoteReceived() for dealing with MIDI input.
+Part of our program is dealing with incoming MIDI, and the other part (our run function and loop) is free to do other things. This is called 'event driven programming' because different parts of the program respond to different events (such as incoming MIDI). This is a very common design for interactive systems in audio, such as hardware or software synthesisers, digital audio workstations, etc.
 
-Let’s look in more detail at the function we have just used. The first part of this is referred to as the return datatype (1), however will we not worry about this until the next practical. (2) refers to ownership (or namespace), again will not worry about this until future practicals, but for now ensure that this is added. (3) Is the name of our callback function, these must be typed exactly as they appear, other callback functions have similar names (i.e. for mod wheel). Finally, (4) is the parameters of our callback function, these are the pieces of data passed to us for processing.
+## Exercise 2: Making a noise
 
-```cpp
-(1) void (2) IAP:: (3) callbackNoteReceived (4) (int note, int velocity, int channel)
-```
-Inside our note received function we simply print the values we receive. Do not worry if you do not fully grasp this concept yet.
-
-## Exercise 2: Printing Values for Octave and Pitch
-
-If we want to play sound in response to pressing notes, we can try to extend our callback to call `aserveOscillator()` as shown below. The eagle-eyed readers will notice that there is **something subtlely wrong**... but it's a good first attempt.
+If we want to make sound in response to pressing keys, we can try to extend our callback to call `aserveOscillator()` as shown below. The eagle-eyed readers will notice that there is **something subtlely wrong**... but it's a good first attempt.
 
 ```cpp
 void IAP::callbackNoteReceived (int note, int velocity, int channel)
@@ -93,7 +87,7 @@ void IAP::callbackNoteReceived (int note, int velocity, int channel)
 
 Remember to add the oscillator code underneath the existing **std::cout** statements.
 
-## Exercise 3: Our first monophonic synthesizer
+## Exercise 3: A frequency calculation
 
 Music, much like many other fields, involves some mathematical principles. One of these is the formula for converting MIDI note numbers into frequencies. 
 
