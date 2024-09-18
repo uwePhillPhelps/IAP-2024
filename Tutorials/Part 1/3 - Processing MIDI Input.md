@@ -79,22 +79,31 @@ Inside our note received function we simply print the values we receive. Do not 
 
 ## Exercise 2: Printing Values for Octave and Pitch
 
-Inside our note callback we want to print two more useful pieces of information. We can use the following formulae to work out pitch and octave from the note number. The below is **not** C++ code... but it's close.
+If we want to play sound in response to pressing notes, we can try to extend our callback to call `aserveOscillator()` as shown below. The eagle-eyed readers will notice that there is **something subtlely wrong**... but it's a good first attempt.
 
 ```cpp
-octave = note / 12
-pitch = note % 12
+void IAP::callbackNoteReceived (int note, int velocity, int channel)
+{
+   	std::cout << "Note Received: " << note;
+	std::cout <<  " Velocity: " << velocity << "\n";
+
+    aserveOscillator( 0, note, 0.5, 0 ); // sine wave
+}
 ```
 
- Your task now is to work out how to convert this to C++ code and print the values out inside our callback function. Add your code underneath the existing **std::cout** statements.
+Remember to add the oscillator code underneath the existing **std::cout** statements.
 
 ## Exercise 3: Our first monophonic synthesizer
 
-Music, much like many other fields, involves some mathematical principles. One of these is the formula for converting MIDI note numbers into frequencies. We manually wrote note frequencies in practical 1 when programming our first sequence, however this is not effective when we do not know what MIDI notes we will receive. We can use the following formula to calculate note frequencies in real time.
+Music, much like many other fields, involves some mathematical principles. One of these is the formula for converting MIDI note numbers into frequencies. 
+
+Our program above is **subtlely wrong** because it does not perform any conversion. Since MIDI note numbers have a range of 0..127 the sounds produced by the program above are very low bass only.
+
+We can calculate note frequencies using the formula shown below:
 
 <img src="../images/Screen%20Shot%202019-02-21%20at%2012.27.15.png" height=60/>
 
-where 'f' is our frequency, and 'n' is our note number. You will need to use the power function to calculate the exponent (the part written above the number '2'). 
+where 'n' is the note number we are interested in, and 'f' is the calculated frequency. You will need to use the power function to calculate the exponent (the part written above the number '2'). 
 
 The pow() function takes two arguments x and y and returns the result of x to the power y. 
 That is, the equation: 
@@ -108,20 +117,38 @@ can be written in C++ as:
 p = pow (x, y);
 ```
 
-Do not worry if you do not understand this fully yet. Complete this exercise by arranging the following code in the correct order. If you are up for the challenge, have a go at implementing this yourself.
+## DEBUG exercise: Our first deliberately broken synth
+
+Complete this debug exercise by **uncommenting and rearranging** the deliberately jumbled code in the section below. 
+
+The idea here is to make your callbackNoteReceived calculate the frequency for aserve's ocscillators to use whenever a note is received.
 
 ```cpp
-1.	int freq = 440 * power;
-2.	int power = pow(2, octave); 
-3.	aserveOscillator (0, freq, 1.0, 1); // squarewave oscillator
-4.	int octave = (note – 69) / 12;
+void IAP::callbackNoteReceived (int note, int velocity, int channel)
+{
+   	std::cout << "Note Received: " << note;
+	std::cout <<  " Velocity: " << velocity << "\n";
+
+   //  THE FOLLOWING LINES ARE DELIBERATELY IN THE WRONG ORDER
+   //
+   //	int freq = 440 * power;
+   //	aserveOscillator (0, freq, 0.5, 1); // squarewave oscillator
+   //	int power = pow(2, octave); 
+   //	intt octave = (note – 69) / 12;
+   //
+   //  THE ABOVE LINES ARE DELIBERATELY IN THE WRONG ORDER
+}
 ```
 
-Run and test your program before moving on. You *may* notice some weird behaviours. Read on below...
+As you uncomment and rearrange the code, your editor **may** show useful code hints and suggestions, but may also show hints and suggestions which jumble the solution even further. If you get stuck or lost, don't be afraid to ask staff for help. 👍
 
-## Error
+When you run and use your program to confirm that it works correctly, you should be able to press a key and hear a sound from the speakers that is much more appropriately tuned...
 
-You should notice that there is an error when we run our program. That is no matter what note we play, we hear the note A, in different octaves.
+...you *may* notice some weird behaviour to the program. Read on below.
+
+## DEBUG Exercise: Just one more thing...
+
+You should notice that no matter what physical key we push, we hear the sound of an A in different octaves.
 
 The reason that the program does not work correctly is due to using integers. Since note frequencies have decimal parts, we will need to replace some of the *int* datatypes with *float* datatypes.
 
