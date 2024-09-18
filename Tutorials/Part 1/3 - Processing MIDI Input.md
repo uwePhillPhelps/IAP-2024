@@ -19,6 +19,8 @@ Programs with event driven input do not need to execute sequentially. That is to
 
 ## Exercise 1: Adding a callback
 
+Ensure that any work from last week is appropriately saved and that you have set your `IAP.cpp` and `IAP.h` files to the <a href="../../Code%20Exercises/Tutorial%201/">clean files provided</a>.
+
 To add a callback to the IAPproj template, we need to make changes in **both** the IAP.h file and in the IAP.cpp file. Let's deal with the IAP.cpp file first.
 
 1. Select the IAP.cpp file for editing
