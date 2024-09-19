@@ -105,6 +105,8 @@ If you're thinking 'Amazing! This is great and I want to delve in further!' then
 * In the same area that we use 440, we also divide by 12 to organise our keyboard into octaves, what happens if we change THIS number?
 * We have deliberately limited the BPM to max out at 1000... you can change this limit if you like! What happens?
 
+* Try cutting slices from the sounds provided in [this UWE OneDrive link here](https://uweacuk-my.sharepoint.com/:f:/g/personal/philip3_phelps_uwe_ac_uk/EkEZ-XX7PwNMr_RuA7siG8MBbKoqiaUR-0cM__XpEPhF4Q)
+
 ## Wrapping up - preparing for next week
 
 Now that we're at the end of this session you should be familiar with: 
