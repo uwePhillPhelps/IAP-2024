@@ -39,17 +39,17 @@ The table bellow outlines each test and the tutorial exercise they are based on.
 
 | Number | Unit Test Name | Exercise Number | Exercise Name |
 | --- | --- | --- | --- |
-| 1 | Midi Note to Frequency | 3.3 | <a href="../Tutorials/Part%201/3%20-%20Processing%20MIDI%20Input.md">Our first monophonic synthesizer</a> |
-| 2 | Drum Sampler | 4.4 |  <a href="../Tutorials/Part%201/4%20-%20Flow%20Control.md">Fixing the drum sampler </a> |
-| 3 | Chord Machine | 5.3 | <a href="../Tutorials/Part%201/5%20-%20Functions.md">Chord Machine </a> |
-| 4 | Monophonic Synth | 6.4 | <a href="../Tutorials/Part%201/6%20-%20Functions%20II.md">noteoff</a> |
-| 5 | Scale Quantisation | 7.4 | <a href="../Tutorials/Part%201/7%20-%20Switch%20and%20Combinational%20Logic.md">Scale Quantisation</a> |
-| 6 | High Frequency Test Loop | 8.3 | <a href="../Tutorials/Part%201/8%20-%20Loops.md"> High frequency test </a> |
-| 7 | Music Sequencer | 11.3 | <a href="../Tutorials/Part%202/11%20-%20Vector.md"> Exercise 3: Building a music sequencer </a> |
+| 1 | Midi Note to Frequency | 3.3 | Our first monophonic synthesizer |
+| 2 | Drum Sampler | 4.4 |  Fixing the drum sampler |
+| 3 | Chord Machine | 5.3 | Chord Machine |
+| 4 | Monophonic Synth | 6.4 | Fixing note-off synthesiser |
+| 5 | Scale Quantisation | 7.4 | Scale Quantisation |
+| 6 | High Frequency Test Loop | 8.3 | High frequency test |
+| 7 | Music Sequencer | 11.3 | Building a music sequencer |
 
 
 # Test 1: Midi Note to Frequency
-*Tests: <a href="../Tutorials/Part%201/3%20-%20Processing%20MIDI%20Input.md">Exercise 3.3</a>*
+*See: <a href="../Tutorials/Part%201/3%20-%20Processing%20MIDI%20Input.md">Tutorial 3</a>*
 
 This unit test tests that you have correctly implemented the equation for converting note numbers into oscillator frequencies. The test will iteratively output MIDI note numbers from 0-127 and expect the oscillator on channel 0 to be updated accordingly. 
 
@@ -58,7 +58,7 @@ This unit test tests that you have correctly implemented the equation for conver
 | 1 | MIDI notes from 0 - 127 | Switch on Oscillator 0 with correct frequency | 
 
 # Test 2: Drum Sampler
-*Tests: <a href="../Tutorials/Part%201/4%20-%20Flow%20Control.md">Exercise 4.4</a>*
+*See: <a href="../Tutorials/Part%201/4%20-%20Flow%20Control.md">Tutorial 4</a>*
 
 This unit test tests that you have correctly implemented exercise 4.4. The test will simulate pushing each of the top 4 drum pads on the impulse keyboard. The sample should only be triggered when the pad is pushed down (velocity greater then 0) but not when the pad is released (velocity value is 0).
 
@@ -75,7 +75,7 @@ This unit test tests that you have correctly implemented exercise 4.4. The test 
 
 
 # Test 3: Chord Machine
-*Tests: <a href="../Tutorials/Part%201/5%20-%20Functions.md">Exercise 5.3</a>*
+*See: <a href="../Tutorials/Part%201/5%20-%20Functions.md">Tutorial 5</a>*
 
 This unit test tests that you have correctly implemented exercise 5.3. This test will simulate pushing each of the top 4 drum pads on the impulse keyboard. The first 3 pads should play major chords, and the 4th pad a minor chord. Each note of the chord must be played on a different channel at the same time. See the below table for the exact expected chords.
 
@@ -88,7 +88,7 @@ This unit test tests that you have correctly implemented exercise 5.3. This test
 
 
 # Test 4: Fix noteoff
-*Tests: <a href="../Tutorials/Part%201/6%20-%20Functions%20II.md">Exercise 6.4</a>*
+*See: <a href="../Tutorials/Part%201/6%20-%20Functions%20II.md">Tutorial 6</a>*
 
 This unit test tests that you have correctly implemented the expected behaviour for note off messages for a monophonic synthesiser. The oscillator should always play note on messages when received but only switch off when the note number of a note off messages matches the frequency of the oscillator that is currently playing.
 
@@ -101,7 +101,7 @@ This unit test tests that you have correctly implemented the expected behaviour 
 
 
 # Test 5: Scale Quantization
-*Tests: <a href="../Tutorials/Part%201/7%20-%20Switch%20and%20Combinational%20Logic.md">Exercise 7.4</a>*
+*See: <a href="../Tutorials/Part%201/7%20-%20Switch%20and%20Combinational%20Logic.md">Tutorial 7</a>*
 
 This unit test tests that you have correctly implemented the major scale quantization function. All notes should be quantised to the C major scale (white keys) this means each time a black key is pressed the corresponding note is transposed by 1 semitone (value increased by 1). The test will iteratively output MIDI note numbers from 0-127 and expect the oscillator on channel 0 to be updated accordingly. 
 
@@ -112,7 +112,7 @@ This unit test tests that you have correctly implemented the major scale quantiz
 
 
 # Test 6: High Frequency Test
-*Tests: <a href="../Tutorials/Part%201/8%20-%20Loops.md">Exercise 8.3</a>*
+*See: <a href="../Tutorials/Part%201/8%20-%20Loops.md">Tutorial 8</a>*
 
 This unit test tests that you have correctly implemented a looping high frequency test. This unit test will require you to adapt one of your solutions from exercise 8. When you run this unit test Aserve will send out a modwheel control change message. When this happens you should start an oscillator frequency sweep. 
 
@@ -127,7 +127,7 @@ Your frequency sweep should start with a frequency value of 20hz and increment t
 
 
 # Test 7: Vector Sequencer
-*Tests: <a href="../Tutorials/Part%202/11%20-%20Vector.md">Exercise 11.3</a>*
+*See: <a href="../Tutorials/Part%202/10%20-%20Arrays%20and%20Vectors.md">Tutorial 10</a>*
 
 This unit test will test all of the features of exercise 11.3. Aserve will send a series of note on and note off messages to your project. Your project should store these note numbers. Aserve will simulate pushing the play button at which point you should playback all the notes sent previously. This should continue to loop until a stop message is recieved (CC 114), at this point playback should stop.
 
@@ -139,7 +139,7 @@ This unit test will test all of the features of exercise 11.3. Aserve will send 
 | 2 | CC 115 with a value of 127 | The program should output the note on messages sent previously in 250ms intervals, this should repeat |
 | 3 | CC 114 with a value of 127 | Playback should stop, oscillator state should be switched off |
 
-## File paths
+## How Aserve manages your solutions folder
 
 When your project runs it sends Aserve a message specifying the location of your project and source files. This only needs to happen once. If you close Aserve for any reason, you will need to re run your project once to set the file paths. This all happens automatically and you most likely will never see any error messages because of this. However **the unit test mechanism can fail** if the paths are not set correctly.
 
@@ -160,8 +160,8 @@ You only need to follow these steps when Aserve shows the "invalid path" message
  
 On **very rare** occasions where you need to manually tell Aserve the location of your project and Solutions folder. To do this open settings -> unit test setup (from the dropdown menu). **Speak to a member of staff before changing any of the settings - normally setup should complete automatically as described above.**
 
-# Sorting, Reversing, Shuffling
-*Tests: <a href="../Tutorials/Part%202/12%20-%20Constants%20and%20Algorithms.md">Exercise 12.2</a>
+# Challenge: Sorting, Reversing, Shuffling
+*See: <a href="../Tutorials/Part%202/12%20-%20Algorithms%20and%20Program%20design.md">Tutorial 12</a>
 
 As a challenge, adapt and extend your solution to unit test 7. You will only need one vector, and you only need to store note-on note numbers. Commands from buttons should modify the stored sequence (to sort it, or shuffle it, or reverse it) before playing it back.  **Once the playback for-loop has ended you should set the playButton to be false** (so that the sequence plays once, not loop). 
 
