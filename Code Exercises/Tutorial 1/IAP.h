@@ -16,15 +16,17 @@ public:
   
     //---------------------------------------------------------------------
     // SHARED VARIABLES (IAP member variables)
-    // You might add your own variables, like 'wave' or 'currentNote'
+    // ...delete this line and add your own variables below
+    // ...perhaps your own variables like 'currentNote' or 'wave'
   
     //---------------------------------------------------------------------
     // FUNCTIONS (IAP class methods)
-    // You might add your own functions, like 'mtof()' or 'minorChord()'
+    // ...delete this line and add your own functions below
+    // ...perhaps your own functions like 'mtof()' or 'minorChord()'
     void run ();
   
     //---------------------------------------------------------------------
-    // CALLBACK FUNCTIONS
+    // CALLBACK FUNCTIONS 
     //void callbackNoteReceived  (int note, int velocity, int channel);
     //void callbackModWheelMoved (int value);
     //void callbackPitchbendWheelMoved (int value);
