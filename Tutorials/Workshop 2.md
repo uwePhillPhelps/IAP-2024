@@ -61,3 +61,25 @@ void IAP::callbackCCValueChanged (int cc, int value)
   }
 }
 ```
+
+## Additive synth
+
+starting point - needs the callback in the .h
+
+```cpp
+void IAP::run ()
+{
+    while(1){ aserveSleep(100); }
+}
+
+void IAP::callbackCCValueChanged (int cc, int value)
+{
+  float amp = value/127.0;
+  float freq = 148.0;
+  if( cc == 41 ){ aserveOscillator(0, 1 * freq, amp, 0); }
+  if( cc == 42 ){ aserveOscillator(1, 2 * freq, amp, 0); }
+  if( cc == 43 ){ aserveOscillator(2, 3 * freq, amp, 0); }
+  if( cc == 44 ){ aserveOscillator(3, 4 * freq, amp, 0); }
+  if( cc == 45 ){ aserveOscillator(4, 5 * freq, amp, 0); }
+}
+
