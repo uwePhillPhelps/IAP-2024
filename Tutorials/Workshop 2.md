@@ -82,27 +82,32 @@ void IAP::callbackCCValueChanged (int cc, int value)
   if( cc == 44 ){ aserveOscillator(3, 4 * freq, amp, 0); }
   if( cc == 45 ){ aserveOscillator(4, 5 * freq, amp, 0); }
 }
+```
 
 ## Resonant lowpass filter with envelope
+
+This starting point generates a randomised filter sweep.
 
 ```cpp
 void IAP::run ()
 {
-    Random r;                   // we'll use this randomisation tool below
+    Random r;                            // we'll use this randomisation tool below
 
-    aserveOscillator(0, 144, 0.8, 2); // make a jazz noise here
+    aserveOscillator(0, 144, 0.8, 2);    // make a jazz noise here
   
     float freq = r.nextInt(5000) + 1000; // pick a random cutoff frequency
     while(1)
-    {
-      freq *= 0.9;              // slide down
+    {      
+      aserveLPF( freq );                 // low pass filter
+      aserveBPF( freq, 10, 2 );          // resonant peak
+
+      freq *= 0.9;                       // slide down 
+      if( freq < 100 )                   // lowest point in the sweep
+      {
+         freq = r.nextInt(5000) + 1000;  // pick a new random frequency
+      }
       
-      aserveBPF( freq, 10, 2 ); // peak
-      aserveLPF( freq );        // muffle
-      
-      if( freq < 100 ) freq = r.nextInt(5000) + 1000; // pick a new random cutoff
-      
-      aserveSleep(100);         // wait a bit
+      aserveSleep(100);                  // wait a bit
     }
 }
 ```
