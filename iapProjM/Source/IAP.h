@@ -150,6 +150,8 @@ public:
     //---------------------------------------------------------------------------------
     // SHARED VARIABLES (IAP member variables)
     IAPMusicTools musicTools;
+    float sampleVolume = 1.0;
+
     
     //---------------------------------------------------------------------------------
     // FUNCTIONS (IAP class methods)
