@@ -1,10 +1,10 @@
 # Workshop 2 – Playful and creative extension
 
-This workshop will extend the materials provided in workshop 1 earlier. The idea is to XYZ . By the end of this session you should be familiar with: 
+This workshop will extend the materials provided in workshop 1 earlier. The idea is to start with the same template synthesiser as last time, but this time, use your new found C++ knowledge to extend it! By the end of this session you should be familiar with: 
 
-1.	FOO.
-2.	BAR.
-3.	BAZ. 
+1.	Extending C++ code to develop sounds and ideas
+2.	Adding new features to existing projects
+3.	Bringing your own creative flair to synthesiser design in C++
 
 ## Getting started
 
@@ -22,6 +22,12 @@ Your first task is probably to scroll down to the drum sequence section which lo
 
 ...and to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm.
 
+### Extending this further...
+
+* What other time signatures could you make?
+* Could the amount of samples be controlled by a MIDI CC message? Think 'for' loops...
+* Maybe you could change samples during playback?
+
 ## Broken beat 
 
 Let's adjust the rhythm to make the timing between beats uneven. Adjust the `aserveSleep()` values so that some are shorter, and some are longer... perhaps
@@ -34,6 +40,12 @@ Let's adjust the rhythm to make the timing between beats uneven. Adjust the `ase
    sample
    sleep( 90 )
 ```
+
+### Extending this further...
+
+* Could the aserveSleep() values still be related using + - * / ?
+* Maybe the aserveSleep() calls could be controlled using a MIDI CC message?
+* Could you use a variable that increases/decreases over time? 
 
 ## Pixel fun
 
@@ -111,3 +123,15 @@ void IAP::run ()
     }
 }
 ```
+#So why are we doing this???
+
+Later on into IAP we will discuss the idea of an 'Extended Project'; a project of your design that incorporates your knowledge of C++ and Aserve to create an awesome synthesiser/sequencer/drum sampler.... the choice is yours!
+
+By thinking about how we can develop, extend and invent new ideas for our work and then successfully implement them, we can hopefully start to imagine what our own synthesiser might look like for the Extended Project. 
+
+This is also a great example of how to manage a larger project. C++ is a fantastic langauge for developing larger, complex projects, and as such, you can use this project as inspiration for:
+
+* Naming and organising variables and functions
+* Implementing and combining different ideas
+* Layout and formatting code
+* Commenting instructions
