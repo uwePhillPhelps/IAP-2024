@@ -15,17 +15,17 @@ The following assumes you have set your `IAP.cpp` and `IAP.h` files to the <a hr
 Your first task is probably to scroll down to the drum sequence section of our IAP::run() function. It should look like this:
 
 ```cpp
-  while(true)
+    while(true)
     {
         if(USE_DRUMS)
         {
-            aservePlaySample(0, 1.0);
+            aservePlaySample(0, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(1, 1.0);
+            aservePlaySample(1, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(2, 1.0);
+            aservePlaySample(2, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(3, 1.0);
+            aservePlaySample(3, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
         }
         else
@@ -35,33 +35,32 @@ Your first task is probably to scroll down to the drum sequence section of our I
     }
 ```
 
-You should try to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm.  Think about _where_ each sample is played and duplicate that section of code. 
+You should try to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm.  Think about _where_ each sample is played and then duplicate that section of code. 
 
 ### Extending this further...
 
 * What other time signatures could you make?
 * Maybe you could change samples during playback?
-* Could the amount of samples be controlled by a MIDI CC message? Take at look at how the sample amplitudes (lines 99, 101, 103, 105) are controlled on line 185:
+* Could the amount of beats be controlled by a MIDI CC message? Take at look at how the `sampleVolume` is already controlled (line 185 in `IAP.cpp`):
   
 ```cpp
     if(cc == 21){ sampleVolume = value / 127.0; }
 ```
-Could we do something similar using a 'for loop' to change the amount of samples? We could have a _shared variable_ in the header (.h) file that helps with this. 
+
+Could we do something similar using a _shared variable_ in the header (.h) file and a 'for loop' to help with this?
 
   ```cpp
-// in your .h file...
-    int amountOfLoops = 1;
+    // in your .h file...
+    int amountOfBeats = 4;
 ```
 
-```cpp
-//in your .cpp file inside the void callbackCCValueChanged callback
+You **could add this code below** to your `callbackCCValueChanged()` function of the `IAP.cpp` file to complete this feature.
 
-    if(cc == 22){ amountOfLoops = value; }
+```cpp
+    if(cc == 22){ amountOfBeats = value; }
 ```
 
 Talk to one of the team if you want to explore this further...
-
-
 
 ## Broken beat 
 
@@ -80,11 +79,11 @@ Let's adjust the rhythm to make the timing between beats uneven. Adjust the `ase
 
 * Could the aserveSleep() values still be related using + - * / ?
 * Could you use a variable that increases/decreases over time?
-* Maybe the aserveSleep() calls could be controlled using a MIDI CC message? This will be a similar principle as the amountOfLoops example above...
+* Maybe the aserveSleep() calls could be controlled using a MIDI CC message? This will be a similar principle as the `amountOfBeats` example above...
 
 ## Pixel fun
 
-Why not make use of the Aserve Pixel Grid display area... add this to your cc callback 
+Why not make use of the Aserve Pixel Grid display area... **Try replacing your `callbackCCValueChanged()` with the starting point code below**
 
 ```cpp
 void IAP::callbackCCValueChanged (int cc, int value)
@@ -111,7 +110,7 @@ void IAP::callbackCCValueChanged (int cc, int value)
 
 ## Additive synth
 
-starting point - needs the callback in the .h
+Here's a simple-ish additive synthesiser starting point. **Replace your `run()` function and your `callbackCCValueChanged()` with the starting point below**
 
 ```cpp
 void IAP::run ()
@@ -121,11 +120,12 @@ void IAP::run ()
 
 void IAP::callbackCCValueChanged (int cc, int value)
 {
-  float amp = value/127.0;
-  float freq = 148.0;
-  if( cc == 41 ){ aserveOscillator(0, 1 * freq, amp, 0); }
-  if( cc == 42 ){ aserveOscillator(1, 2 * freq, amp, 0); }
-  if( cc == 43 ){ aserveOscillator(2, 3 * freq, amp, 0); }
+  float amp = value/127.0;                                  // calculate the amplitude of the partial
+  float freq = 148.0;                                       // 148Hz is a good value for the Aserve waveform display
+
+  if( cc == 41 ){ aserveOscillator(0, 1 * freq, amp, 0); }  // fundamental frequency
+  if( cc == 42 ){ aserveOscillator(1, 2 * freq, amp, 0); }  // second harmonic
+  if( cc == 43 ){ aserveOscillator(2, 3 * freq, amp, 0); }  // ... etc
   if( cc == 44 ){ aserveOscillator(3, 4 * freq, amp, 0); }
   if( cc == 45 ){ aserveOscillator(4, 5 * freq, amp, 0); }
 }
@@ -133,7 +133,7 @@ void IAP::callbackCCValueChanged (int cc, int value)
 
 ## Resonant lowpass filter with envelope
 
-This starting point generates a randomised filter sweep.
+This starting point generates a randomised filter sweep. **Replace your `run()` function with the starting point below**
 
 ```cpp
 void IAP::run ()
