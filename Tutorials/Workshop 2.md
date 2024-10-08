@@ -41,13 +41,15 @@ You should try to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm
 
 * What other time signatures could you make?
 * Maybe you could change samples during playback?
-* Could the amount of beats be controlled by a MIDI CC message? Take at look at how the `sampleVolume` is already controlled (line 185 in `IAP.cpp`):
-  
+* Could the amount of beats be controlled by a MIDI CC message?
+
+Take at look at how the `sampleVolume` is already controlled (line 185 in `IAP.cpp`):
+
 ```cpp
     if(cc == 21){ sampleVolume = value / 127.0; }
 ```
 
-Could we do something similar using a _shared variable_ in the header (.h) file and a 'for loop' to help with this?
+Could we do something similar using a _shared variable_ in the header (.h) file and a 'for loop' to help with this feature?
 
   ```cpp
     // in your .h file...
