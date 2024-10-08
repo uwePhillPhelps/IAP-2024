@@ -75,7 +75,7 @@ std::string keySignature = "C Minor";
 
 void IAP::run ()
 {
-    std::cout << "iapProj is running - have fun!\n";
+        std::cout << "iapProj is running - have fun!\n";
   
     musicTools.currentKeySignature = keySignature;
     musicTools.getPitchClassesOfKey(musicTools.currentKeySignature);
@@ -96,13 +96,13 @@ void IAP::run ()
     {
         if(USE_DRUMS)
         {
-            aservePlaySample(0, 1.0);
+            aservePlaySample(0, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(1, 1.0);
+            aservePlaySample(1, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(2, 1.0);
+            aservePlaySample(2, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(3, 1.0);
+            aservePlaySample(3, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
         }
         else
@@ -181,6 +181,9 @@ void IAP::callbackCCValueChanged(int cc, int value)
     // buttons nearest the left (under sliders) are CC 51 and 52
     if(cc == 51){ musicTools.changeKeySignature(); }
     if(cc == 52){ musicTools.toggleChordMode(); }
+    
+    if(cc == 21){ sampleVolume = value / 127.0; }
+
   
     // button nearest the right (under rotary controls) is CC 117
     if(cc == 117)
@@ -203,3 +206,4 @@ void IAP::callbackModWheelMoved (int value)
 {
     aserveLPF( (value+5) * 100 );
 }
+    
