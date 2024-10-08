@@ -15,9 +15,24 @@ The following assumes you have set your `IAP.cpp` and `IAP.h` files to the <a hr
 Your first task is probably to scroll down to the drum sequence section which looks like this
 
 ```cpp
-  thing
-  stuff
-  blah
+  while(true)
+    {
+        if(USE_DRUMS)
+        {
+            aservePlaySample(0, 1.0);
+            aserveSleep( BPMToMS(BPM) );
+            aservePlaySample(1, 1.0);
+            aserveSleep( BPMToMS(BPM) );
+            aservePlaySample(2, 1.0);
+            aserveSleep( BPMToMS(BPM) );
+            aservePlaySample(3, 1.0);
+            aserveSleep( BPMToMS(BPM) );
+        }
+        else
+        {
+            aserveSleep( BPMToMS(BPM*4) );
+        }
+    }
 ```
 
 ...and to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm.
@@ -123,7 +138,7 @@ void IAP::run ()
     }
 }
 ```
-#So why are we doing this???
+# So why are we doing this???
 
 Later on into IAP we will discuss the idea of an 'Extended Project'; a project of your design that incorporates your knowledge of C++ and Aserve to create an awesome synthesiser/sequencer/drum sampler.... the choice is yours!
 
