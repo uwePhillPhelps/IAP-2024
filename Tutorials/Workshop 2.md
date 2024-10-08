@@ -35,7 +35,7 @@ Your first task is probably to scroll down to the drum sequence section of our I
     }
 ```
 
-...and to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm.
+You should try to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm. ** Think about _where_ each sample is played and duplicate that section of code. 
 
 ### Extending this further...
 
