@@ -1,5 +1,5 @@
 //  IAP.h
-//  Last updated 2024 aug 20
+//  Last updated 2024 oct 08
 
 #ifndef __IAPProjectDevelopmentTest1__IAP__
 #define __IAPProjectDevelopmentTest1__IAP__
@@ -7,7 +7,7 @@
 #include "AserveComs.h"
 #include <unordered_map>
 
-//---------------------------------------------------------------------------------
+//--------------------------------------------------------------------------
 // USER CREATED CLASS
 
 class IAPMusicTools : public AserveComs
@@ -147,19 +147,23 @@ public:
 class IAP : public AserveComs  {
 public:
     
-    //---------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     // SHARED VARIABLES (IAP member variables)
     IAPMusicTools musicTools;
-    
-    //---------------------------------------------------------------------------------
+    float sampleVolume = 1.0;
+
+    //-----------------------------------------------------------------------
     // FUNCTIONS (IAP class methods)
     void run ();
-    //---------------------------------------------------------------------------------
+  
+    //-----------------------------------------------------------------------
     // CALLBACK FUNCTIONS
     void callbackNoteReceived  (int note, int velocity, int channel);
     void callbackModWheelMoved (int value);
-    //void callbackPitchbendWheelMoved (int value);
     void callbackCCValueChanged (int cc, int value);
+    //void callbackPitchbendWheelMoved (int value);
+    //void callbackMIDIReceived (MIDI message);
+    //void callbackPixelGrid (int x, int y);
     
     float BPMToMS(int bpm)
     {
@@ -169,9 +173,6 @@ public:
         return 60000.0 / bpm;
         
     }
-    
-    //void callbackMIDIReceived (MIDI message);
-    //void callbackPixelGrid (int x, int y);
   
 private:
     

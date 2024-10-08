@@ -1,5 +1,5 @@
 //  IAP.cpp
-//  Last updated 2024 aug 20
+//  Last updated 2024 oct 08
 
 #include "IAP.h"
 #include <iostream>
@@ -75,7 +75,7 @@ std::string keySignature = "C Minor";
 
 void IAP::run ()
 {
-        std::cout << "iapProj is running - have fun!\n";
+    std::cout << "iapProj is running - have fun!\n";
   
     musicTools.currentKeySignature = keySignature;
     musicTools.getPitchClassesOfKey(musicTools.currentKeySignature);
@@ -181,9 +181,9 @@ void IAP::callbackCCValueChanged(int cc, int value)
     // buttons nearest the left (under sliders) are CC 51 and 52
     if(cc == 51){ musicTools.changeKeySignature(); }
     if(cc == 52){ musicTools.toggleChordMode(); }
-    
+  
+    // the rotary control in the uppermost left is CC 21
     if(cc == 21){ sampleVolume = value / 127.0; }
-
   
     // button nearest the right (under rotary controls) is CC 117
     if(cc == 117)

@@ -1,5 +1,5 @@
 //  IAP.cpp
-//  Last updated 2024 aug 20
+//  Last updated 2024 oct 08
 
 #include "IAP.h"
 #include <iostream>
@@ -96,13 +96,13 @@ void IAP::run ()
     {
         if(USE_DRUMS)
         {
-            aservePlaySample(0, 1.0);
+            aservePlaySample(0, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(1, 1.0);
+            aservePlaySample(1, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(2, 1.0);
+            aservePlaySample(2, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(3, 1.0);
+            aservePlaySample(3, sampleVolume);
             aserveSleep( BPMToMS(BPM) );
         }
         else
@@ -182,6 +182,9 @@ void IAP::callbackCCValueChanged(int cc, int value)
     if(cc == 51){ musicTools.changeKeySignature(); }
     if(cc == 52){ musicTools.toggleChordMode(); }
   
+    // the rotary control in the uppermost left is CC 21
+    if(cc == 21){ sampleVolume = value / 127.0; }
+  
     // button nearest the right (under rotary controls) is CC 117
     if(cc == 117)
     {
@@ -203,3 +206,4 @@ void IAP::callbackModWheelMoved (int value)
 {
     aserveLPF( (value+5) * 100 );
 }
+    
