@@ -12,7 +12,7 @@ The following assumes you have set your `IAP.cpp` and `IAP.h` files to the <a hr
 
 ## Drums please!
 
-Your first task is probably to scroll down to the drum sequence section which looks like this
+Your first task is probably to scroll down to the drum sequence section of our IAP::run() function. It should look like this:
 
 ```cpp
   while(true)
