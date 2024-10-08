@@ -40,8 +40,28 @@ You should try to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm
 ### Extending this further...
 
 * What other time signatures could you make?
-* Could the amount of samples be controlled by a MIDI CC message? Think 'for' loops...
 * Maybe you could change samples during playback?
+* Could the amount of samples be controlled by a MIDI CC message? Take at look at how the sample amplitudes (lines 99, 101, 103, 105) are controlled on line 185:
+  
+```cpp
+    if(cc == 21){ sampleVolume = value / 127.0; }
+```
+Could we do something similar using a 'for loop' to change the amount of samples? We could have a _shared variable_ in the header (.h) file that helps with this. 
+
+  ```cpp
+// in your .h file...
+    int amountOfLoops = 1;
+```
+
+```cpp
+//in your .cpp file inside the void callbackCCValueChanged callback
+
+    if(cc == 22){ amountOfLoops = value; }
+```
+
+Talk to one of the team if you want to explore this further...
+
+
 
 ## Broken beat 
 
@@ -59,8 +79,8 @@ Let's adjust the rhythm to make the timing between beats uneven. Adjust the `ase
 ### Extending this further...
 
 * Could the aserveSleep() values still be related using + - * / ?
-* Maybe the aserveSleep() calls could be controlled using a MIDI CC message?
-* Could you use a variable that increases/decreases over time? 
+* Could you use a variable that increases/decreases over time?
+* Maybe the aserveSleep() calls could be controlled using a MIDI CC message? This will be a similar principle as the amountOfLoops example above...
 
 ## Pixel fun
 
