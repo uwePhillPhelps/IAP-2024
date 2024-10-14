@@ -83,12 +83,12 @@ Could we do something similar using a _shared variable_ in the header (.h) file 
     int sleepControl = 0;
 ```
 
-You **could add this code below** to your `callbackCCValueChanged()` function of the `IAP.cpp` file to complete this feature.
+You **could add this code** to your `callbackCCValueChanged()` function of the `IAP.cpp` file to complete this feature.
 
 ```cpp
     if(cc == 22){ sleepControl = value * 10; }
 ```
-and of course you'll need to apply this in the drum sequence playback section of the code
+and of course you'll need to apply this in the drum sequence playback section of the code of your `IAP.cpp`
 
 ```cpp
    sample
