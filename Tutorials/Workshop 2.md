@@ -19,14 +19,14 @@ Your first task is probably to scroll down to the drum sequence section of our I
     {
         if(USE_DRUMS)
         {
-            aservePlaySample(0, sampleVolume);
-            aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(1, sampleVolume);
-            aserveSleep( BPMToMS(BPM) );
-            aservePlaySample(2, sampleVolume);
-            aserveSleep( BPMToMS(BPM) );
+            aservePlaySample(0, sampleVolume);    // here we play a sequence of drum samples
+            aserveSleep( BPMToMS(BPM) );          // with delays between each trigger
+            aservePlaySample(1, sampleVolume);    
+            aserveSleep( BPMToMS(BPM) );          // ...etc...
+            aservePlaySample(2, sampleVolume);     
+            aserveSleep( BPMToMS(BPM) );          // ...etc...
             aservePlaySample(3, sampleVolume);
-            aserveSleep( BPMToMS(BPM) );
+            aserveSleep( BPMToMS(BPM) );          // the sequence repeats forever
         }
         else
         {
@@ -40,29 +40,7 @@ You should try to **add an extra beat** to turn our 4/4 rhythm into a 5/4 rhythm
 ### Extending this further...
 
 * What other time signatures could you make?
-* Maybe you could change samples during playback?
-* Could the amount of beats be controlled by a MIDI CC message?
-
-Take at look at how the `sampleVolume` is already controlled (line 185 in `IAP.cpp`):
-
-```cpp
-    if(cc == 21){ sampleVolume = value / 127.0; }
-```
-
-Could we do something similar using a _shared variable_ in the header (.h) file and a 'for loop' to help with this feature?
-
-  ```cpp
-    // in your .h file...
-    int amountOfBeats = 4;
-```
-
-You **could add this code below** to your `callbackCCValueChanged()` function of the `IAP.cpp` file to complete this feature.
-
-```cpp
-    if(cc == 22){ amountOfBeats = value; }
-```
-
-Talk to one of the team if you want to explore this further...
+* Maybe you could load new samples with `aserveLoadSample()` during playback?
 
 ## Broken beat 
 
@@ -79,9 +57,49 @@ Let's adjust the rhythm to make the timing between beats uneven. Adjust the `ase
 
 ### Extending this further...
 
-* Could the aserveSleep() values still be related using + - * / ?
-* Could you use a variable that increases/decreases over time?
-* Maybe the aserveSleep() calls could be controlled using a MIDI CC message? This will be a similar principle as the `amountOfBeats` example above...
+* Could the aserveSleep() values still be related using a variable and + - * / ?
+
+```cpp
+   sample
+   sleep( 100 )
+   sample
+   sleep( 100 + 10 )
+   sample
+   sleep( 100 - 10 )
+```   
+  
+* Could the value be controlled by a MIDI CC message?
+
+Take at look at how the `sampleVolume` is already controlled (line 185 in `IAP.cpp`):
+
+```cpp
+    if(cc == 21){ sampleVolume = value / 127.0; }
+```
+
+Could we do something similar using a _shared variable_ in the header (.h) file and a 'for loop' to help with this feature?
+
+  ```cpp
+    // in your .h file...
+    int sleepControl = 0;
+```
+
+You **could add this code below** to your `callbackCCValueChanged()` function of the `IAP.cpp` file to complete this feature.
+
+```cpp
+    if(cc == 22){ sleepControl = value * 10; }
+```
+and of course you'll need to apply this in the drum sequence playback section of the code
+
+```cpp
+   sample
+   sleep( 100 )
+   sample
+   sleep( 100 + sleepControl )
+   sample
+   sleep( 100 - sleepControl )
+``` 
+
+Talk to one of the team if you want to explore this further...
 
 ## Pixel fun
 
