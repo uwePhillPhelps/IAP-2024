@@ -110,11 +110,11 @@ void IAP::callbackCCValueChanged (int cc, int value)
 {
   if( cc == 51 )               // left most button under the sliders
   {
-    aserveSetPixelGrid(0, 15);
-    aserveSetPixelGrid(1, 9);
-    aserveSetPixelGrid(2, 9);
-    aserveSetPixelGrid(3, 9);
-    aserveSetPixelGrid(4, 15);
+    aserveSetPixelGrid(0, 15); // 15 in binary is 1111
+    aserveSetPixelGrid(1, 9);  // 9  in binary is 1001
+    aserveSetPixelGrid(2, 9);  //                 1001
+    aserveSetPixelGrid(3, 9);  //                 1001
+    aserveSetPixelGrid(4, 15); //                 1111
    }
   
   if( cc == 52)                // button under the second slider from the left
@@ -134,7 +134,7 @@ When this is working, the two leftmost buttons under the sliders will display di
 
 ### Extending this further...
 
-* Edit one of the images to understand how the values relate to the pixels
+* Edit one of the images to understand how the values relate to the image displayed
 * Add further code to detect more button pushes and display more images
 
 ## Additive synth
@@ -162,7 +162,7 @@ void IAP::callbackCCValueChanged (int cc, int value)
 
 When this is working, the leftmost sliders adjust the amplitude of *harmonic partials*. This allows you to create precise and exact waveform shapes and timbres. See the screencapture below.
 
-<img src="images/AservePixelGrid.gif" alt="pressing buttons under the sliders will update the pixel grid"></img>
+<img src="images/AserveAdditive.gif" alt="pressing buttons under the sliders will update the pixel grid"></img>
 
 ### Extending this further
 
