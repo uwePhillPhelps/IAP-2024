@@ -128,6 +128,15 @@ void IAP::callbackCCValueChanged (int cc, int value)
 }
 ```
 
+When this is working, the two leftmost buttons under the sliders will display different (pixel) images - see screencapture below.
+
+<img src="images/AservePixelGrid.gif" alt="pressing buttons under the sliders will update the pixel grid"></img>
+
+### Extending this further...
+
+* Edit one of the images to understand how the values relate to the pixels
+* Add further code to detect more button pushes and display more images
+
 ## Additive synth
 
 Here's a simple-ish additive synthesiser starting point. **Replace your `run()` function and your `callbackCCValueChanged()` with the starting point below**
@@ -150,6 +159,14 @@ void IAP::callbackCCValueChanged (int cc, int value)
   if( cc == 45 ){ aserveOscillator(4, 5 * freq, amp, 0); }
 }
 ```
+
+When this is working, the leftmost sliders adjust the amplitude of *harmonic partials*. This allows you to create precise and exact waveform shapes and timbres. See the screencapture below.
+
+<img src="images/AservePixelGrid.gif" alt="pressing buttons under the sliders will update the pixel grid"></img>
+
+### Extending this further
+
+Advanced aditive synthesisers often use envelopes to adjust the timbre semi-automatically during performance. See the exercise below for an example of how to create a simple envelope.
 
 ## Resonant lowpass filter with envelope
 
