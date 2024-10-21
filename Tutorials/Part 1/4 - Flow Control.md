@@ -98,19 +98,19 @@ The flow chart for this is given below (T means true, F means false):
 
 <img src="../images/if_else.png" height=300/>
 
-Pseudocode (not C++ code, but close) for the solution is:
+**PSEUDOCODE** for the solution is:
 
 ```
-when callbackNoteReceived
+void IAP::callbackNoteReceived(int note, int velocity, int channel)
 {
-     if( velocity > 0 )
+     if the velocity from the keyboard note is greater than 0
      {
-       frequency = 440 * pow( 2, note-69/12 ) // calculate frequency
-       oscillator( 0, frequency, 0.5. 0 )     // use a sinewave
+       frequency = 440 * pow( 2, note-69/12 ); // calculate frequency
+       send the frequency variable to a call to aserveOscillator     // use a sinewave
      }
      else
      {
-       oscillator( 0, 0, 0, 0 )               // silence please
+       set aserveOscillator to (0,0,0,0) // silence please
      }
 }
 ```
