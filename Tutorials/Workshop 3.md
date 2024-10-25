@@ -64,10 +64,10 @@ The supplied xcode project and code will build this missing component, allowing 
 ## Exercise 2 - Install
 
 On MacOS there are several places one may install an audio plugin component. The most convenient is within your personal 'home' Library folder.
-We need to drag the `IAPAudioPlug.component` into this 'home' library folder, so we'll need a secondary Finder window.
+We need to install the `IAPAudioPlug.component` into this 'home' library folder.
 
-1. Select the Finder and use the menu `Finder > New Finder Window`
-2. Then use the menu `Go > Go to Folder...`
+1. Use the finder to locate the `IAPaudioplug.component` in the `Build/Debug/` folder
+2. Use use the finder menu `Go > Go to Folder...`
 3. Search for `~/Library/Audio/Plug-ins/Components`
 
    a. Be **absolutely sure to use the `~` symbol in the search path here**
@@ -79,13 +79,17 @@ We need to drag the `IAPAudioPlug.component` into this 'home' library folder, so
 
    d. Ask a member of staff if you need assistance
 
-4. Drag the `IAPAudioPlug.component` into your personal 'home' Library of audio plugin components.
+4. Copy the `IAPAudioPlug.component` into your personal 'home' Library of audio plugin components.
 
-! animation showing installation of IAPaudioplug.component ] ( ./images/IAPaudioplug_install.gif
+![animation showing installation of IAPaudioplug.component](./images/IAPaudioplug_install.gif)
+
+You may use `copy` and `paste` menus or drag files using the mouse. However you choose to do it, make sure that the .component is installed into your personal 'home' plugin library.
+
+Later, we'll replace old builds of our plugin as we improve and change it. The end of the animation shows how to confirm you want to replace an old plugin .component with a new version.
 
 ## Exercise 3 - Creative exploration!
 
-1. Open the downloaded Logic DAW project
+1. Open the downloaded Logic DAW project now
 2. Voila! Plugin do the things. Happy fun time exploration yay! 😊
 
 If everything has gone well, you will see the IAPaudioplug controls, similar to the screenshot below.
@@ -93,21 +97,17 @@ If everything has gone well, you will see the IAPaudioplug controls, similar to 
 ![a screenshot of the IAPaudioplug controls](./images/IAPaudioplug.png)
 
 ---
-Congratulations on building your first audio plugin 😀🎉
-
-Now begins the fun!
+Congratulations on getting this far. 😀🎉 The boring parts are over, now begins the fun!
 
 # Creative prompts
 
 * Play with the plugin to hear what it does to the sound
-
-   * You can use the recording provided...
    
-   * ...or you can record your own sound in logic to experiment
+   * ...you can use the provided audio, or record your own sound with the microphone
 
-   * ...or you can use "monitor" mode to hear the effect on the live microphone input
+   * ...you can use "monitor" mode to hear the effect on the live microphone input **use headphones to avoid feedback**
 
-   * Change the plugin `choiceParam` to different settings. All choices do something, and there is room for *creative opportunities* and improvements that you can decide 😊
+* Set the plugin `choiceParam` to different settings to hear the results. All choices do something different, and there is room for *creative opportunities* and improvements that you can decide below 😊
 
 * Read our helpful code comments provided in the xcode project
 
@@ -117,7 +117,12 @@ Now begins the fun!
 
 ## Gain
 
-In this mode, the starting point code adjusts gain (turns up and down the volume) according to the slider `floatParam` value.
+In this mode, the starting point code adjusts gain (turns up and down the volume). 
+
+Similarly to the animation below, the `floatParam` value is used as a multiplier. The amplitude of the music 
+ is scaled (right the way down to silence if the value is zero) according to the `floatParam` slider value.
+
+![animation showing adjustable gain of a sine wave](./images/IAPaudioplug_gain.gif)
 
 Here are some questions to ask yourself:
 
