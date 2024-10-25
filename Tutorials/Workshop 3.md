@@ -2,35 +2,38 @@
 
 This workshop will introduce audio effect processing. The idea is to record your own audio and/or use the supplied recordings for creative and playful exploration. By the end of this session you should be familiar with: 
 
-1.	Recording audio and audio effect plugins
-2.	Basic digital signal processing concepts
+1.	Using audio effect plugins as 'insert' effects
+2.	Basic signal processing code for gain, panning, distortion, and more
 3.	Building and installing audio plugin .components
 
-The workshop text assumes you understand what Digital Audio Workstations (DAW) is and how audio effect plugins can be inserted onto audio tracks/channels within a DAW. Step by step instructions are provided, so even if you're not totally familiar with these concepts yet, you can still have fun in this workshop. 😊
+Some familiarity with Digital Audio Workstations (DAWs) and how audio effects are used on audio tracks/channels is assumed. Step by step instructions are provided, so even if you're not totally familiar with these concepts yet, you can still have fun in this workshop. 😊
 
-## Putting the puzzle pieces together
+## Overview of the puzzle pieces
 
 ![a diagram of required tools and elements](./images/IAPaudioplug_elements.png) 
 
-You'll use Xcode to build the `IAPAudioPlug` audio plugin `.component`...
+*(reading the diagram from left to right)*
 
-...then use Logic to record your own audio onto the timeline and...
+Today we'll use Xcode to build the `IAPAudioPlug` audio plugin `.component`...
 
-...load the `IAPaudioplug` as an insert effect in Logic to...
+...then we'll use **Logic** as a DAW to...
 
-...process your sound with an audio plugin that **you have designed**... 👍
+...load the `IAPaudioplug` as an insert effect to...
+
+...process your audio with an audio effect that **you have designed**... 👍
 
 ## Getting started
 
-We provide several files as a starting point. These files are compatible with the MacOS software on lab machines. All files are zipped for convenient distribution.
+We provide several files as a starting point compatible with the MacOS software on lab machines. All files are zipped for convenient distribution.
 
-1. Download `IAPAudioPlug.zip` from designated download location 
-2. Download `Logic_DAW_Project.zip` from designated download location
-   a. Put this file aside for later. We will need it soon, but not initially
+1. Download the `IAPAudioPlug.zip` xcode project 
+2. Download the `Logic_DAW_Project.zip`
+
+   a. Put this aside for later. We will need it soon, but not initially
 
 ## A word of warning
 
-If you accidentally open the supplied Logic DAW project before the plugin is ready, an error message will warn you of a required, missing component.
+If you accidentally open the supplied Logic DAW project before your plugin is ready, an error message will warn you of a required, missing component.
 
 ![a screenshot of the error message](./images/IAPaudioplug_missing.png) 
 
@@ -47,17 +50,17 @@ The supplied xcode project and code will build this missing component, allowing 
 1. Unzip the `IAPAudioPlug.zip`, navigate to the folder `builds > MacOSX` and load the `IAPAudioPlug.xcodeproj` with xcode.
 2. Use the menu to select `Product > Scheme > IAPAudioPlug-ALL`
 
-   a. For the curious: different schemes configure different types of plugin technology.
+   * icons for various schemes are different. The desired scheme icon is a dart-board target icon like this 🎯
 
-   b. The icons for various schemes are different. The desired scheme has a dart-board target icon similar to this 🎯
+   * for the curious: different schemes configure different types of plugin technology
    
-3. Build the project – await success  <img height="80px" src="./images/xcodeBuildSucceded.png" alt="xcode build success"></img>
+3. Build the project – await success 🤞
 
 4. Examine the files within the `IAPAudioPlug > builds > MacOSX` folder
 
-   a. there should now be a `build -> Debug` folder containing a variety of files
+   * there should now be a `build -> Debug` folder containing a variety of files
 
-   b. focus your attention on the `IAPAudioPlug.component` - confirm the date modified matches todays date and time
+   * focus your attention on the `IAPAudioPlug.component` - confirm the date modified matches **todays date and time**
 
 ! a screenshot showing the xcode build folder ] ( ./images/IAPaudioplug_buildfolder.png
 
@@ -66,9 +69,8 @@ The supplied xcode project and code will build this missing component, allowing 
 On MacOS there are several places one may install an audio plugin component. The most convenient is within your personal 'home' Library folder.
 We need to install the `IAPAudioPlug.component` into this 'home' library folder.
 
-1. Use the finder to locate the `IAPaudioplug.component` in the `Build/Debug/` folder
-2. Use use the finder menu `Go > Go to Folder...`
-3. Search for `~/Library/Audio/Plug-ins/Components`
+1. Use use the finder menu `Go > Go to Folder...`
+2. Search for `~/Library/Audio/Plug-ins/Components`
 
    a. Be **absolutely sure to use the `~` symbol in the search path here**
 
@@ -79,39 +81,44 @@ We need to install the `IAPAudioPlug.component` into this 'home' library folder.
 
    d. Ask a member of staff if you need assistance
 
-4. Copy the `IAPAudioPlug.component` into your personal 'home' Library of audio plugin components.
+4. Copy your `IAPAudioPlug.component` into your personal 'home' Library of audio plugin components.
+
+## The above steps as an animation
+
+The animation below shows the required steps.
 
 ![animation showing installation of IAPaudioplug.component](./images/IAPaudioplug_install.gif)
 
-You may use `copy` and `paste` menus or drag files using the mouse. However you choose to do it, make sure that the .component is installed into your personal 'home' plugin library.
+However you choose to do it, install the .component to *your personal 'home' plugin library*. You may use `copy` and `paste` menus or drag files using the mouse. 
 
-Later, we'll replace old builds of our plugin as we improve and change it. The end of the animation shows how to confirm you want to replace an old plugin .component with a new version.
+Later, as we improve and change our plugin, we'll replace old builds with new versions. The end of the animation shows how to confirm you want to replace an old plugin .component with a new version.
 
 ## Exercise 3 - Creative exploration!
 
-1. Open the downloaded Logic DAW project now
-2. Voila! Plugin do the things. Happy fun time exploration yay! 😊
+Congratulations on getting this far. 😀🎉 **The boring parts are over, now begins the fun!**
+
+1. Open the downloaded Logic DAW project
+2. Voila! Plugin do the things. Happy fun time exploration yay! 🎶😊🎵
 
 If everything has gone well, you will see the IAPaudioplug controls, similar to the screenshot below.
 
 ![a screenshot of the IAPaudioplug controls](./images/IAPaudioplug.png)
 
----
-Congratulations on getting this far. 😀🎉 The boring parts are over, now begins the fun!
-
 # Creative prompts
 
-* Play with the plugin to hear what it does to the sound
+* Play with the plugin to hear what it does to the sound on the timeline
    
-   * ...you can use the provided audio, or record your own sound with the microphone
+   * ...use the provided audio timeline, or delete this and record your own sound with the microphone
 
-   * ...you can use "monitor" mode to hear the effect on the live microphone input **use headphones to avoid feedback**
+   * ...use 'monitoring' mode to hear the effect applied to live microphone input **if you choose this, use headphones to avoid feedback**
 
-* Set the plugin `choiceParam` to different settings to hear the results. All choices do something different, and there is room for *creative opportunities* and improvements that you can decide below 😊
+* Set the plugin `choiceParam` to different settings to hear the results. 
+
+   * All choices do something different, and there is room for *creative opportunities* and improvements that you can decide below 😊
 
 * Read our helpful code comments provided in the xcode project
 
-   * Focus your attention on the `PluginProcessor.cpp` and `PluginProcessor.h` files
+   * Focus your attention on the comments in the `PluginProcessor.cpp` file
 
 * Read the guidance in the sections below for further inspiration and guidance
 
