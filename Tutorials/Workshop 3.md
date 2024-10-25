@@ -2,23 +2,33 @@
 
 This workshop will introduce audio effect processing. The idea is to record your own audio and/or use the supplied recordings for creative and playful exploration. By the end of this session you should be familiar with: 
 
-1.	FOO.
-2.	BAR.
-3.	BAZ. 
+1.	Recording audio and audio effect plugins
+2.	Basic digital signal processing concepts
+3.	Building and installing audio plugin .components
+
+The workshop text assumes you understand what Digital Audio Workstations (DAW) is and how audio effect plugins can be inserted onto audio tracks/channels within a DAW. Step by step instructions are provided, so even if you're not totally familiar with these concepts yet, you can still have fun in this workshop. 😊
 
 ## Getting started
 
-We provide several files as a starting point. These files are compatible with the MacOS version in the lab machines. All files are zipped for convenient distribution.
+We provide several files as a starting point. These files are compatible with the MacOS software on lab machines. All files are zipped for convenient distribution.
 
 1. Download `IAPAudioPlug.zip` from designated download location 
 2. Download `Logic_DAW_Project.zip` from designated download location
-   a. Put this file aside for later. We will need it soon, but not initially.
+   a. Put this file aside for later. We will need it soon, but not initially
+
+## Pieces of the puzzle
+
+![a diagram of required tools and elements](./images/IAPaudioplug_elements.png) 
+
+You'll use Xcode to build the `IAPAudioPlug` xcode project into an audio plugin `.component`...
+...then use the Logic DAW to record some of your own audio and...
+...process the sound with audio plugin code that **you design**...
 
 ## A word of warning
 
-If you accidentally open the supplied Logic DAW project, an error message you of a required, missing component.
+If you accidentally open the supplied Logic DAW project before the plugin is ready, an error message will warn you of a required, missing component.
 
-! a screenshot of the error message !
+![a screenshot of the error message](./images/IAPaudioplug_missing.png) 
 
 The supplied xcode project and code will build this missing component, allowing you to experiment with simple audio effect processing such as:
 * Gain
@@ -40,6 +50,8 @@ The supplied xcode project and code will build this missing component, allowing 
    a. there should now be a `build -> Debug` folder containing a variety of files
    b. focus your attention on the `IAPAudioPlug.component` - confirm the date modified matches todays date and time
 
+! a screenshot showing the xcode build folder ] ( ./images/IAPaudioplug_buildfolder.png
+
 ## Exercise 2 - Install
 
 On MacOS there are several places one may install an audio plugin component. The most convenient is within your personal 'home' Library folder.
@@ -55,14 +67,16 @@ We need to drag the `IAPAudioPlug.component` into this 'home' library folder, so
 
 4. Drag the `IAPAudioPlug.component` into your personal 'home' Library of audio plugin components.
 
+! animation showing installation of IAPaudioplug.component ] ( ./images/IAPaudioplug_install.gif
+
 ## Exercise 3 - Creative exploration!
 
 1. Open the downloaded Logic DAW project
-2. Voila! Plugin do the things. Happy fun time exploration yay!
+2. Voila! Plugin do the things. Happy fun time exploration yay! 😊
 
 If everything has gone well, you will see the IAPaudioplug controls, similar to the screenshot below.
 
-![a screenshot of the IAPaudioplug controls](./images/IAPaudioplug.png) 
+! a screenshot of the IAPaudioplug controls ] ( ./images/IAPaudioplug.png
 
 Creative prompts
 * Go and change the code, rebuild, delete the old component and add in the new component, and relaunch the Logic Project 
