@@ -38,7 +38,7 @@ return-type functionName ( argument-type(s) );
 
 The return-type indicates the data type of the value which is returned from the function. The argument-types indicate the data types of any values that are passed into the function. The function-name should indicate what the function does. 
 
-The readNumber() function provided at the beginning of this practical does not take any arguments, but returns an int. C++ functions can take many arguments but only return one. If a function does not return anything, the return type must be written as **void**.
+C++ functions can take many arguments but only return one. If a function does not return anything, the return type must be written as **void**.
 
 Examples of a few function declarations are shown bellow.
 
@@ -64,13 +64,17 @@ void setNote (int note, int velocity, int wave);
 
 Function definitions should appear in IAP.cpp separated from the IAP::run() function. The first line of the definition should match the declaration, but have the IAP:: statement placed between the return type and function name. This must be followed by opening and closing braces that enclose the statements that are to be executed when the function is called. Note that the semi-colon included in the declaration is not used in the definition.
 
-## First function
+## A deliberately messy example
 
-To illustrate when we might to make a function, open up an empty project and copy the following code to the IAP::run() in IAP.cpp. 
+To illustrate when we might to make a function, let's use some deliberately messy code.
+The code below is a perfect example of duplicated repetitive code that can be made more compact with the use of functions.
+**If you find yourself writing code like this, you should re-write it as a function.** We'll show you how to re-write it below.
 
 Study the code below.
 
 ```cpp
+void IAP::run()
+{
   int numberA = 0;
   std::cout << "Please enter a number : \n";
   std::cin >> numberA;
@@ -86,26 +90,28 @@ Study the code below.
   int numberD = 0;
   std::cout << "Please enter a number : \n";
   std::cin >> numberD;
-```
 
+  std::cout << "Your numbers multiplied together: ";
+  std::cout << numberA * numberB * numberC * numberD << "\n";
+}
+```
 Study the code above. 
 
 There are four groups of statements, each marginally different. If we look closely, the only difference is the variable we are storing our data in. 
+We read four numbers (`numberA`, `numberB`, `numberC`, and `numberD`) in sequence then perform a simple multiplication to display the result..
 
-If you find yourself writing code like this, you should re-write it as a function. 
-Doing so avoids duplication of code, and makes your code easier to change.
+**If you find yourself writing code like this, you should re-write it as a function.** We'll show you how to re-write it below.
 
+## Exercise 1: Avoiding repetition with functions
 
-## Exercise 1: Our first function
-
-1. Select the IAP.h file for editing
+1. Select the `IAP.h` file for editing
 2. Place the following line of code under the FUNCTIONS label, after the run function that is already there.
 
 ```cpp
 int readNumber ();
 ```
 
-1. Select the IAP.cpp file for editing
+1. Select the `IAP.cpp` file for editing
 2. Add the following code under our main run() function.
 
 ```cpp
@@ -118,18 +124,23 @@ int IAP::readNumber ()
 }
 ```
 
-*The IAP:: part of our statements, means that this function is owned by the IAP class. Classes will be explored in later practical’s.*
-
-We can now remove our previous code in the 'run()' function and replace it with our new 'readNumber()' function instead. The overall code is now simple and readable:
+Our new `readNumber()` function code allows us to write compact, simple, and readable code in our main `IAP::run()` function. 
+**All of the duplication that we had befrore can now be simplified into just four lines.**
 
 ```cpp
-int numberA = readNumber();
-int numberB = readNumber();
-int numberC = readNumber();
-int numberD = readNumber();
+void IAP::run()
+{
+    int numberA = readNumber();
+    int numberB = readNumber();
+    int numberC = readNumber();
+    int numberD = readNumber();
+
+    std::cout << "Your numbers multiplied together: ";
+    std::cout << numberA * numberB * numberC * numberD << "\n";
+}
 ```
 
-Make sure the program operates as it did previously. You should now be able to see how much more clear the code is to read. We will now look at functions in more detail.
+You should now be able to see how much more clear the code is to read. We will now look at functions in more detail.
 
 ## Exercise 2: mtof function
 
@@ -140,17 +151,12 @@ Below is some code for your IAP.cpp file that makes Aserve play midi notes:
 
 //
 //  IAP.cpp
-//  IAPProjectDevelopmentTest1
-//
-//  Created by Samuel Hunt on 16/07/2018.
-//  Copyright (c) 2018 SJHDevelopment. All rights reserved.
 //
 
 #include "IAP.h"
 #include <iostream>
 
-// This is our main function code. Nearly Everything goes in here..
-
+/* This is our main function code. Nearly Everything goes in here. */
 void IAP::run ()
 {
     while (true) {
@@ -158,6 +164,7 @@ void IAP::run ()
     }
 }
 
+/* This callback function handles events from the keybed and drumpads */
 void IAP::callbackNoteReceived (int note, int velocity, int channel)
 {
     float freq = 440.0 * pow(2.0, (note-69)/12.0);
@@ -170,10 +177,6 @@ and here is the IAP.h file:
 ```cpp
 //
 //  IAP.h
-//  IAPProjectDevelopmentTest1
-//
-//  Created by Samuel Hunt on 16/07/2018.
-//  Copyright (c) 2018 SJHDevelopment. All rights reserved.
 //
 
 #ifndef __IAPProjectDevelopmentTest1__IAP__
@@ -181,28 +184,33 @@ and here is the IAP.h file:
 
 #include "AserveComs.h"
 
+//---------------------------------------------------------------------
+// USER CREATED CLASS
+// You might add your own classes, like 'IAPSynth' or 'Person' here
+
 class IAP : public AserveComs  {
 public:
-    
-    //---------------------------------------------------------------------------------
-    // SHARED VARIABLES
-
-    //---------------------------------------------------------------------------------
-    // FUNCTIONS
-
+  
+    //---------------------------------------------------------------------
+    // SHARED VARIABLES (IAP member variables)
+    // ...delete this line and add your own variables below
+    // ...perhaps your own variables like 'currentNote' or 'wave'
+  
+    //---------------------------------------------------------------------
+    // FUNCTIONS (IAP class methods)
+    // ...delete this line and add your own functions below
+    // ...perhaps your own functions like 'mtof()' or 'minorChord()'
     void run ();
-    
-    //---------------------------------------------------------------------------------
-    // CALLBACK FUNCTIONS
-
+  
+    //---------------------------------------------------------------------
+    // CALLBACK FUNCTIONS 
     void callbackNoteReceived  (int note, int velocity, int channel);
     //void callbackModWheelMoved (int value);
     //void callbackPitchbendWheelMoved (int value);
     //void callbackCCValueChanged (int cc, int value);
-
-    //void callbackMIDIRecived (MIDI message);
+    //void callbackMIDIReceived (MIDI message);
     //void callbackPixelGrid (int x, int y);
-    
+
 private:
 
 };
