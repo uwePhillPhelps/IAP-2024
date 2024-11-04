@@ -285,7 +285,7 @@ void IAP::callbackNoteReceived  (int note, int velocity, int channel)
 Add 2 or more chord functions, some suggestions for chords are given bellow. You should map these chords to the other 4 drum pads.
 
 | Chord Name | Intervals |
-| --- | --- | --- |
+| --- | --- |
 | Major 7 | +4, +7, +11 |
 | Minor 7 | +3, +7, +10 |
 | Dominant 7 | +4, +7, +10 |
