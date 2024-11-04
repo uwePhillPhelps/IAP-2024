@@ -75,6 +75,7 @@ Study the code below.
 ```cpp
 void IAP::run()
 {
+  // read four numbers
   int numberA = 0;
   std::cout << "Please enter a number : \n";
   std::cin >> numberA;
@@ -91,6 +92,7 @@ void IAP::run()
   std::cout << "Please enter a number : \n";
   std::cin >> numberD;
 
+  // perform a calculation and display the result
   std::cout << "Your numbers multiplied together: ";
   std::cout << numberA * numberB * numberC * numberD << "\n";
 }
@@ -120,7 +122,7 @@ int IAP::readNumber ()
     int number = 0;
     std::cout << "Please enter a number : \n";
     std::cin >> number;
-	   return number;
+    return number;
 }
 ```
 
@@ -130,11 +132,13 @@ Our new `readNumber()` function code allows us to write compact, simple, and rea
 ```cpp
 void IAP::run()
 {
+    // read four numbers
     int numberA = readNumber();
     int numberB = readNumber();
     int numberC = readNumber();
     int numberD = readNumber();
 
+    // perform a calculation and display the result
     std::cout << "Your numbers multiplied together: ";
     std::cout << numberA * numberB * numberC * numberD << "\n";
 }
