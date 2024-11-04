@@ -139,8 +139,9 @@ void IAP::run()
     int numberD = readNumber();
 
     // perform a calculation and display the result
-    std::cout << "Your numbers multiplied together: ";
-    std::cout << numberA * numberB * numberC * numberD << "\n";
+    int result = numberA * numberB * numberC * numberD;
+    std::cout << "Your numbers multiplied together are ";
+    std::cout << result << "\n";
 }
 ```
 
