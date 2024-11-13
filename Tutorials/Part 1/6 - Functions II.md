@@ -19,7 +19,7 @@ Remember to uncomment the relevant callback declarations in your `IAP.h` file.
 ```cpp
 void IAP::callbackModWheelMoved (int value)
 {
-  int wave = 0;         // we'll use this for oscillators when notes are pressed
+  int wave = 0;         // used for our oscillator when notes are pressed
   if( value >= 64 )     // if the modwheel is over halfway
   {
     wave = 1;           // we want to hear a square wave
@@ -34,11 +34,11 @@ void IAP::callbackModWheelMoved (int value)
 ```cpp
 void IAP::callbackNoteReceived  (int note, int velocity, int channel)
 {
-  int wave = 0;         // we'll use this for oscillators when notes are pressed
+  int wave = 0;         // used for our oscillator when notes are pressed
   if( velocity > 0 )    // if the note received is 'pressed'
   {
     float frequency = mtof(note);              // calculate frequency
-    aserveOscillator(0, frequency, 1.0, wave); // and start the oscillator playing
+    aserveOscillator(0, frequency, 1.0, wave); // and start the oscillator playing with desired wave
   }
   else
   {
