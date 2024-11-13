@@ -74,7 +74,11 @@ Shared variables are also useful for solving another common design problem: *sto
 
 For a number of weeks, you will have encountered a bug with the monophonic synths that we have been building. 
 
-If you press and hold a note with your left hand and then a second note with your right hand, you will notice that the oscillator is stolen by the most recently pressed note - the right hand note. If you now release the left hand note the oscillator should stop, even though the right hand note is still pressed. 
+If you press and hold a note with your left hand and then a second note with your right hand, you will notice that the oscillator is stolen by the most recently pressed note - the right hand note. 
+
+The problem is that the oscillator stops no matter which note we release. Our code does not 'care' which note is released. We need to fix that.
+
+The ideal behaviour is that the oscillator should stop *only when releasing the 'previously pushed' note*.
 
 In case it helps to visualise, below is an annotated screenshot of a pianoroll showing the events descried in the paragraph above.
 
@@ -82,21 +86,37 @@ In case it helps to visualise, below is an annotated screenshot of a pianoroll s
 
 ## Exercise 4: Fix noteoff - A possible solution
 
-The cause of the problem is that our iapProj program cannot (yet) 'remember' that a particular note is being held when a note is released.  The iapProj simply switches off the oscillator if the note velocity is zero.
+We can fix this by *adding a shared variable* to remember the 'previous note' number pressed.
 
-The desired behaviour is that the oscillator should be switched off only if the velocity is zero and the released note number matches the 'remembered' note being played by the oscillator. 
+We will need to *modify our if statement* inside the callbackNoteReceived(), such that the shared variable is checked to see if it matches the note number of the ‘note off’ message. 
 
-We can fix this by *adding a shared variable* to remember the last note number pressed between calls to callbackNoteReceived(). 
+## Some starting point code
 
-We will then *modify our if statement* inside the callbackNoteReceived(), such that the shared variable is checked to see if it matches the note number of the ‘note off’ message. 
+Look at the starting point code below. Remember that the problem is that our code stops the oscillator no matter which note we release. The ideal behaviour is that the oscillator should stop *only when releasing the 'previously pushed' note*.
 
-## Exercise 4: Fix noteoff - Let's fix it!
+```cpp
+void  IAP::callbackNoteReceived  (int note, int velocity, int channel)
+{
+    if( velocity > 0 )                              // did we 'press' a note?
+    {
+        float frequency = mtof(note);               // calculate frequency
+        aserveOscillator(0, frequency, 1.0, wave);  // start oscillator sound
+        currentNote = note;                         // remember this note number (in a shared variable)
+    }
+    else if( velocity == 0 )                        // did we 'release' a note?
+    {
+        aserveOscillator(0, 0, 0, 0);
+    }
+}
+```
 
-The steps to complete this are as follows: 
+This code is deliberately incomplete. Can you work out what we need to do to complete the puzzle and fix the note off problem?
 
-1. Create a new shared variable in the IAP.h file called currentNote and set its initial value to be -1
-2. When the oscillator is switched on (inside the callback) set currentNote to be equal to the note number.
-3. When Note Off messages are received you can compare the Note Off number with the currentNote variable and if it matches you switch the oscillator off and set the currentNote back to -1, otherwise you leave it on. You will need to modify the *else* statement in the callback to use an *else if*
+### Some hints
+
+A shared variable in the `IAP.h` file can store the 'previous note' number.
+Store the pressed note number in the shared variable when we switch on the oscillator.
+Don't just compare the velocity to find 'released' notes... Also compare the 'previous note' shared variable before you switch the oscillator off.
 
 ## Debug Exercise
 
