@@ -4,17 +4,17 @@
 Functions continue to be one of the most important concepts in building larger programs. In this practical we will focus on how to share variables between functions effectively. On successful completion of this practical you will have an understanding of:
 
 1.	Variable scope
-2.	Memory addresses
-3.	When to declare shared variables in the IAP.h
+2.	When and how to declare shared variables
+3.	Using shared variables to store 'previous values'
 
 ## Getting started
 
-Last practical we looked at functions and we will continue to do so in this practical also. **Please ensure you have completed last weeks practical, before attempting this one**. Reload your solution to practical 5 exercise 2: mtof function.
+This week we'll explore sharing values between blocks of code in the IAP project, including several common design problems and solutions that relate to this.
 
 ## Exercise 1: Variable scope
 
-Add the following code to your IAP.cpp (bellow the run function) replacing the existing note callback function. 
-Remember to uncomment the modwheel callback function from IAP.h 
+Add the following code to your `IAP.cpp` (below the run function) replacing the existing note callback function. 
+Remember to uncomment the relevant callback declarations in your `IAP.h` file.
 
 ```cpp
 void IAP::callbackModWheelMoved (int value)
@@ -70,7 +70,7 @@ Re-run your program and check to ensure that the modwheel behaviour working corr
 
 ## Exercise 4: Fix noteoff - We have a problem!
 
-Shared variables are also useful for solving another common design problem: *remembering previous values between calls to the same function*.
+Shared variables are also useful for solving another common design problem: *storing and comparing 'previous values' of variables*.
 
 For a number of weeks, you will have encountered a bug with the monophonic synths that we have been building. 
 
@@ -141,26 +141,6 @@ float IAP::tuneNote (float frequency)
 }
 ```
 *The most common programming mistakes, are: missing brackets, missing braces, spelling errors, and semi-colons where they are not supposed to be.*
-
-## Challenge Exercise: Pitch bend
-
-Using what we have learned so far, you need to add the following code to your project. Think carefully about where each piece of code needs to be placed. You are adding a pitch bend feature that will control the frequency of the oscillator in real time.
-
-```cpp
-1.	void callbackPitchbendWheelMoved (int value);
-2.	void IAP::callbackPitchbendWheelMoved (int value)
-	{
-    
-	}
-3.	int pbValue = 0;
-4.	pbValue = (value / 16383.0) * 24 - 12.0;
-5.	float frequency = mtof(note + pbValue);
-6.	float frequency = mtof(currentNote + pbValue);
-7.	aserveOscillator(0, frequency, 1.0, wave);
-
-```
-
-You may notice that the pitchbend function steps, rather than glides smoothly, have a look through the code and see at what point integer arithmetic is being used, when floating point arithmetic should be used instead.
 
 ## Important Material
 
