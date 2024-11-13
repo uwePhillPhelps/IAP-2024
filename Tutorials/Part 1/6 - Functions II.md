@@ -19,61 +19,42 @@ Remember to uncomment the modwheel callback function from IAP.h
 ```cpp
 void IAP::callbackModWheelMoved (int value)
 {
-  int wave = 0;
-  if (value >= 64)
-	{
-    wave = 1;
+  int wave = 0;         // we'll use this for oscillators when notes are pressed
+  if( value >= 64 )     // if the modwheel is over halfway
+  {
+    wave = 1;           // we want to hear a square wave
   }
-	else 
-	{
-	  wave = 0;
-	}
+  else 
+  {
+    wave = 0;           // otherwise we want to hear a sine wave
+  }
 }
 ```
 
 ```cpp
 void IAP::callbackNoteReceived  (int note, int velocity, int channel)
 {
-  int wave = 0;
-  if (velocity > 0)
-	{
-    float frequency = mtof(note);
-    aserveOscillator(0, frequency, 1.0, wave);
+  int wave = 0;         // we'll use this for oscillators when notes are pressed
+  if( velocity > 0 )    // if the note received is 'pressed'
+  {
+    float frequency = mtof(note);              // calculate frequency
+    aserveOscillator(0, frequency, 1.0, wave); // and start the oscillator playing
   }
   else
-	{
-    aserveOscillator(0, 0, 0, 0);
+  {
+    aserveOscillator(0, 0, 0, 0);              // otherwise, silence please!
   }
 }
 ```
 
-This code is designed to switch between a sine wave and a square wave depending on the position of the modwheel. Run the program and check that this works correctly.
+This code is designed to switch between a sine wave and a square wave depending on the position of the modwheel. Run the program and check that this works correctly. You should notice a deliberate flaw.
 
 # Error
-If we look closely at our program, we can see that we have two variables with the same name but they not do refer to same variable. To verify this, we will print the address of the variable. The address of a variable is it’s location in the computers RAM (random access memory). Every variable in C++ has a unique memory address.
+If we look closely at our program, we can see that two variables share the same name `wave` but they are not truly shared. This is a very common design problem. We wanted you to experience both the problem, and the simple solution below. 😊
 
-# Exercise 2: Printing address
+## Exercise 2: Shared variables
 
-The & symbol is used to get the address of a variable. 
-To print the address of the modwheel callback `wave` variable:
-
-```cpp
-  std::cout << "Address of CallbackModWheelMoved wave : " << &wave << "\n";
-```
-
-Modify your code to print the address of BOTH of the variables named `wave`, in both `callbackModWheelMoved` and `callbackNoteReceived`.
-
-Your output should look something like this (remember to move both the modwheel and press a key!).
-The address of each wave variable is different.
-
-```cpp
-Address of callbackModWheelMoved wave: 0x1013d2990
-Address of callbackNoteReceived wave: 0x1013d2988
-```
-
-## Exercise 3: Shared variables
-
-To fix this issue we need to add a **shared variable** to our IAP.h file. Shared variables are variables that can be accessed between functions. Shared variables also retain their value while the program continues to run. Navigate to our IAP.h file and add a variable called **wave** of type **int**. Place this under the SHARED VARIABLES label.
+To fix this issue we simply need to add a **shared variable** to our IAP.h file. Shared variables are variables that can be accessed between functions. Shared variables also retain their value while the program continues to run. Navigate to our IAP.h file and add a variable called **wave** of type **int**. Place this under the SHARED VARIABLES label.
 
 ```cpp
 //-------------------------------------------------------------
@@ -81,20 +62,15 @@ To fix this issue we need to add a **shared variable** to our IAP.h file. Shared
 int wave = 0;
 ```
 
-Go back to our IAP.cpp file and delete both occasions where our old int wave variables were being declared. Re-run our program and check to ensure that our wave type switch code is working correctly. 
-
-If you still have the address printing code, you should also see the same address value is now printed.
-
-```cpp
-Address of callbackModWheelMoved wave: 0x1013d2988
-Address of callbackNoteReceived wave: 0x1013d2988
-```
+Go back to our `IAP.cpp` file and **delete both of the duplicated, non-shared `int wave` variables**. Your functions should now use the single, shared, variable named `wave` declared in the appropriate way.
 
 <img src="../images/sharedvariables.png" height=300/>
 
-Note that in both functions they are now sharing the same single variable wave.
+Re-run your program and check to ensure that the modwheel behaviour working correctly. When the modwheel is over half-way, notes should play back with a square-wave, otherwise we hear a sine tone.
 
 ## Exercise 4: Fix noteoff - We have a problem!
+
+Shared variables are also useful for solving another common design problem: *remembering previous values between calls to the same function*.
 
 For a number of weeks, you will have encountered a bug with the monophonic synths that we have been building. 
 
