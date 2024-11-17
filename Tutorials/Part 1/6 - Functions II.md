@@ -86,12 +86,7 @@ In case it helps to visualise, below is an annotated screenshot of a pianoroll s
 
 ## Exercise 4: Fix noteoff - A possible solution
 
-![](../images/NoteOff.mp4)
-
-<video width="320" height="240" controls>
-  <source src="../images/NoteOff.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/86bcae66-1eb7-4413-a762-ad40643c210a
 
 We can fix this by *adding a shared variable* to remember the 'previous note' number pressed.
 
