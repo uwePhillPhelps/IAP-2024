@@ -86,6 +86,13 @@ In case it helps to visualise, below is an annotated screenshot of a pianoroll s
 
 ## Exercise 4: Fix noteoff - A possible solution
 
+![](../images/NoteOff.mp4)
+
+<video width="320" height="240" controls>
+  <source src="../images/NoteOff.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 We can fix this by *adding a shared variable* to remember the 'previous note' number pressed.
 
 We will need to *modify our if statement* inside the callbackNoteReceived(), such that the shared variable is checked to see if it matches the note number of the ‘note off’ message. 
