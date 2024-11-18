@@ -13,15 +13,25 @@ This week we'll explore sharing values between blocks of code in the IAP project
 
 ## Exercise 1: Variable scope
 
-Add the following code to your `IAP.cpp` (below the run function) replacing the existing note callback function. 
+Add the following code to your `IAP.cpp` below a standard run function which waits for events.
 Remember to uncomment the relevant callback declarations in your `IAP.h` file.
+
+```cpp
+void IAP::run()
+{
+  while(true)
+  {
+    aserveSleep(1000); // wait for events
+  }
+}
+```
 
 ```cpp
 void IAP::callbackModWheelMoved (int value)
 {
   int wave = 0;         // used for our oscillator when notes are pressed
-  if( value >= 64 )     // if the modwheel is over halfway
-  {
+  if( value > 64 && value < 90 )      
+  {                     // if the modwheel is above 60 AND below 90
     wave = 1;           // we want to hear a square wave
   }
   else 
@@ -47,7 +57,7 @@ void IAP::callbackNoteReceived  (int note, int velocity, int channel)
 }
 ```
 
-This code is designed to switch between a sine wave and a square wave depending on the position of the modwheel. Run the program and check that this works correctly. You should notice a deliberate flaw.
+This code is designed to switch between a sine wave and a square wave depending on the position of the modwheel. Run the program and check that this works correctly. You should notice a deliberate flaw. It doesn't work at all!
 
 # Error
 If we look closely at our program, we can see that two variables share the same name `wave` but they are not truly shared. This is a very common design problem. We wanted you to experience both the problem, and the simple solution below. 😊
