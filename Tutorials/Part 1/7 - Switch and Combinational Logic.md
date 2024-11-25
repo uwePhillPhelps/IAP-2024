@@ -208,11 +208,11 @@ Examine the code below and try **without using xcode or visual studio** to predi
 
 ## Exercise 4: Scale Quantization
 
-Download: [Tutorial 7 code](../../Code%20Exercises/Tutorial%207)
+Download: [Tutorial 7 code](../../Code%20Exercises/Tutorial%207/)
 
-Copy the supplied starting point code for this exercise into your project, replacing everything in your existing IAP.cpp and IAP.h files.
+Replace everything in your existing `IAP.cpp` and `IAP.h` files with the supplied starting point code for this exercise.
 
-For this exercise we are going to show a method for "quantizing" all incoming notes into the C major scale. 
+We are going to show a method for "quantizing" all incoming notes into the C major scale. 
 
 One method of doing scale quantization is to check the pitch class of a note, and if it is not in the current scale, to increment the note by 1. For example, the pitch C# could get incremented to D.
 
