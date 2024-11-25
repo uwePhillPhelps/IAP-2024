@@ -15,6 +15,10 @@ void IAP::run ()
 
 void IAP::callbackNoteReceived  (int note, int velocity, int channel)
 {
+    // in the first part of this exercise...
+    // ...you might perform an adjustment to the 'note' value...
+    // ...before calculating frequency...
+    
     float frequency = 440.0 * pow(2.0, (note-69)/12.0);  // calculate frequency
   
     if (velocity > 0)
