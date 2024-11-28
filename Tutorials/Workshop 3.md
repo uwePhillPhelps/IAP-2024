@@ -38,11 +38,11 @@ If you accidentally open the supplied Logic DAW project before your plugin is re
 ![a screenshot of the error message](./images/IAPaudioplug_missing.png) 
 
 The supplied xcode project and code will build this missing component, allowing you to experiment with simple audio effect processing such as:
-* Gain
-* Panning
-* Distortion
-* Delay
-* Tremolo
+* Gain 💪
+* Panning 🍳
+* Distortion 🎸
+* Delay ⏰⏳
+* Tremolo ~👋~
 * ...and more (if you desire!)!
 
 ## Exercise 1 - Build
