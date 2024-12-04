@@ -24,25 +24,16 @@ Today we'll use Xcode to build the `IAPAudioPlug` audio plugin `.component`...
 
 ## Getting started
 
-We provide several files as a starting point compatible with the MacOS software on lab machines. All files are zipped for convenient distribution.
+We provide <a href="https://uweacuk-my.sharepoint.com/:f:/g/personal/philip3_phelps_uwe_ac_uk/Er9MXyKHo2RLpB9N4FxHyjIBwhTzppLO53klFREwRFqjkQ?e=fiEKky"> starting point files </a> compatible with the MacOS software on lab machines. All files are zipped for convenient distribution.
 
-1. Download the `IAPAudioPlug.zip` xcode project 
-2. Download the `Logic_DAW_Project.zip`
+::: ➡️ ::: First download the `IAPAudioPlug.zip` <a href="https://uweacuk-my.sharepoint.com/:f:/g/personal/philip3_phelps_uwe_ac_uk/Er9MXyKHo2RLpB9N4FxHyjIBwhTzppLO53klFREwRFqjkQ?e=fiEKky"> workshop starting point files </a>::: ⬅️ :::
 
-   a. Put this aside for later. We will need it soon, but not initially
-
-## A word of warning
-
-If you accidentally open the supplied Logic DAW project before your plugin is ready, an error message will warn you of a required, missing component.
-
-![a screenshot of the error message](./images/IAPaudioplug_missing.png) 
-
-The supplied xcode project and code will build this missing component, allowing you to experiment with simple audio effect processing such as:
+The supplied xcode project and code will allow you to experiment with code for simple audio effect processing such as:
 * Gain 💪
 * Panning 🍳
 * Distortion 🎸
 * Delay ⏰⏳
-* Tremolo ~👋~
+* Tremolo 👋 ~ ~ ~
 * ...and more (if you desire!)!
 
 ## Exercise 1 - Build
@@ -62,7 +53,7 @@ The supplied xcode project and code will build this missing component, allowing 
 
    * focus your attention on the `IAPAudioPlug.component` - confirm the date modified matches **todays date and time**
 
-! a screenshot showing the xcode build folder ] ( ./images/IAPaudioplug_buildfolder.png
+![a screenshot showing the xcode build folder ](./images/IAPaudioplug_buildfolder.png)
 
 ## Exercise 2 - Install
 
@@ -72,16 +63,11 @@ We need to install the `IAPAudioPlug.component` into this 'home' library folder.
 1. Use use the finder menu `Go > Go to Folder...`
 2. Search for `~/Library/Audio/Plug-ins/Components`
 
-   a. Be **absolutely sure to use the `~` symbol in the search path here**
+   a. Be **absolutely sure to use the `~` symbol in the search path here** indicateing you wish to access your personal 'home' Library folder
+   
+   b. Ask a member of staff if you need assistance
 
-   b. Finder will not permit you to access the 
-   'root' Library folder
-
-   c. The `~` symbol indicates you wish to access your personal 'home' Library folder
-
-   d. Ask a member of staff if you need assistance
-
-4. Copy your `IAPAudioPlug.component` into your personal 'home' Library of audio plugin components.
+3. Copy your `IAPAudioPlug.component` into your personal 'home' Library of audio plugin components.
 
 ## The above steps as an animation
 
@@ -97,12 +83,21 @@ Later, as we improve and change our plugin, we'll replace old builds with new ve
 
 Congratulations on getting this far. 😀🎉 **The boring parts are over, now begins the fun!**
 
-1. Open the downloaded Logic DAW project
-2. Voila! Plugin do the things. Happy fun time exploration yay! 🎶😊🎵
+::: ➡️ ::: Download the `Logic_DAW_Project.zip` <a href="https://uweacuk-my.sharepoint.com/:f:/g/personal/philip3_phelps_uwe_ac_uk/Er9MXyKHo2RLpB9N4FxHyjIBwhTzppLO53klFREwRFqjkQ?e=fiEKky"> starting point </a>  and open the project ::: ⬅️ :::
 
 If everything has gone well, you will see the IAPaudioplug controls, similar to the screenshot below.
 
 ![a screenshot of the IAPaudioplug controls](./images/IAPaudioplug.png)
+
+Voila! Plugin do the things. Happy fun time exploration yay! 🎶😊🎵
+
+Logic may warn you of a required, missing component if you accidentally open the supplied Logic DAW project before your plugin is ready. If this happens, check the build and install exercise steps above and/or ask a member of staff for assistance. 
+
+![a screenshot of the error message](./images/IAPaudioplug_missing.png) 
+
+Logic will likely display 'session' and 'whats new' messages, **please close these to continue**. You will also need to grant security access to the project file you have opened. Screenshots are shown below.
+
+![please grant security access and close welcome messages](./images/IAPaudioplug_logicstart.png) 
 
 # Creative prompts
 
