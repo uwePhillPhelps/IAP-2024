@@ -132,11 +132,15 @@ Here are some questions to ask yourself:
 
 2. Which part of the code runs when the `choiceParam` is set to `GAIN`?
 
-3. What happens when you adjust the lines which say `*channel... *= stereoGain;` to `*channel... *= 2 * stereoGain;`
-
+3. Can you modify the line which says `*channelLeft *= stereoGain;`
+   
+   * ...to say `*channelLeft *= stereoGain * 2;` instead?
+  
    * Remember that there are **two signals**, one for the left channel, one for the right.
-
+     
    * Remember to rebuild the component and reload the logic project to test your changes 👍
+
+## Stereo panning
 
 4. Find and **uncomment** the code for a stereo panner effect.
 
@@ -148,15 +152,25 @@ Here are some questions to ask yourself:
 
 In this mode, the starting point code distorts the sound according to the slider `floatParam` value.
 
-* Which part of `PluginProcessor.cpp` is the distortion processing code?
+1. Which part of `PluginProcessor.cpp` is the distortion processing code?
 
-* The distortion is **deliberately soft**; is it too weak? how to make it stronger? 
+2. The distortion is **deliberately weak**; how to make it stronger? 
 
-* What happens to the sound when you comment out one of the `if` statements? Can you hear the difference?
+3. What happens to the sound when you comment out one of the `if` statements? Can you hear the difference?
+
+   * Remember to rebuild the component and reload the logic project to test your changes 👍
 
 ## Delay
 
-* Delay -> non-Feedback vs Feedback – differences? Change delay time? 
+In this mode, the sound is echoed by using a delay.
+
+Questions to ask yourself, and things to try here:
+
+1. Which part of `PluginProcessor.cpp` is the delay processing code?
+
+2. What happens when you uncomment the code which performs a "feedback delay" - can you hear the difference?
+
+   * Remember to rebuild the component and reload the logic project to test your changes 👍
 
 ## Tone
 
