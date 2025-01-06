@@ -33,6 +33,7 @@ The supplied xcode project and code will allow you to experiment with code for s
 * Panning 🍳
 * Distortion 🎸
 * Delay ⏰⏳
+* Amplitude Ring Modulation 💍 
 * Tremolo 👋 ~ ~ ~
 * ...and more (if you desire!)!
 
@@ -117,7 +118,7 @@ Logic will likely display 'session' and 'whats new' messages, **please close the
 
 * Read the guidance in the sections below for further inspiration and guidance
 
-## Gain
+## Gain 💪
 
 In this mode, the starting point code adjusts gain (turns up and down the volume). 
 
@@ -140,7 +141,7 @@ Here are some questions to ask yourself:
      
    * Remember to rebuild the component and reload the logic project to test your changes 👍
 
-## Stereo panning
+## Stereo panning 🍳
 
 4. Find and **uncomment** the code for a stereo panner effect.
 
@@ -148,7 +149,7 @@ Here are some questions to ask yourself:
    
    * Hint: Why is it not possible hear a stereo-pan for a silent signal?
 
-## Distortion
+## Distortion 🎸
 
 In this mode, the starting point code distorts the sound according to the slider `floatParam` value.
 
@@ -160,9 +161,9 @@ In this mode, the starting point code distorts the sound according to the slider
 
    * Remember to rebuild the component and reload the logic project to test your changes 👍
 
-## Delay
+## Delay ⏰⏳
 
-In this mode, the sound is echoed by using a delay.
+In this mode, the sound is echoed. We hear a delayed copy of the sound mixed with the original.
 
 Questions to ask yourself, and things to try here:
 
@@ -170,9 +171,15 @@ Questions to ask yourself, and things to try here:
 
 2. What happens when you uncomment the code which performs a "feedback delay" - can you hear the difference?
 
+3. Can you work out how to adjust the timing of the delay?
+
    * Remember to rebuild the component and reload the logic project to test your changes 👍
 
 ## Tone
+
+In this mode, an oscillator signal is produced.
+
+We can use this to perform a variety of sound mangling techniques including Amplitude Ring Modulation 💍 and Tremolo 👋 ~ ~ ~
 
 * Tone gen modify`+=` symbols to `*=` for tone vs ring modulation
 
