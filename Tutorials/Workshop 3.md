@@ -63,7 +63,7 @@ We need to install the `IAPAudioPlug.component` into this 'home' library folder.
 1. Use use the finder menu `Go > Go to Folder...`
 2. Search for `~/Library/Audio/Plug-ins/Components`
 
-   a. Be **absolutely sure to use the `~` symbol in the search path here** indicateing you wish to access your personal 'home' Library folder
+   a. Be **absolutely sure to use the `~` symbol in the search path here** indicating you wish to access your personal 'home' Library folder
    
    b. Ask a member of staff if you need assistance
 
