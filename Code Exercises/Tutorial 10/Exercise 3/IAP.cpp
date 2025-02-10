@@ -14,7 +14,7 @@
 void IAP::run ()
 {
     // display a welcome message
-    std::cout << "Welcome to the music sequencer\n"
+    std::cout << "Welcome to the music sequencer\n";
 
     // these three lines setup our 'default' sequence
     // remove these if you want the program to start silent
