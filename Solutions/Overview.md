@@ -45,7 +45,7 @@ The table bellow outlines each test and the tutorial exercise they are based on.
 | 4 | Monophonic Synth | 6.4 | Fixing note-off synthesiser |
 | 5 | Scale Quantisation | 7.4 | Scale Quantisation |
 | 6 | High Frequency Test Loop | 8.3 | High frequency test |
-| 7 | Music Sequencer | 11.3 | Building a music sequencer |
+| 7 | Music Sequencer | 10.3 | Building a music sequencer |
 
 
 # Test 1: Midi Note to Frequency
