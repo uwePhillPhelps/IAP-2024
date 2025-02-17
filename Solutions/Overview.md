@@ -129,7 +129,7 @@ Your frequency sweep should start with a frequency value of 20hz and increment t
 # Test 7: Vector Sequencer
 *See: <a href="../Tutorials/Part%202/10%20-%20Arrays%20and%20Vectors.md">Tutorial 10</a>*
 
-This unit test will test all of the features of exercise 11.3. Aserve will send a series of note on and note off messages to your project. Your project should store these note numbers. Aserve will simulate pushing the play button at which point you should playback all the notes sent previously. This should continue to loop until a stop message is recieved (CC 114), at this point playback should stop.
+This unit test will test all of the features of exercise 11.3. Aserve will send a series of note on and note off messages to your project. Your project should store the **note on messages**. Aserve will simulate pushing the play button at which point you should playback all the notes sent previously. This should continue to loop until a stop message is recieved (CC 114), at this point playback should stop.
 
 **Note that for the test you will need to stop and re-run your project between tests.**
 
