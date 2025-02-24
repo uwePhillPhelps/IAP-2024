@@ -163,8 +163,7 @@ However, be aware than you can only assign values to waveType that were specifie
 Download the supplied [starting point CPP and H files](../../Code%20Exercises/Tutorial%2011/enums) and copy them into your project. The supplied code is **deliberately messy** and would strongly benefit from refactoring, cleaning, and tidying using the techniques we have discussed. Practice these techniques by cleaning up, tidying, and refactoring the code.
 
 1.	You should make any variables const that are not going to be modified after being initiliased
-2.	Replace any arbitrary literals with constants
-a.	Note that values within calculations are fine as they are.
+2.	Replace any arbitrary literals with constants (values within calculations are fine as they are)
 3.	Make use of at least one enum
 4.	Ensure you save your solution to codebook
 5.	Remember to check your solution with one of the lecturers during next week’s tutorial
