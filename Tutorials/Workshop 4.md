@@ -1,6 +1,8 @@
 
 # Workshop 4 - Fun with Physical Computing, Interaction Design, and VCV Rack! 
 
+ ![](images/Tutorial4/Header.png)  
+
 Hello everyone! 
 
 In this workshop we will be patching and controlling VCV Rack modules, however this time using tools and hardware that you have built with your hands. Using the components and tools that we provide, the controls for soft-synths are transported "off the screen and into the world"! (The workshop assumes you have _some_ familiarity with using VCV Rack, but please chat to us if you are unsure).
