@@ -7,34 +7,51 @@ In this workshop we will be patching and controlling VCV Rack modules, however t
 
 After some initial set up, you will be guided to explore the relationship between physical inputs and sound outputs, a core part of the music technology industry (and many others!) called Interaction Design.
 
-# Getting Started
-|                                                                                             |                                                                                                                                   |  
-|--------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+# Part 1 - Getting Started
+<details open>
+ <summary>Click here for instructions!</summary>
+ 
+|Instructions                                                                                                           |Images                                                                                                                                   |  
+| :--------------------------------------------------------------------------------------------------------------| :-----------------------------------------------------------------------------------------------------------------------------------: |
 | 1. Download and open the supplied XCode project:                                                             | ![File hierarchy showing a file called 'uwe-arduino.xcodeproject](images/Tutorial4/FileHierarchy.png).                            |
 | 2. When prompted, 'Trust and Open' the project:                                                              | ![UWE Security Prompt](images/Tutorial4/UWESecurityPrompt.png).                                                                   |
 | 3. Use the XCode ‘Play’ button to build your project and await success. **VCV Rack will open automatically** | ![](images/Tutorial4/XCodeBuildBar.png) <br> ![](images/Tutorial4/BuildSucceeded.png) <br> ![](images/Tutorial4/WelcomeToVCV.png) |
 
+</details>
 
-
-# Moving into VCV Rack
-|                                                                                                                                    |                                             |
-|------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|
+# Part 2 - Moving into VCV Rack
+<details>
+ <summary>Click here for instructions!</summary>
+ 
+| Instructions                                                                                                                       | Images                                      |
+| :------------------------------------------------------------------------------------------------------------------------------------| :---------------------------------------------: |
 | 1. Right Click in VCV Rack and open up the Modules Library:                                                                        | ![](images/Tutorial4/VCVModules.png)        |
 | 2. Check the UWE VCV Module is there (It's the bright yellow and red one with the UWE Logo at the top!)                            | ![](images/Tutorial4/UWEVCVModule.png)      |
 | 3. Open the VCV Rack Starter Patch we have provided. It's called 'VCV-starter.vcvrack. Once opened, it should look like this: <br. | ![](images/Tutorial4/VCVTemplateOpened.png) |
 
-# Setting up the Arduino
-|                                                                                                                                                                                                                      |                                               |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
-| 1. Look at the UWE Module. Press the CONNECT button on the UWE module **after** plugging in the Arduino.                                                                                                             | ![](images/Tutorial4/UWEConnect.png)          |
+</details>
+
+
+# Part 3 - Setting up the Arduino
+
+<details>
+ <summary>Click here for instructions!</summary>
+ 
+| Instructions                                                                                                                                                                                                         | Images                                        |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| :-----------------------------------------------: |
+| 1. Look at the UWE Module. Press the CONNECT button on the UWE module **after** plugging in the Arduino.                                                                                                             | ![](images/Tutorial4/UWEConnect.png)           |
 | 2. This might not work first time. If it doesn't connect, we have provided a tool to help find the USB name. The tool is called 'arduino_usb_helper' and will find the name of USB Devices attached to your machine. | ![](images/Tutorial4/ArduinoHelperFolder.png) |
 | 3. Similarly to XCode, you can run the tool we have created using the Play button:                                                                                                                                   | ![](images/Tutorial4/ArduinoHelperGUI.png)    |
 | 4. If your Arduino is not connected correctly, you will see this message. Check the device is correctly connected or speak to a member of staff:                                                                     | ![](images/Tutorial4/NoDevicesFound.png)      |
 | 5. If your Arduino is connected correctly, you will see this message. Copy the numbers and return to the UWE VCV Rack Module:                                                                                        | ![](images/Tutorial4/USBFound.png)            |
 | 6. Change the text in the UWE VCV Module to match the numbers you have copied and try to connect again.                                                                                                              |                                               |
 
-# SETUP FINISHED! LET'S MAKE SOME NOISE!
+</details>
 
+# Part 4 - Setup finished... let's make some noise!
+<details>
+ <summary>Click here for instructions!</summary>
+ 
 ## Exercise 1 - Playful Exploration
 In this part of the workshop, we want you to help you focus on developing meaningful, intuitive relationships between physical inputs and sound outputs. The Arduino hardware we’re using has a built-in motion sensor and is ready to go. 
 
@@ -68,8 +85,6 @@ Okay now for something different! Rather than moving the hardware around...
 
 Let’s now connect a sensor to detect the motion of our hands in proximity to the sensor. 
 
- 
-
 ... more images and guidance here... 
 
 Pick the sensor out and take a closer look. It emits a beam of infrared light whilst measuring the intensity of light bounced back into the photosensor. If you stare at the sensor (when it’s on), you can see a faint gloaw as some of the emitted light falls into the visible-light spectrum. 
@@ -80,4 +95,6 @@ Because the sensor detects the intensity of its reflected IR light, the sensor o
 
 ## Exercise 5 - Lights
 Let’s build a Light Dependent Resistor circuit on the breadboard to use with your smartphone flashlight 😀🔦💡 
+
+</details>
 
