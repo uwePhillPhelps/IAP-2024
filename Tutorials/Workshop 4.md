@@ -61,18 +61,15 @@ After some initial set up, you will be guided to explore the relationship betwee
  <summary>Click here for instructions!</summary>
  
 ## Exercise 1 - Playful Exploration
-In this part of the workshop, we want you to help you focus on developing meaningful, intuitive relationships between physical inputs and sound outputs. The Arduino hardware we’re using has a built-in motion sensor and is ready to go. 
+In this part of the workshop, we will focus on developing meaningful, intuitive relationships between physical inputs and sound outputs. The Arduino hardware we’re using has a built-in gyroscopic sensor and is ready to go!
+* What happens when you pick up the hardware and move it around gently? The motion outputs on our module should respond to **three** axis of movement...
+![](images/Tutorial4/6DOF.jpeg) 
 
-Q: what happens when you pick up the hardware and move it around gently? 
-The motion outputs on our module should respond to three axis of movement. 
+* What happens when you tilt the hardware in different directions? 
 
-Q: What happens when you tilt the hardware in different directions? 
+* Can you work out which physical movements refer to which axis (x, y, z)? Hint: try a back-and-forth action, followed by up-and-down action, and then a side-to-side action 
 
-Q: Can you work out which physical movements refer to which axis (x,y,z)?  
-
-Hint: try a back-and-forth action, followed by up-and-down, then side-to-side 
-
-Q: Can you work out how to tune the frequency to play a little melody? 
+* Can you work out how to tune the frequency to play a little melody? 
 
 ## Exercise 2 - Thinking about Interaction Design
 Q: Which motion feels more intuitive for pitch control – up-and-down or side-to-side? 
