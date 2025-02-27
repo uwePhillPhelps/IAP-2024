@@ -78,8 +78,9 @@ First things first, let's figure out what our Arduino can do...
 ## Exercise 2 - Thinking about Interaction Design
 When we discuss how people use things (everything from doors, fridges and cars to synthesisers, software and instruments!) we call this **Interaction Design**; how do we design the way we interact with stuff to make the best experience possible? We often take this for granted, but imagine playing a drumkit using a slider, or a guitar using 144 different buttons for each fretted note... some designs **FEEL** better than others...
 
-[Here are some examples of terribly designed volume controls...](https://uxdesign.cc/the-worst-volume-control-ui-in-the-world-60713dc86950)<br>
-![](images/Tutorial4/BadVolume.jpg)
+|[Here are some examples of terribly designed volume controls...](https://uxdesign.cc/the-worst-volume-control-ui-in-the-world-60713dc86950) |![](images/Tutorial4/BadVolume.jpg)                                                             |  
+| :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
+
 
 * Which motion feels **more intuitive** for pitch control – up-and-down or side-to-side? Why do you think this is?
 
