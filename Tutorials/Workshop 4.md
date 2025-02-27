@@ -59,28 +59,34 @@ After some initial set up, you will be guided to explore the relationship betwee
 # Part 4 - Setup finished... let's make some noise!
 <details>
  <summary>Click here for instructions!</summary>
- 
-## Exercise 1 - Playful Exploration
-In this part of the workshop, we will focus on developing meaningful, intuitive relationships between physical inputs and sound outputs. The Arduino hardware we’re using has a built-in gyroscopic sensor and is ready to go!
-* What happens when you pick up the hardware and move it around gently? The motion outputs on our module should respond to **three** axis of movement...
-![](images/Tutorial4/6DOF.jpeg) 
 
-* What happens when you tilt the hardware in different directions? 
+ In this part of the workshop, we will focus on developing meaningful and intuitive relationships between physical inputs and sound outputs. The Arduino hardware we are using has a built-in gyroscopic sensor and is ready to go!
+
+## Exercise 1 - Playful Exploration
+
+First things first, let's figure out what our Arduino can do...
+
+|What happens when you pick up the hardware and move it around gently? The motion outputs on our module should respond to **three** axis of movement... |![](images/Tutorial4/6DOF.jpeg)                                                             |  
+| :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
+
+* What happens when you tilt the Arduino in different directions? 
 
 * Can you work out which physical movements refer to which axis (x, y, z)? Hint: try a back-and-forth action, followed by up-and-down action, and then a side-to-side action 
 
 * Can you work out how to tune the frequency to play a little melody? 
 
 ## Exercise 2 - Thinking about Interaction Design
-Q: Which motion feels more intuitive for pitch control – up-and-down or side-to-side? 
+When we discuss how people use things (everything from doors, fridges and cars to synthesisers, software and instruments!) we call this **Interaction Design**; how do we design the way we interact with stuff to make the best experience possible? We often take this for granted, but imagine playing a drumkit using a slider, or a guitar using 144 different buttons for each fretted note... some designs **FEEL** better than others...
 
-Q: What sound parameters beyond oscillator pitch could we alter? Filter resonance? 
+[Here are some examples of terribly designed volume controls...](https://uxdesign.cc/the-worst-volume-control-ui-in-the-world-60713dc86950)
 
-Q: What sound parameters feel intuitive or natural to control with a key-turning motion? 
+* Which motion feels **more intuitive** for pitch control – up-and-down or side-to-side? Why do you think this is?
 
-There is an art to finding meaningful, intuitive relationships between physical inputs and sound outputs. This practice is called INTERACTION DESIGN, and it is a core part of the music technology industry.  
+* What sound parameters beyond oscillator pitch could we alter? Filter resonance? Filter cutoff? The speed of an LFO?
 
-Creative tools and Digital Musical Interfaces that are frustrating or confusing to interact with are arguably badly designed and difficult to work with. Of course, intentionally unpleasant experiences are just as valid as pleasant ones, but let’s try to have fun! 😀 
+* What sound parameters feel intuitive or natural to control with a key-turning motion? Why do you think this is?
+
+While there is no 'right or wrong' control for which type of interaction to use, some interaction styles may feel more intuitive or 'better' than others to you. Creative tools and Digital Musical Interfaces that are frustrating or confusing to interact with are arguably badly designed and difficult to work with. Of course, intentionally unpleasant experiences are just as valid as pleasant ones, but let’s try to have fun! 😀 
 
 ## Exercise 3 - Sliders
 The word haptic refers to the sensation and act of touching.  A very common music technology control mechanism is the SLIDER. These are great for controlling sound with “set and forget” behaviour, but also for reacting to expressive and articulate movements. 
