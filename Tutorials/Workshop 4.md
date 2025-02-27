@@ -78,7 +78,8 @@ First things first, let's figure out what our Arduino can do...
 ## Exercise 2 - Thinking about Interaction Design
 When we discuss how people use things (everything from doors, fridges and cars to synthesisers, software and instruments!) we call this **Interaction Design**; how do we design the way we interact with stuff to make the best experience possible? We often take this for granted, but imagine playing a drumkit using a slider, or a guitar using 144 different buttons for each fretted note... some designs **FEEL** better than others...
 
-[Here are some examples of terribly designed volume controls...](https://uxdesign.cc/the-worst-volume-control-ui-in-the-world-60713dc86950)
+[Here are some examples of terribly designed volume controls...](https://uxdesign.cc/the-worst-volume-control-ui-in-the-world-60713dc86950)<br>
+![](images/Tutorial4/BadVolume.jpg)
 
 * Which motion feels **more intuitive** for pitch control – up-and-down or side-to-side? Why do you think this is?
 
@@ -89,20 +90,24 @@ When we discuss how people use things (everything from doors, fridges and cars t
 While there is no 'right or wrong' control for which type of interaction to use, some interaction styles may feel more intuitive or 'better' than others to you. Creative tools and Digital Musical Interfaces that are frustrating or confusing to interact with are arguably badly designed and difficult to work with. Of course, intentionally unpleasant experiences are just as valid as pleasant ones, but let’s try to have fun! 😀 
 
 ## Exercise 3 - Sliders
-The word haptic refers to the sensation and act of touching.  A very common music technology control mechanism is the SLIDER. These are great for controlling sound with “set and forget” behaviour, but also for reacting to expressive and articulate movements. 
+Let's start to add some new components... A very common Music Technology control mechanism is the **Slider**. These are great for controlling sound with “set and forget” behaviour; you move the slider to a value (set) and then leave it until you want to change it again (forget). They are also useful for reacting to expressive and articulate movements, such as swells, fades, risers or pushes.
+
+* Which audio parameters feel **more intuitive** to control using a slider? Why do you think this is?
 
 ## Exercise 4 - Distance Sensors
-Okay now for something different! Rather than moving the hardware around... 
+Okay, now for something different! Rather than moving the hardware around or moving a slider around, let's move ourselves around!
 
 Let’s now connect a sensor to detect the motion of our hands in proximity to the sensor. 
 
 ... more images and guidance here... 
 
-Pick the sensor out and take a closer look. It emits a beam of infrared light whilst measuring the intensity of light bounced back into the photosensor. If you stare at the sensor (when it’s on), you can see a faint gloaw as some of the emitted light falls into the visible-light spectrum. 
+Pick the sensor out and take a closer look...
 
-Some sensors have a cable connected with red (POWER), black (GROUND) and yellow (SIGNAL) connectors. Some sensors have red (POWER), black (GROUND) and white (SIGNAL) connectors. Connect the sensor in place of the slider and observe the value as you move your hand over the sensor. 
+So how does it work? It emits a beam of infrared light whilst measuring the intensity of light bounced back into the photosensor. If you stare at the sensor (when it’s on), you can see a faint gloaw as some of the emitted light falls into the visible-light spectrum. 
 
-Because the sensor detects the intensity of its reflected IR light, the sensor outputs near-zero when nothing is in front of it (approx. > 3ft), and ramps up as an object comes near, when the object is very close the value starts to drop off again. 
+Some sensors have a cable connected with red (POWER), black (GROUND) and yellow (SIGNAL) connectors. Some sensors have red (POWER), black (GROUND) and white (SIGNAL) connectors. 
+
+Connect the sensor in place of the slider and observe the value as you move your hand over the sensor. Because the sensor detects the intensity of its reflected IR light, the sensor outputs near-zero when nothing is in front of it (approx. > 3ft), and ramps up as an object comes near, when the object is very close the value starts to drop off again. 
 
 ## Exercise 5 - Lights
 Let’s build a Light Dependent Resistor circuit on the breadboard to use with your smartphone flashlight 😀🔦💡 
