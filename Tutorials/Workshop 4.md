@@ -81,7 +81,7 @@ When we discuss how people use things (everything from doors, fridges and cars t
 |[Here are some examples of terribly designed volume controls...](https://uxdesign.cc/the-worst-volume-control-ui-in-the-world-60713dc86950) |![](images/Tutorial4/BadVolume.jpg)                                                             |  
 | :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
 
-
+## Creative Tasks
 * Which motion feels **more intuitive** for pitch control – up-and-down or side-to-side? Why do you think this is?
 
 * What sound parameters beyond oscillator pitch could we alter? Filter resonance? Filter cutoff? The speed of an LFO?
@@ -96,7 +96,15 @@ Let's start to add some new components... A very common Music Technology control
 |Here is how the slider (left of the image) connects to the Ardunio (right of the image): <br><br>We use three cables to do attach to three slots:<br>1. Power (Red)<br>2. Data (Yellow) <br>3. Ground (Black)<br><br>-Connect the Red Cable from Position 1 on the slider to the 5V slot<br><br>-Connect the Yellow Cable from Position 2 on the slider to the A0 slot. <br><br>-Connect the Black Cable from Position 3 on the slider to a GND slot <br> |![](images/Tutorial4/ArduinoSliderConnections.png)|                                   
 | :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
 
+## Creative Tasks
+* Can you manipulate:
+  * Pitch?
+  * Speed?
+  * Volume?
+  * Delay amount?
 * Which audio parameters feel **more intuitive** to control using a slider? Why do you think this is?
+* Sliders commonly control volume... Can you use the slider to control something unconventional?
+* We can use the slider to control more than one thing at a time... Which two parameters could you control at the same time for a pleasant sound?
 
 ## Exercise 4 - Distance Sensors
 Okay, now for something different! Rather than moving the hardware around or moving a slider around, let's move ourselves around!
@@ -106,11 +114,18 @@ Let’s now connect a sensor to detect the motion of our hands in proximity to t
 |Pick the sensor out and take a closer look...|![](images/Tutorial4/SharpDistanceSensor.png)                                                             |  
 | :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
 
-So how does it work? It emits a beam of infrared light whilst measuring the intensity of light bounced back into the photosensor. If you stare at the sensor (when it’s on), you can see a faint gloaw as some of the emitted light falls into the visible-light spectrum. 
+## So how does it work? 
 
-Some sensors have a cable connected with red (POWER), black (GROUND) and yellow (SIGNAL) connectors. Some sensors have red (POWER), black (GROUND) and white (SIGNAL) connectors. 
+The sensor emits a beam of **infrared light** whilst measuring the intensity of light bounced back into the photosensor. If you stare at the sensor (when it’s on), you can see a faint gloaw as some of the emitted light falls into the visible-light spectrum. 
 
-Connect the sensor in place of the slider and observe the value as you move your hand over the sensor. Because the sensor detects the intensity of its reflected IR light, the sensor outputs near-zero when nothing is in front of it (approx. > 3ft), and ramps up as an object comes near, when the object is very close the value starts to drop off again. 
+|Some sensors have a cable connected with:<br>-Red (POWER)<br>-Black (GROUND)<br>-Yellow (SIGNAL). |![](images/Tutorial4/MotionSensor.jpg)                           |  
+| :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
+
+
+* Connect the sensor in place of the slider
+* Observe the value as you move your hand over the sensor
+
+Because the sensor detects the intensity of its reflected IR light, the sensor outputs near-zero when nothing is in front of it (approx. > 3ft), and ramps up as an object comes near, when the object is very close the value starts to drop off again. 
 
 ## Exercise 5 - Lights
 Let’s build a Light Dependent Resistor circuit on the breadboard to use with your smartphone flashlight 😀🔦💡 
