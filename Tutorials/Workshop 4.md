@@ -17,10 +17,10 @@ After some initial set up, you will be guided to explore the relationship betwee
  
 |Instructions                                                                                                    |Images                                                                                                                             |  
 | :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
-| 1. Download and open the supplied XCode project                                                                | ![File hierarchy showing a file called 'uwe-arduino.xcodeproject](images/Tutorial4/FileHierarchy.png).                            |
-| 2. When prompted, 'Trust and Open' the project                                                                 | ![UWE Security Prompt](images/Tutorial4/UWESecurityPrompt.png).                                                                   |
+| 1. Download and open the supplied XCode project                                                                | ![File hierarchy showing a file called 'uwe-arduino.xcodeproject](images/Tutorial4/FileHierarchy.png)                            |
+| 2. When prompted, 'Trust and Open' the project                                                                 | ![UWE Security Prompt](images/Tutorial4/UWESecurityPrompt.png)                                                                   |
 | 3. Use the XCode ‘Play’ button to build your project and await success. **VCV Rack will open automatically**   | ![](images/Tutorial4/XCodeBuildBar.png) <br> ![](images/Tutorial4/BuildSucceeded.png) <br> ![](images/Tutorial4/WelcomeToVCV.png) |
-
+| 4. Open our template VCV Rack project which is included in your downloaded files|![](images/Tutorial4/OpenTheVCVStarter.png)                                                    |
 </details>
 
 # Part 2 - Moving into VCV Rack
@@ -32,7 +32,7 @@ After some initial set up, you will be guided to explore the relationship betwee
 | Instructions                                                                                                                          | Images                                      |
 | :------------------------------------------------------------------------------------------------------------------------------------ | :-----------------------------------------: |
 | 1. Right Click in VCV Rack and open up the Modules Library                                                                            | ![](images/Tutorial4/VCVModules.png)        |
-| 2. Check the UWE VCV Module is there (It's the bright yellow and red one with the UWE Logo at the top!)                               | ![](images/Tutorial4/UWEVCVModule.png)      |
+| 2. Check the UWE VCV Module is there (It is the bright yellow and red one with the UWE Logo at the top!)                               | ![](images/Tutorial4/UWEVCVModule.png)      |
 | 3. Open the VCV Rack Starter Patch we have provided. It's called 'VCV-starter.vcvrack. Once opened, it should look like this:         | ![](images/Tutorial4/VCVTemplateOpened.png) |
 
 </details>
@@ -92,6 +92,9 @@ While there is no 'right or wrong' control for which type of interaction to use,
 
 ## Exercise 3 - Sliders
 Let's start to add some new components... A very common Music Technology control mechanism is the **Slider**. These are great for controlling sound with “set and forget” behaviour; you move the slider to a value (set) and then leave it until you want to change it again (forget). They are also useful for reacting to expressive and articulate movements, such as swells, fades, risers or pushes.
+
+|Here is how the slider (left of the image) connects to the Ardunio (right of the image): <br><br>We use three cables to do attach to three slots:<br>1. Power (Red)<br>2. Data (Yellow) <br>3. Ground (Black)<br><br>-Connect the Red Cable from Position 1 on the slider to the 5V slot<br><br>-Connect the Yellow Cable from Position 2 on the slider to the A0 slot. <br><br>-Connect the Black Cable from Position 3 on the slider to a GND slot <br> |![](images/Tutorial4/ArduinoSliderConnections.png)|                                   
+| :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
 
 * Which audio parameters feel **more intuitive** to control using a slider? Why do you think this is?
 
