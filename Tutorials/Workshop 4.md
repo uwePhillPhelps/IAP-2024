@@ -97,7 +97,7 @@ Let's start to add some new components... A very common Music Technology control
 | :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
 
 ## Creative Tasks
-* Can you manipulate:
+* There is another file you will have downloaded called 'VCVRack-wubs' that has a 'wubby' low frequency oscillator. Can you manipulate:
   * Pitch?
   * Speed?
   * Volume?
