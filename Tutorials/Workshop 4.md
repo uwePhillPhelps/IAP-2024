@@ -101,11 +101,10 @@ Let's start to add some new components... A very common Music Technology control
 ## Exercise 4 - Distance Sensors
 Okay, now for something different! Rather than moving the hardware around or moving a slider around, let's move ourselves around!
 
-Let’s now connect a sensor to detect the motion of our hands in proximity to the sensor. 
+Let’s now connect a sensor to detect the motion of our hands in proximity to the sensor:
 
-... more images and guidance here... 
-
-Pick the sensor out and take a closer look...
+|Pick the sensor out and take a closer look...|![](images/Tutorial4/SharpDistanceSensor.png)                                                             |  
+| :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
 
 So how does it work? It emits a beam of infrared light whilst measuring the intensity of light bounced back into the photosensor. If you stare at the sensor (when it’s on), you can see a faint gloaw as some of the emitted light falls into the visible-light spectrum. 
 
