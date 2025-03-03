@@ -66,7 +66,7 @@ After some initial set up, you will be guided to explore the relationship betwee
 
 First things first, let's figure out what our Arduino can do...
 
-|What happens when you pick up the hardware and move it around gently? The motion outputs on our module should respond to **three** axis of movement... |![](images/Tutorial4/6DOF.jpeg)                                                             |  
+|What happens when you pick up the hardware and move it around gently? The motion outputs on our module should respond to **three** axis of movement... |![](images/Tutorial4/6DOF.png)                                                             |  
 | :--------------------------------------------------------------------------------------------------------------| :-------------------------------------------------------------------------------------------------------------------------------: |
 
 * What happens when you tilt the Arduino in different directions? 
