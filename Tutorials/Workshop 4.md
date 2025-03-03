@@ -136,9 +136,5 @@ The sensor emits a beam of **infrared light** whilst measuring the intensity of 
   * Delay amount?
 * Distance sensing allows us to control things smoothly and fluidly using a **continuous** scale... what could we control insetad that is unconventional?
 * We can use the distance sensor to control more than one thing at a time... Which two parameters could you control at the same time for a pleasant sound?
-
-## Exercise 5 - Lights
-Let’s build a Light Dependent Resistor circuit on the breadboard to use with your smartphone flashlight 😀🔦💡 
-
 </details>
 
