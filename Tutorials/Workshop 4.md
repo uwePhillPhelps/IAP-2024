@@ -33,7 +33,7 @@ After some initial set up, you will be guided to explore the relationship betwee
 | :------------------------------------------------------------------------------------------------------------------------------------ | :-----------------------------------------: |
 | 1. Right Click in VCV Rack and open up the Modules Library                                                                            | ![](images/Tutorial4/VCVModules.png)        |
 | 2. Check the UWE VCV Module is there (It is the bright yellow and red one with the UWE Logo at the top!)                               | ![](images/Tutorial4/UWEVCVModule.png)      |
-| 3. Open the VCV Rack Starter Patch we have provided. It's called 'VCV-starter.vcvrack. Once opened, it should look like this:         | ![](images/Tutorial4/VCVTemplateOpened.png) |
+| 3. Open the VCV Rack Starter Patch we have provided. It's called `VCV-starter.vcvrack`. Once opened, it should look like this:         | ![](images/Tutorial4/VCVTemplateOpened.png) |
 
 </details>
 
@@ -48,11 +48,11 @@ After some initial set up, you will be guided to explore the relationship betwee
 | Instructions                                                                                                                                                                                                         | Images                                        |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| :-------------------------------------------: |
 | 1. Look at the UWE Module in VCV Rack. Press the CONNECT button on the UWE module **after** plugging in the Arduino.                                                                                                 | ![](images/Tutorial4/UWEConnect.png)          |
-| 2. This might not work first time. If it doesn't connect, we have provided a tool to help find the USB name. The tool is called 'arduino_usb_helper' and will find the name of USB Devices attached to your machine. | ![](images/Tutorial4/ArduinoHelperFolder.png) |
+| 2. This might not work first time. If it doesn't connect, we have provided a tool to help. The tool is called `arduino_usb_helper` and will display the device number of the device attached to your machine (the VCV module needs this). | ![](images/Tutorial4/ArduinoHelperFolder.png) |
 | 3. Similarly to XCode, you can run the tool we have created using the Play button:                                                                                                                                   | ![](images/Tutorial4/ArduinoHelperGUI.png)    |
 | 4. If your Arduino is not connected correctly, you will see this message. Check the device is correctly connected or speak to a member of staff:                                                                     | ![](images/Tutorial4/NoDevicesFound.png)      |
 | 5. If your Arduino is connected correctly, you will see this message. Copy the numbers and return to the UWE VCV Rack Module:                                                                                        | ![](images/Tutorial4/USBFound.png)            |
-| 6. Change the text in the UWE VCV Module to match the numbers you have copied and try to connect again.                                                                                                              |                                               |
+| 6. Configure the UWE VCV Module to use the numbers you have copied and try to connect again.                                                                                                             |                                               |
 
 </details>
 
